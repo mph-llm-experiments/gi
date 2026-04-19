@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx wrangler dev",
     "deploy": "npx wrangler deploy",
-    "test": "node --test tests/",
+    "test": "node --test 'tests/*.test.js'",
     "setup:vendor": "mkdir -p public/vendor && cp node_modules/fuse.js/dist/fuse.mjs public/vendor/fuse.esm.min.js"
   },
   "devDependencies": {
