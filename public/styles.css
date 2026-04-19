@@ -234,3 +234,40 @@ main {
   margin-bottom: 0.75rem;
   padding-left: 0.25rem;
 }
+
+/* History */
+.history {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.history-heading {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.history .result-card {
+  margin-bottom: 0.5rem;
+}
+
+.clear-history {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding-left: 0.25rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.clear-history:hover {
+  color: var(--text);
+  text-decoration: underline;
+}

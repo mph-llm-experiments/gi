@@ -3,6 +3,8 @@ import { classifyGI, getGIColor } from './lib.js';
 
 const MAX_RESULTS = 25;
 const DEBOUNCE_MS = 150;
+const HISTORY_KEY = 'gi-history';
+const MAX_HISTORY = 20;
 
 let fuse;
 let debounceTimer;
@@ -12,6 +14,60 @@ const welcomeEl = document.getElementById('welcome');
 const resultsEl = document.getElementById('results');
 const noResultsEl = document.getElementById('no-results');
 const clearBtn = document.getElementById('clear-search');
+const historyEl = document.getElementById('history');
+
+function getHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+function addToHistory(food) {
+  const history = getHistory();
+  const filtered = history.filter(f => f.name !== food.name);
+  filtered.unshift({
+    name: food.name,
+    gi: food.gi,
+    gl: food.gl ?? null,
+    category: food.category ?? null,
+    carbs: food.carbs ?? null,
+    serving: food.serving ?? null,
+  });
+  if (filtered.length > MAX_HISTORY) filtered.length = MAX_HISTORY;
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(filtered));
+}
+
+function clearHistoryData() {
+  localStorage.removeItem(HISTORY_KEY);
+}
+
+function renderHistory() {
+  const history = getHistory();
+  historyEl.innerHTML = '';
+
+  if (history.length === 0) return;
+
+  const heading = document.createElement('div');
+  heading.className = 'history-heading';
+  heading.textContent = 'Recently viewed';
+  historyEl.appendChild(heading);
+
+  for (const food of history) {
+    historyEl.appendChild(createCard(food));
+  }
+
+  const clearHistoryBtn = document.createElement('button');
+  clearHistoryBtn.className = 'clear-history';
+  clearHistoryBtn.textContent = 'Clear history';
+  clearHistoryBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    clearHistoryData();
+    renderHistory();
+  });
+  historyEl.appendChild(clearHistoryBtn);
+}
 
 async function init() {
   const res = await fetch('foods.json');
@@ -38,6 +94,8 @@ async function init() {
     show(welcomeEl);
     searchInput.focus();
   });
+
+  renderHistory();
 }
 
 function handleSearch() {
@@ -129,7 +187,12 @@ function createCard(food) {
   `;
 
   card.addEventListener('click', () => {
+    const wasExpanded = card.classList.contains('expanded');
     card.classList.toggle('expanded');
+    if (!wasExpanded) {
+      addToHistory(food);
+      renderHistory();
+    }
   });
 
   return card;
