@@ -10,7 +10,7 @@
     "setup:vendor": "mkdir -p public/vendor && cp node_modules/fuse.js/dist/fuse.mjs public/vendor/fuse.esm.min.js"
   },
   "devDependencies": {
-    "wrangler": "^3"
+    "wrangler": "^4.83.0"
   },
   "dependencies": {
     "fuse.js": "^7.0.0"
