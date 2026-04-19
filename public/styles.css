@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 :root {
   --bg: #faf6f1;
   --bg-card: #ffffff;
