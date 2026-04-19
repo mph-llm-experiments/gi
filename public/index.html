@@ -16,6 +16,7 @@
   <header>
     <h1>GI Lookup</h1>
     <p class="tagline">Glycemic Index Reference</p>
+    <a href="#" id="about-link" class="about-link">About</a>
   </header>
 
   <main>
@@ -41,6 +42,20 @@
       <p>No foods found. Try a different search.</p>
     </div>
   </main>
+
+  <div id="about" class="about" hidden>
+    <div class="about-content">
+      <a href="#" id="about-back" class="about-back">&larr; Back</a>
+      <h2>About GI Lookup</h2>
+      <p>A simple, ad-free tool for looking up glycemic index (GI) and glycemic load (GL) values.</p>
+      <h3>Data Source</h3>
+      <p>Food data from the international tables of glycemic index and glycemic load values:</p>
+      <p class="citation">Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE, Goletzke J. International tables of glycemic index and glycemic load values 2021. <em>American Journal of Clinical Nutrition</em>. 2021.</p>
+      <p><a href="https://doi.org/10.1093/ajcn/nqac031" target="_blank" rel="noopener">View paper (DOI: 10.1093/ajcn/nqac031)</a></p>
+      <h3>Methodology</h3>
+      <p>All GI values were determined using studies consistent with ISO 26642:2010 methodology. GL values use standardized carbohydrate portions for each food category.</p>
+    </div>
+  </div>
 
   <script type="module" src="app.js"></script>
 </body>

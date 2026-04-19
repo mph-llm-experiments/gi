@@ -271,3 +271,70 @@ main {
   color: var(--text);
   text-decoration: underline;
 }
+
+/* About link */
+.about-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.about-link:hover {
+  text-decoration: underline;
+}
+
+/* About page */
+.about {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.about-content h2 {
+  font-size: 1.25rem;
+  color: var(--text-heading);
+  margin-bottom: 1rem;
+}
+
+.about-content h3 {
+  font-size: 0.95rem;
+  color: var(--text-heading);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.about-content a {
+  color: var(--text-heading);
+}
+
+.citation {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-left: 2px solid var(--border);
+  padding-left: 0.75rem;
+  font-style: italic;
+}
+
+.about-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.about-back:hover {
+  color: var(--text);
+}

@@ -15,6 +15,10 @@ const resultsEl = document.getElementById('results');
 const noResultsEl = document.getElementById('no-results');
 const clearBtn = document.getElementById('clear-search');
 const historyEl = document.getElementById('history');
+const aboutEl = document.getElementById('about');
+const aboutLink = document.getElementById('about-link');
+const aboutBack = document.getElementById('about-back');
+const mainEl = document.querySelector('main');
 
 function getHistory() {
   try {
@@ -96,6 +100,18 @@ async function init() {
   });
 
   renderHistory();
+
+  aboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    mainEl.hidden = true;
+    aboutEl.hidden = false;
+  });
+
+  aboutBack.addEventListener('click', (e) => {
+    e.preventDefault();
+    aboutEl.hidden = true;
+    mainEl.hidden = false;
+  });
 }
 
 function handleSearch() {
