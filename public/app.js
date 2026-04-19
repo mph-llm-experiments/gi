@@ -132,4 +132,6 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-init();
+init().catch(() => {
+  welcomeEl.innerHTML = '<p>Failed to load food data. Please reload.</p>';
+});
