@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#faf6f1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>GI Lookup</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>GI Lookup</h1>
+    <p class="tagline">Glycemic Index Reference</p>
+  </header>
+
+  <main>
+    <div class="search-container">
+      <input
+        type="search"
+        id="search"
+        placeholder="Search foods…"
+        autocomplete="off"
+        autofocus
+      >
+    </div>
+
+    <div id="welcome" class="welcome">
+      <p>Search over <strong>4,000</strong> foods for glycemic index and load values.</p>
+    </div>
+
+    <div id="results" class="results" hidden></div>
+
+    <div id="no-results" class="no-results" hidden>
+      <p>No foods found. Try a different search.</p>
+    </div>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
