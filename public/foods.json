@@ -1,0 +1,122 @@
+[
+  {
+    "name": "White bread",
+    "category": "Bakery Products",
+    "gi": 75,
+    "gl": 11,
+    "serving": 30,
+    "carbs": 14
+  },
+  {
+    "name": "Whole wheat bread",
+    "category": "Bakery Products",
+    "gi": 74,
+    "gl": 9,
+    "serving": 30,
+    "carbs": 12
+  },
+  {
+    "name": "Apple, raw",
+    "category": "Fruit",
+    "gi": 36,
+    "gl": 5,
+    "serving": 120,
+    "carbs": 13
+  },
+  {
+    "name": "Banana, ripe",
+    "category": "Fruit",
+    "gi": 51,
+    "gl": 13,
+    "serving": 120,
+    "carbs": 25
+  },
+  {
+    "name": "Watermelon, raw",
+    "category": "Fruit",
+    "gi": 76,
+    "gl": 4,
+    "serving": 120,
+    "carbs": 6
+  },
+  {
+    "name": "White rice, boiled",
+    "category": "Cereal Grains",
+    "gi": 73,
+    "gl": 30,
+    "serving": 150,
+    "carbs": 40
+  },
+  {
+    "name": "Brown rice, boiled",
+    "category": "Cereal Grains",
+    "gi": 68,
+    "gl": 23,
+    "serving": 150,
+    "carbs": 33
+  },
+  {
+    "name": "Rolled oats porridge",
+    "category": "Cereal Grains",
+    "gi": 55,
+    "gl": 13,
+    "serving": 250,
+    "carbs": 24
+  },
+  {
+    "name": "Sweet potato, boiled",
+    "category": "Root Vegetables",
+    "gi": 46,
+    "gl": 11,
+    "serving": 150,
+    "carbs": 25
+  },
+  {
+    "name": "Potato, boiled",
+    "category": "Root Vegetables",
+    "gi": 78,
+    "gl": 15,
+    "serving": 150,
+    "carbs": 20
+  },
+  {
+    "name": "Lentils, boiled",
+    "category": "Legumes",
+    "gi": 32,
+    "gl": 5,
+    "serving": 150,
+    "carbs": 17
+  },
+  {
+    "name": "Chickpeas, canned",
+    "category": "Legumes",
+    "gi": 42,
+    "gl": 9,
+    "serving": 150,
+    "carbs": 22
+  },
+  {
+    "name": "Spaghetti, white, boiled",
+    "category": "Pasta",
+    "gi": 49,
+    "gl": 24,
+    "serving": 180,
+    "carbs": 48
+  },
+  {
+    "name": "Corn flakes",
+    "category": "Breakfast Cereals",
+    "gi": 81,
+    "gl": 21,
+    "serving": 30,
+    "carbs": 26
+  },
+  {
+    "name": "Milk, full fat",
+    "category": "Dairy",
+    "gi": 27,
+    "gl": 3,
+    "serving": 250,
+    "carbs": 12
+  }
+]
