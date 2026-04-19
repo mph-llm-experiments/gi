@@ -135,3 +135,7 @@ function escapeHtml(str) {
 init().catch(() => {
   welcomeEl.innerHTML = '<p>Failed to load food data. Please reload.</p>';
 });
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
