@@ -31,15 +31,37 @@
       <button id="clear-search" class="clear-btn" hidden aria-label="Clear search">&times;</button>
     </div>
 
-    <div id="welcome" class="welcome">
-      <p>Search over <strong>4,000</strong> foods for glycemic index and load values.</p>
+    <div id="loading" class="loading">
+      <span class="loading-dot">.</span><span class="loading-dot">.</span><span class="loading-dot">.</span>
+    </div>
+
+    <div id="welcome" class="welcome" hidden>
+      <p>Search over <strong>2,044</strong> foods for glycemic index and load values.</p>
+      <div class="gi-legend">
+        <div class="gi-legend-item">
+          <span class="gi-legend-value" style="color: var(--gi-low)">0–55</span>
+          <span class="gi-legend-range">Low</span>
+          <span class="gi-legend-desc">Slow release</span>
+        </div>
+        <div class="gi-legend-item">
+          <span class="gi-legend-value" style="color: var(--gi-medium)">56–69</span>
+          <span class="gi-legend-range">Medium</span>
+          <span class="gi-legend-desc">Moderate</span>
+        </div>
+        <div class="gi-legend-item">
+          <span class="gi-legend-value" style="color: var(--gi-high)">70+</span>
+          <span class="gi-legend-range">High</span>
+          <span class="gi-legend-desc">Fast release</span>
+        </div>
+      </div>
       <div id="history" class="history"></div>
     </div>
 
     <div id="results" class="results" hidden></div>
 
     <div id="no-results" class="no-results" hidden>
-      <p>No foods found. Try a different search.</p>
+      <p>No foods found.</p>
+      <p>Try a broader term — e.g. "potato" instead of "mashed potatoes."</p>
     </div>
   </main>
 
@@ -48,6 +70,11 @@
       <a href="#" id="about-back" class="about-back">&larr; Back</a>
       <h2>About GI Lookup</h2>
       <p>A simple, ad-free tool for looking up glycemic index (GI) and glycemic load (GL) values.</p>
+      <h3>What is GI?</h3>
+      <p>The glycemic index ranks foods by how quickly they raise blood sugar after eating. Foods are tested against pure glucose (GI 100) as a reference.</p>
+      <p><strong style="color: var(--gi-low)">Low GI (0–55)</strong> foods release energy slowly and steadily. <strong style="color: var(--gi-medium)">Medium GI (56–69)</strong> foods have a moderate effect. <strong style="color: var(--gi-high)">High GI (70+)</strong> foods cause a rapid spike.</p>
+      <h3>What is GL?</h3>
+      <p>Glycemic load accounts for both the GI and the amount of carbohydrate in a typical serving. A food can have a high GI but a low GL if a normal portion contains little carbohydrate — watermelon is a classic example (GI 76, GL 4).</p>
       <h3>Data Source</h3>
       <p>Food data from the international tables of glycemic index and glycemic load values:</p>
       <p class="citation">Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE, Goletzke J. International tables of glycemic index and glycemic load values 2021. <em>American Journal of Clinical Nutrition</em>. 2021.</p>

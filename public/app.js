@@ -13,6 +13,7 @@ const searchInput = document.getElementById('search');
 const welcomeEl = document.getElementById('welcome');
 const resultsEl = document.getElementById('results');
 const noResultsEl = document.getElementById('no-results');
+const loadingEl = document.getElementById('loading');
 const clearBtn = document.getElementById('clear-search');
 const historyEl = document.getElementById('history');
 const aboutEl = document.getElementById('about');
@@ -86,6 +87,10 @@ async function init() {
   welcomeEl.querySelector('strong').textContent =
     foods.length.toLocaleString();
 
+  // Hide loading, show welcome
+  loadingEl.hidden = true;
+  welcomeEl.hidden = false;
+
   searchInput.addEventListener('input', () => {
     clearBtn.hidden = !searchInput.value;
     clearTimeout(debounceTimer);
@@ -137,6 +142,7 @@ function show(el) {
   welcomeEl.hidden = el !== welcomeEl;
   resultsEl.hidden = el !== resultsEl;
   noResultsEl.hidden = el !== noResultsEl;
+  loadingEl.hidden = true;
 }
 
 function renderResults(hits) {
@@ -150,9 +156,11 @@ function renderResults(hits) {
       : `${hits.length} result${hits.length === 1 ? '' : 's'}`;
   resultsEl.appendChild(count);
 
-  for (const { item } of hits) {
-    resultsEl.appendChild(createCard(item));
-  }
+  hits.forEach(({ item }, i) => {
+    const card = createCard(item);
+    card.style.animationDelay = `${i * 0.03}s`;
+    resultsEl.appendChild(card);
+  });
 }
 
 function createCard(food) {
@@ -182,21 +190,23 @@ function createCard(food) {
     </div>
     <div class="result-detail">
       <div class="detail-inner">
-        <div class="detail-item">
-          <span class="detail-label">Glycemic Load</span>
-          <span class="detail-value">${food.gl ?? '—'}</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Category</span>
-          <span class="detail-value">${escapeHtml(food.category || '—')}</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Serving</span>
-          <span class="detail-value">${food.serving ? food.serving + 'g' : '—'}</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Carbs / serve</span>
-          <span class="detail-value">${food.carbs ? food.carbs + 'g' : '—'}</span>
+        <div class="detail-content">
+          <div class="detail-item">
+            <span class="detail-label">Glycemic Load</span>
+            <span class="detail-value">${food.gl ?? '—'}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Category</span>
+            <span class="detail-value">${escapeHtml(food.category || '—')}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Serving</span>
+            <span class="detail-value">${food.serving ? food.serving + 'g' : '—'}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Carbs / serve</span>
+            <span class="detail-value">${food.carbs ? food.carbs + 'g' : '—'}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -221,6 +231,8 @@ function escapeHtml(str) {
 }
 
 init().catch(() => {
+  loadingEl.hidden = true;
+  welcomeEl.hidden = false;
   welcomeEl.innerHTML = '<p>Failed to load food data. Please reload.</p>';
 });
 

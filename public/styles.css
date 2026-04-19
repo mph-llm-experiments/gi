@@ -88,6 +88,13 @@ main {
   opacity: 0.7;
 }
 
+/* Hide native search clear button */
+#search::-webkit-search-cancel-button,
+#search::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .clear-btn {
   position: absolute;
   right: 12px;
@@ -100,6 +107,7 @@ main {
   cursor: pointer;
   padding: 4px 8px;
   line-height: 1;
+  transition: color 0.15s;
 }
 
 .clear-btn:hover {
@@ -109,7 +117,7 @@ main {
 /* Welcome state */
 .welcome {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
@@ -119,12 +127,47 @@ main {
   color: var(--text-heading);
 }
 
+/* GI Legend */
+.gi-legend {
+  margin-top: 1.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.gi-legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.gi-legend-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.gi-legend-range {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.gi-legend-desc {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
 /* No results */
 .no-results {
   text-align: center;
   padding: 2rem 1rem;
   color: var(--text-secondary);
   font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Result cards */
@@ -134,16 +177,30 @@ main {
   gap: 0.5rem;
 }
 
+/* Card entrance animation */
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .result-card {
   background: var(--bg-card);
   border-radius: 8px;
   box-shadow: 0 1px 3px var(--shadow);
   overflow: hidden;
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.15s, transform 0.15s;
+  animation: cardIn 0.25s ease-out both;
 }
 
 .result-card:active {
+  transform: scale(0.985);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -194,17 +251,20 @@ main {
 
 /* Expanded detail */
 .result-detail {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.25s ease-out;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease-out;
 }
 
 .result-card.expanded .result-detail {
-  max-height: 200px;
-  transition: max-height 0.3s ease-in;
+  grid-template-rows: 1fr;
 }
 
 .detail-inner {
+  overflow: hidden;
+}
+
+.detail-content {
   padding: 0 1rem 0.875rem;
   border-top: 1px solid var(--border);
   padding-top: 0.75rem;
@@ -269,6 +329,7 @@ main {
   border: none;
   cursor: pointer;
   text-decoration: none;
+  transition: color 0.15s;
 }
 
 .clear-history:hover {
@@ -285,9 +346,11 @@ main {
   color: var(--text-secondary);
   text-decoration: none;
   letter-spacing: 1px;
+  transition: color 0.15s;
 }
 
 .about-link:hover {
+  color: var(--text-heading);
   text-decoration: underline;
 }
 
@@ -320,6 +383,11 @@ main {
 
 .about-content a {
   color: var(--text-heading);
+  transition: color 0.15s;
+}
+
+.about-content a:hover {
+  color: var(--text);
 }
 
 .citation {
@@ -337,8 +405,43 @@ main {
   font-size: 0.85rem;
   color: var(--text-secondary);
   text-decoration: none;
+  transition: color 0.15s;
 }
 
 .about-back:hover {
   color: var(--text);
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.loading-dot {
+  display: inline-block;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .result-card {
+    animation: none;
+  }
+  .result-detail {
+    transition: none;
+  }
+  .result-card.expanded .result-detail {
+    transition: none;
+  }
 }

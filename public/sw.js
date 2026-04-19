@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gi-v5';
+const CACHE_NAME = 'gi-v6';
 const ASSETS = [
   '/',
   '/index.html',
