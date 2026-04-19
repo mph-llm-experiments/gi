@@ -58,11 +58,12 @@ main {
 /* Search */
 .search-container {
   margin-bottom: 1.25rem;
+  position: relative;
 }
 
 #search {
   width: 100%;
-  padding: 0.85rem 1rem;
+  padding: 0.85rem 2.5rem 0.85rem 1rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1rem;
   color: var(--text);
@@ -81,6 +82,24 @@ main {
 #search::placeholder {
   color: var(--text-secondary);
   opacity: 0.7;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.clear-btn:hover {
+  color: var(--text);
 }
 
 /* Welcome state */

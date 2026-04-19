@@ -11,6 +11,7 @@ const searchInput = document.getElementById('search');
 const welcomeEl = document.getElementById('welcome');
 const resultsEl = document.getElementById('results');
 const noResultsEl = document.getElementById('no-results');
+const clearBtn = document.getElementById('clear-search');
 
 async function init() {
   const res = await fetch('foods.json');
@@ -26,8 +27,16 @@ async function init() {
     foods.length.toLocaleString();
 
   searchInput.addEventListener('input', () => {
+    clearBtn.hidden = !searchInput.value;
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(handleSearch, DEBOUNCE_MS);
+  });
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearBtn.hidden = true;
+    show(welcomeEl);
+    searchInput.focus();
   });
 }
 
