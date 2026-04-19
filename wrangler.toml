@@ -2,5 +2,9 @@
 name = "gi"
 compatibility_date = "2026-04-01"
 
+routes = [
+  { pattern = "gi.puddingtime.net", custom_domain = true }
+]
+
 [assets]
 directory = "./public"
