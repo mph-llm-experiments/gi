@@ -1,122 +1,942 @@
 [
   {
-    "name": "White bread",
-    "category": "Bakery Products",
-    "gi": 75,
-    "gl": 11,
-    "serving": 30,
-    "carbs": 14
+    "name": "All-Bran",
+    "category": "Cereals",
+    "gi": 45
   },
   {
-    "name": "Whole wheat bread",
-    "category": "Bakery Products",
-    "gi": 74,
-    "gl": 9,
-    "serving": 30,
-    "carbs": 12
+    "name": "Angel Hair",
+    "category": "Staples",
+    "gi": 45
   },
   {
-    "name": "Apple, raw",
-    "category": "Fruit",
-    "gi": 36,
-    "gl": 5,
-    "serving": 120,
-    "carbs": 13
+    "name": "Apple",
+    "category": "Fruits",
+    "gi": 39
   },
   {
-    "name": "Banana, ripe",
-    "category": "Fruit",
-    "gi": 51,
-    "gl": 13,
-    "serving": 120,
-    "carbs": 25
+    "name": "Apricot",
+    "category": "Fruits",
+    "gi": 54
   },
   {
-    "name": "Watermelon, raw",
-    "category": "Fruit",
-    "gi": 76,
-    "gl": 4,
-    "serving": 120,
-    "carbs": 6
+    "name": "Bagel",
+    "category": "Breads",
+    "gi": 77
   },
   {
-    "name": "White rice, boiled",
-    "category": "Cereal Grains",
-    "gi": 73,
-    "gl": 30,
-    "serving": 150,
-    "carbs": 40
+    "name": "Baguette / French Bread",
+    "category": "Breads",
+    "gi": 95
   },
   {
-    "name": "Brown rice, boiled",
-    "category": "Cereal Grains",
-    "gi": 68,
-    "gl": 23,
-    "serving": 150,
-    "carbs": 33
+    "name": "Baked / Jacket Potato",
+    "category": "Vegetables",
+    "gi": 89
   },
   {
-    "name": "Rolled oats porridge",
-    "category": "Cereal Grains",
-    "gi": 55,
-    "gl": 13,
-    "serving": 250,
-    "carbs": 24
+    "name": "Baked Beans",
+    "category": "Beans",
+    "gi": 50
   },
   {
-    "name": "Sweet potato, boiled",
-    "category": "Root Vegetables",
-    "gi": 46,
-    "gl": 11,
-    "serving": 150,
-    "carbs": 25
+    "name": "Banana",
+    "category": "Fruits",
+    "gi": 56
   },
   {
-    "name": "Potato, boiled",
-    "category": "Root Vegetables",
-    "gi": 78,
-    "gl": 15,
-    "serving": 150,
-    "carbs": 20
+    "name": "Banana Cake",
+    "category": "Snacks & Sweets",
+    "gi": 51
   },
   {
-    "name": "Lentils, boiled",
-    "category": "Legumes",
-    "gi": 32,
-    "gl": 5,
-    "serving": 150,
-    "carbs": 17
+    "name": "Basmati Rice",
+    "category": "Staples",
+    "gi": 67
   },
   {
-    "name": "Chickpeas, canned",
-    "category": "Legumes",
-    "gi": 42,
-    "gl": 9,
-    "serving": 150,
-    "carbs": 22
+    "name": "Bean Sprouts",
+    "category": "Vegetables",
+    "gi": 25
   },
   {
-    "name": "Spaghetti, white, boiled",
-    "category": "Pasta",
-    "gi": 49,
-    "gl": 24,
-    "serving": 180,
-    "carbs": 48
+    "name": "Beetroot",
+    "category": "Vegetables",
+    "gi": 64
   },
   {
-    "name": "Corn flakes",
-    "category": "Breakfast Cereals",
-    "gi": 81,
-    "gl": 21,
-    "serving": 30,
-    "carbs": 26
+    "name": "Black Beans",
+    "category": "Beans",
+    "gi": 30
   },
   {
-    "name": "Milk, full fat",
+    "name": "Black Eyed Peas",
+    "category": "Vegetables",
+    "gi": 42
+  },
+  {
+    "name": "Blueberries",
+    "category": "Fruits",
+    "gi": 50
+  },
+  {
+    "name": "Blueberry muffin",
+    "category": "Snacks & Sweets",
+    "gi": 72
+  },
+  {
+    "name": "Boiled Carrots",
+    "category": "Vegetables",
+    "gi": 47
+  },
+  {
+    "name": "Boiled Potato",
+    "category": "Vegetables",
+    "gi": 71
+  },
+  {
+    "name": "Branflakes",
+    "category": "Cereals",
+    "gi": 74
+  },
+  {
+    "name": "Broccoli",
+    "category": "Vegetables",
+    "gi": 10
+  },
+  {
+    "name": "Brown Rice",
+    "category": "Staples",
+    "gi": 58
+  },
+  {
+    "name": "Buckwheat",
+    "category": "Staples",
+    "gi": 51
+  },
+  {
+    "name": "Bulgur",
+    "category": "Staples",
+    "gi": 48
+  },
+  {
+    "name": "Bulgur Wheat",
+    "category": "Staples",
+    "gi": 47
+  },
+  {
+    "name": "Butter Beans",
+    "category": "Beans",
+    "gi": 36
+  },
+  {
+    "name": "Cabbage",
+    "category": "Vegetables",
+    "gi": 10
+  },
+  {
+    "name": "Cantaloupe Melon",
+    "category": "Fruits",
+    "gi": 67
+  },
+  {
+    "name": "Carrot cake",
+    "category": "Snacks & Sweets",
+    "gi": 88
+  },
+  {
+    "name": "Cashew Nuts",
+    "category": "Snacks & Sweets",
+    "gi": 26
+  },
+  {
+    "name": "Cauliflower",
+    "category": "Vegetables",
+    "gi": 15
+  },
+  {
+    "name": "Chapatti",
+    "category": "Breads",
+    "gi": 52
+  },
+  {
+    "name": "Cheerios",
+    "category": "Cereals",
+    "gi": 82
+  },
+  {
+    "name": "Cheese",
     "category": "Dairy",
-    "gi": 27,
-    "gl": 3,
-    "serving": 250,
-    "carbs": 12
+    "gi": 0
+  },
+  {
+    "name": "Cherries",
+    "category": "Fruits",
+    "gi": 22
+  },
+  {
+    "name": "Chickpeas",
+    "category": "Staples",
+    "gi": 29
+  },
+  {
+    "name": "Chillies",
+    "category": "Vegetables",
+    "gi": 10
+  },
+  {
+    "name": "Chocolate cake",
+    "category": "Snacks & Sweets",
+    "gi": 54
+  },
+  {
+    "name": "Coarse Barley Bread",
+    "category": "Breads",
+    "gi": 34
+  },
+  {
+    "name": "Coco Pops",
+    "category": "Cereals",
+    "gi": 77
+  },
+  {
+    "name": "Coconut",
+    "category": "Fruits",
+    "gi": 45
+  },
+  {
+    "name": "Corn On The Cob",
+    "category": "Vegetables",
+    "gi": 62
+  },
+  {
+    "name": "Corn Tortilla",
+    "category": "Breads",
+    "gi": 55
+  },
+  {
+    "name": "Cornflakes",
+    "category": "Cereals",
+    "gi": 88
+  },
+  {
+    "name": "Couscous",
+    "category": "Staples",
+    "gi": 68
+  },
+  {
+    "name": "Crisps / Potato Chips",
+    "category": "Snacks & Sweets",
+    "gi": 54
+  },
+  {
+    "name": "Croissant",
+    "category": "Breads",
+    "gi": 77
+  },
+  {
+    "name": "Crumpet",
+    "category": "Breads",
+    "gi": 69
+  },
+  {
+    "name": "Cup Cake",
+    "category": "Snacks & Sweets",
+    "gi": 100
+  },
+  {
+    "name": "Custard",
+    "category": "Snacks & Sweets",
+    "gi": 35
+  },
+  {
+    "name": "Dates",
+    "category": "Fruits",
+    "gi": 84
+  },
+  {
+    "name": "Digestives",
+    "category": "Snacks & Sweets",
+    "gi": 59
+  },
+  {
+    "name": "Donuts",
+    "category": "Snacks & Sweets",
+    "gi": 76
+  },
+  {
+    "name": "Dried Apricots",
+    "category": "Fruits",
+    "gi": 32
+  },
+  {
+    "name": "Dried Dates",
+    "category": "Fruits",
+    "gi": 42
+  },
+  {
+    "name": "Eggplant/Aubergine",
+    "category": "Vegetables",
+    "gi": 15
+  },
+  {
+    "name": "Eggs",
+    "category": "Staples",
+    "gi": 0
+  },
+  {
+    "name": "English Muffin",
+    "category": "Breads",
+    "gi": 100
+  },
+  {
+    "name": "Ezekiel Bread",
+    "category": "Breads",
+    "gi": 35
+  },
+  {
+    "name": "Fava Beans",
+    "category": "Beans",
+    "gi": 80
+  },
+  {
+    "name": "Fettuccini",
+    "category": "Staples",
+    "gi": 32
+  },
+  {
+    "name": "Fettucini",
+    "category": "Staples",
+    "gi": 32
+  },
+  {
+    "name": "Figs",
+    "category": "Fruits",
+    "gi": 74
+  },
+  {
+    "name": "Fish",
+    "category": "Staples",
+    "gi": 0
+  },
+  {
+    "name": "French Fries",
+    "category": "Staples",
+    "gi": 79
+  },
+  {
+    "name": "Gnocchi",
+    "category": "Staples",
+    "gi": 68
+  },
+  {
+    "name": "Grapefruit",
+    "category": "Fruits",
+    "gi": 26
+  },
+  {
+    "name": "Grapes",
+    "category": "Fruits",
+    "gi": 55
+  },
+  {
+    "name": "Green Beans",
+    "category": "Vegetables",
+    "gi": 15
+  },
+  {
+    "name": "Green Lentils",
+    "category": "Vegetables",
+    "gi": 30
+  },
+  {
+    "name": "Hamburger Bun",
+    "category": "Breads",
+    "gi": 68
+  },
+  {
+    "name": "Honey",
+    "category": "Snacks & Sweets",
+    "gi": 62
+  },
+  {
+    "name": "Hummus",
+    "category": "Staples",
+    "gi": 6
+  },
+  {
+    "name": "Ice Cream",
+    "category": "Snacks & Sweets",
+    "gi": 57
+  },
+  {
+    "name": "Jam",
+    "category": "Snacks & Sweets",
+    "gi": 50
+  },
+  {
+    "name": "Jelly Beans",
+    "category": "Beans",
+    "gi": 96
+  },
+  {
+    "name": "Kaiser Roll",
+    "category": "Breads",
+    "gi": 73
+  },
+  {
+    "name": "Kidney Bean",
+    "category": "Beans",
+    "gi": 35
+  },
+  {
+    "name": "Kiwi Fruit",
+    "category": "Fruits",
+    "gi": 57
+  },
+  {
+    "name": "Lentils",
+    "category": "Vegetables",
+    "gi": 30
+  },
+  {
+    "name": "Lettuce",
+    "category": "Vegetables",
+    "gi": 10
+  },
+  {
+    "name": "Light Rye Bread",
+    "category": "Breads",
+    "gi": 97
+  },
+  {
+    "name": "Lima Beans",
+    "category": "Beans",
+    "gi": 46
+  },
+  {
+    "name": "Linguine",
+    "category": "Staples",
+    "gi": 74
+  },
+  {
+    "name": "Macaroni",
+    "category": "Staples",
+    "gi": 52
+  },
+  {
+    "name": "Mango",
+    "category": "Fruits",
+    "gi": 58
+  },
+  {
+    "name": "Maple Syrup",
+    "category": "Snacks & Sweets",
+    "gi": 68
+  },
+  {
+    "name": "Mars Bar",
+    "category": "Snacks & Sweets",
+    "gi": 68
+  },
+  {
+    "name": "Mashed Potatoes",
+    "category": "Vegetables",
+    "gi": 76
+  },
+  {
+    "name": "Meat",
+    "category": "Staples",
+    "gi": 0
+  },
+  {
+    "name": "Meat Ravioli",
+    "category": "Staples",
+    "gi": 39
+  },
+  {
+    "name": "Melba Toast",
+    "category": "Breads",
+    "gi": 71
+  },
+  {
+    "name": "Milk Chocolate",
+    "category": "Snacks & Sweets",
+    "gi": 48
+  },
+  {
+    "name": "Muesli",
+    "category": "Cereals",
+    "gi": 58
+  },
+  {
+    "name": "Muesli Bar",
+    "category": "Snacks & Sweets",
+    "gi": 49
+  },
+  {
+    "name": "Mung Noodles",
+    "category": "Staples",
+    "gi": 39
+  },
+  {
+    "name": "Mushrooms",
+    "category": "Vegetables",
+    "gi": 10
+  },
+  {
+    "name": "Navy Beans",
+    "category": "Beans",
+    "gi": 31
+  },
+  {
+    "name": "Nectarines",
+    "category": "Fruits",
+    "gi": 43
+  },
+  {
+    "name": "New Potatoes",
+    "category": "Vegetables",
+    "gi": 58
+  },
+  {
+    "name": "Noodles",
+    "category": "Staples",
+    "gi": 51
+  },
+  {
+    "name": "Nutella",
+    "category": "Snacks & Sweets",
+    "gi": 33
+  },
+  {
+    "name": "Nutrigrain",
+    "category": "Cereals",
+    "gi": 66
+  },
+  {
+    "name": "Oatmeal",
+    "category": "Cereals",
+    "gi": 56
+  },
+  {
+    "name": "Oatmeal Cookie",
+    "category": "Snacks & Sweets",
+    "gi": 77
+  },
+  {
+    "name": "Onions",
+    "category": "Vegetables",
+    "gi": 10
+  },
+  {
+    "name": "Oranges",
+    "category": "Fruits",
+    "gi": 45
+  },
+  {
+    "name": "Pancake",
+    "category": "Snacks & Sweets",
+    "gi": 96
+  },
+  {
+    "name": "Papaya",
+    "category": "Fruits",
+    "gi": 58
+  },
+  {
+    "name": "Parsnips",
+    "category": "Vegetables",
+    "gi": 79
+  },
+  {
+    "name": "Pasta",
+    "category": "Staples",
+    "gi": 53
+  },
+  {
+    "name": "Pastry",
+    "category": "Snacks & Sweets",
+    "gi": 84
+  },
+  {
+    "name": "Peaches",
+    "category": "Fruits",
+    "gi": 42
+  },
+  {
+    "name": "Peanuts",
+    "category": "Snacks & Sweets",
+    "gi": 13
+  },
+  {
+    "name": "Pears",
+    "category": "Fruits",
+    "gi": 37
+  },
+  {
+    "name": "Peas",
+    "category": "Vegetables",
+    "gi": 48
+  },
+  {
+    "name": "Pineapple",
+    "category": "Fruits",
+    "gi": 64
+  },
+  {
+    "name": "Pinto Beans",
+    "category": "Beans",
+    "gi": 39
+  },
+  {
+    "name": "Pitta / Pita Bread White",
+    "category": "Breads",
+    "gi": 62
+  },
+  {
+    "name": "Pizza",
+    "category": "Snacks & Sweets",
+    "gi": 57
+  },
+  {
+    "name": "Plums",
+    "category": "Fruits",
+    "gi": 24
+  },
+  {
+    "name": "Popcorn",
+    "category": "Snacks & Sweets",
+    "gi": 62
+  },
+  {
+    "name": "Porridge",
+    "category": "Cereals",
+    "gi": 52
+  },
+  {
+    "name": "Poultry",
+    "category": "Staples",
+    "gi": 0
+  },
+  {
+    "name": "Pretzels",
+    "category": "Snacks & Sweets",
+    "gi": 83
+  },
+  {
+    "name": "Prunes",
+    "category": "Fruits",
+    "gi": 29
+  },
+  {
+    "name": "Pumpkin",
+    "category": "Vegetables",
+    "gi": 70
+  },
+  {
+    "name": "Quinoa",
+    "category": "Staples",
+    "gi": 52
+  },
+  {
+    "name": "Raisins",
+    "category": "Fruits",
+    "gi": 64
+  },
+  {
+    "name": "Raw Carrots",
+    "category": "Vegetables",
+    "gi": 20
+  },
+  {
+    "name": "Red Lentils",
+    "category": "Vegetables",
+    "gi": 24
+  },
+  {
+    "name": "Red Peppers",
+    "category": "Vegetables",
+    "gi": 10
+  },
+  {
+    "name": "Rice Cakes",
+    "category": "Snacks & Sweets",
+    "gi": 84
+  },
+  {
+    "name": "Rice Krispies",
+    "category": "Cereals",
+    "gi": 82
+  },
+  {
+    "name": "Rice Milk",
+    "category": "Dairy",
+    "gi": 86
+  },
+  {
+    "name": "Rice Noodles",
+    "category": "Staples",
+    "gi": 40
+  },
+  {
+    "name": "Rich Tea Biscuits",
+    "category": "Snacks & Sweets",
+    "gi": 56
+  },
+  {
+    "name": "Runner Beans",
+    "category": "Vegetables",
+    "gi": 31
+  },
+  {
+    "name": "Rye Bread",
+    "category": "Breads",
+    "gi": 65
+  },
+  {
+    "name": "Ryvita",
+    "category": "Snacks & Sweets",
+    "gi": 66
+  },
+  {
+    "name": "Scones",
+    "category": "Snacks & Sweets",
+    "gi": 92
+  },
+  {
+    "name": "Shortbread",
+    "category": "Snacks & Sweets",
+    "gi": 64
+  },
+  {
+    "name": "Shredded Wheat",
+    "category": "Cereals",
+    "gi": 68
+  },
+  {
+    "name": "Skimmed Milk",
+    "category": "Dairy",
+    "gi": 33
+  },
+  {
+    "name": "Snickers Bar",
+    "category": "Snacks & Sweets",
+    "gi": 50
+  },
+  {
+    "name": "Soba Noodles",
+    "category": "Staples",
+    "gi": 35
+  },
+  {
+    "name": "Sourdough Rye",
+    "category": "Breads",
+    "gi": 48
+  },
+  {
+    "name": "Sourdough Wheat",
+    "category": "Breads",
+    "gi": 54
+  },
+  {
+    "name": "Soy Beans",
+    "category": "Beans",
+    "gi": 15
+  },
+  {
+    "name": "Soy Milk",
+    "category": "Dairy",
+    "gi": 38
+  },
+  {
+    "name": "Spaghetti",
+    "category": "Staples",
+    "gi": 47
+  },
+  {
+    "name": "Special K",
+    "category": "Cereals",
+    "gi": 53
+  },
+  {
+    "name": "Split Peas",
+    "category": "Vegetables",
+    "gi": 29
+  },
+  {
+    "name": "Sponge Cake",
+    "category": "Snacks & Sweets",
+    "gi": 46
+  },
+  {
+    "name": "Strawberries",
+    "category": "Fruits",
+    "gi": 36
+  },
+  {
+    "name": "Stuffing",
+    "category": "Staples",
+    "gi": 75
+  },
+  {
+    "name": "Sugar",
+    "category": "Staples",
+    "gi": 68
+  },
+  {
+    "name": "Sultanas",
+    "category": "Fruits",
+    "gi": 56
+  },
+  {
+    "name": "Swede",
+    "category": "Vegetables",
+    "gi": 72
+  },
+  {
+    "name": "Sweet Corn",
+    "category": "Vegetables",
+    "gi": 50
+  },
+  {
+    "name": "Sweet Potatoes",
+    "category": "Vegetables",
+    "gi": 61
+  },
+  {
+    "name": "Taco Shells",
+    "category": "Staples",
+    "gi": 68
+  },
+  {
+    "name": "Tapioca",
+    "category": "Snacks & Sweets",
+    "gi": 70
+  },
+  {
+    "name": "Tomatoes",
+    "category": "Vegetables",
+    "gi": 27
+  },
+  {
+    "name": "Tortellini",
+    "category": "Staples",
+    "gi": 50
+  },
+  {
+    "name": "Udon Noodles",
+    "category": "Staples",
+    "gi": 55
+  },
+  {
+    "name": "Unleavened Wheat Bread",
+    "category": "Breads",
+    "gi": 70
+  },
+  {
+    "name": "Vegetable Soup",
+    "category": "Staples",
+    "gi": 48
+  },
+  {
+    "name": "Vermicelli",
+    "category": "Staples",
+    "gi": 35
+  },
+  {
+    "name": "Wafers",
+    "category": "Snacks & Sweets",
+    "gi": 77
+  },
+  {
+    "name": "Waffles",
+    "category": "Snacks & Sweets",
+    "gi": 76
+  },
+  {
+    "name": "Walnuts",
+    "category": "Snacks & Sweets",
+    "gi": 15
+  },
+  {
+    "name": "Water Crackers",
+    "category": "Snacks & Sweets",
+    "gi": 75
+  },
+  {
+    "name": "Watermelon",
+    "category": "Fruits",
+    "gi": 74
+  },
+  {
+    "name": "Weetabix",
+    "category": "Cereals",
+    "gi": 72
+  },
+  {
+    "name": "Wheat Pasta",
+    "category": "Staples",
+    "gi": 54
+  },
+  {
+    "name": "Wheat Roti",
+    "category": "Breads",
+    "gi": 62
+  },
+  {
+    "name": "Wheat Tortilla",
+    "category": "Breads",
+    "gi": 30
+  },
+  {
+    "name": "White Bread",
+    "category": "Breads",
+    "gi": 71
+  },
+  {
+    "name": "White Rice",
+    "category": "Staples",
+    "gi": 79
+  },
+  {
+    "name": "Whole Milk",
+    "category": "Dairy",
+    "gi": 33
+  },
+  {
+    "name": "Wholemeal / Whole Grain Bread",
+    "category": "Breads",
+    "gi": 66
+  },
+  {
+    "name": "Wholemeal / Whole Grain Pasta",
+    "category": "Staples",
+    "gi": 45
+  },
+  {
+    "name": "Wholemeal / Whole Grain Spaghetti",
+    "category": "Staples",
+    "gi": 42
+  },
+  {
+    "name": "Wholemeal Rye Bread",
+    "category": "Breads",
+    "gi": 56
+  },
+  {
+    "name": "Wild Rice",
+    "category": "Staples",
+    "gi": 57
+  },
+  {
+    "name": "Yam",
+    "category": "Vegetables",
+    "gi": 49
+  },
+  {
+    "name": "Yoghurt / Yogurt",
+    "category": "Snacks & Sweets",
+    "gi": 34
   }
 ]

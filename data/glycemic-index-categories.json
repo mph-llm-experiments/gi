@@ -1,0 +1,34 @@
+[
+    {
+      "page": "beans",
+      "category": "Beans"
+    },
+    {
+      "page": "breads",
+      "category": "Breads"
+    },
+    {
+      "page": "cereals",
+      "category": "Cereals"
+    },
+    {
+      "page": "dairy",
+      "category": "Dairy"
+    },
+    {
+      "page": "fruits",
+      "category": "Fruits"
+    },
+    {
+      "page": "snacks-and-sweets",
+      "category": "Snacks & Sweets"
+    },
+    {
+      "page": "staples",
+      "category": "Staples"
+    },
+    {
+      "page": "vegetables",
+      "category": "Vegetables"
+    }
+]
