@@ -44,10 +44,17 @@ struct LabelReader {
         // when Vision can see a carbohydrate line too.
         let seesCarbLine = lines.contains { $0.localizedCaseInsensitiveContains("carb") }
         guard seesCarbLine, model.isAvailable,
-              var fromModel = try? await model.extract(from: image), fromModel.netCarbs != nil else {
+              let fromModel = try? await model.extract(from: image), fromModel.totalCarbs != nil else {
             return vision
         }
-        if fromModel.servingLabel == nil { fromModel.servingLabel = vision.servingLabel }
-        return fromModel
+        // The model's numbers, but Vision's read of the label format and fiber when it has them:
+        // a US label misread as EU would otherwise skip the fiber subtraction.
+        return LabelParser.reading(
+            total: fromModel.totalCarbs,
+            fiber: fromModel.fiber ?? vision.fiber,
+            format: vision.format == .unknown ? fromModel.format : vision.format,
+            serving: fromModel.servingLabel ?? vision.servingLabel,
+            productName: fromModel.productName
+        )
     }
 }

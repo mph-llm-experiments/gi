@@ -27,7 +27,10 @@ struct LabelCaptureButton: View {
         .photosPicker(isPresented: $showPhotos, selection: $photo, matching: .images)
         .fullScreenCover(isPresented: $showCamera) {
             CameraPicker { image in
-                if let cg = image.uprightCGImage { onImage(cg) }
+                Task.detached(priority: .userInitiated) {
+                    let cg = image.labelReadyCGImage()
+                    await MainActor.run { if let cg { onImage(cg) } }
+                }
             }
             .ignoresSafeArea()
         }
@@ -35,7 +38,7 @@ struct LabelCaptureButton: View {
             guard let photo else { return }
             Task {
                 if let data = try? await photo.loadTransferable(type: Data.self),
-                   let cg = UIImage(data: data)?.uprightCGImage {
+                   let cg = await Task.detached(priority: .userInitiated, operation: { LabelImage.cgImage(from: data) }).value {
                     onImage(cg)
                 }
                 self.photo = nil

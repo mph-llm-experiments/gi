@@ -1,4 +1,5 @@
 import CoreGraphics
+import UIKit
 import GIBowlCore
 import Testing
 @testable import GIBowl
@@ -76,4 +77,20 @@ func realModelReadsUSLabel() async throws {
 func realModelOnBlankImageReadsNothing() async {
     let r = await LabelReader().read(LabelFixtures.image([]))
     #expect(r.netCarbs == nil)
+}
+
+@Test func visionFormatAndFiberWinOverTheModel() async {
+    let usLines = ["Serving size 2/3 cup (55g)", "Total Carbohydrate 37g", "Dietary Fiber 4g"]
+    let euGuess = StubModel(reading: LabelParser.reading(total: 37, fiber: nil, format: .eu, serving: nil))
+    let r = await LabelReader(recognizer: StubRecognizer(lines: usLines), model: euGuess).read(LabelFixtures.image(["x"]))
+    #expect(r.netCarbs == 33 && !r.fiberMissing && r.format == .us)
+}
+
+@Test func largePhotosAreDownscaled() {
+    let big = UIGraphicsImageRenderer(size: CGSize(width: 6000, height: 4000), format: { let f = UIGraphicsImageRendererFormat(); f.scale = 1; return f }()).image { _ in }
+    let cg = big.labelReadyCGImage()
+    #expect(cg != nil && max(cg!.width, cg!.height) <= LabelImage.maxDimension)
+    let data = big.jpegData(compressionQuality: 0.5)!
+    let fromData = LabelImage.cgImage(from: data)
+    #expect(fromData != nil && max(fromData!.width, fromData!.height) <= LabelImage.maxDimension)
 }

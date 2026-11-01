@@ -33,13 +33,3 @@ struct CameraPicker: UIViewControllerRepresentable {
         }
     }
 }
-
-extension UIImage {
-    /// The image redrawn upright, so text recognition sees it the way the person does.
-    var uprightCGImage: CGImage? {
-        if imageOrientation == .up, let cgImage { return cgImage }
-        let format = UIGraphicsImageRendererFormat()
-        format.scale = 1
-        return UIGraphicsImageRenderer(size: size, format: format).image { _ in draw(at: .zero) }.cgImage
-    }
-}

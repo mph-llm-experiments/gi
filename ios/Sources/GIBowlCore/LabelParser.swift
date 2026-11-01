@@ -60,22 +60,30 @@ public enum LabelParser {
     public static func parse(lines raw: [String]) -> LabelReading {
         let lines = raw.map(normalize)
 
-        if let totalLine = lines.first(where: { $0.contains("total carb") }) {
-            let total = firstNumber(after: /total carb[a-z.]*/, in: totalLine)
-            let fiberLine = lines.first { $0.contains("fiber") || $0.contains("fibre") }
-            let fiber = fiberLine.flatMap { firstNumber(after: /(dietary )?fib(er|re)/, in: $0) }
-            let serving = servingSize(in: raw)
-            return reading(total: total, fiber: fiber, format: .us, serving: serving)
+        if let totalIndex = lines.firstIndex(where: { $0.contains("total carb") }) {
+            let total = value(after: /total carb[a-z.]*/, at: totalIndex, in: lines)
+            // Only lines that start with the fiber keyword count, so "Fiber One" or
+            // "chicory root fiber, 2% or less salt" in the ingredients can't supply it.
+            let fiber = lines.indices
+                .filter { lines[$0].hasPrefix("dietary fib") || lines[$0].hasPrefix("fib") }
+                .lazy
+                .compactMap { value(after: /(dietary )?fib(er|re)/, at: $0, in: lines) }
+                .first
+            return reading(total: total, fiber: fiber, format: .us, serving: servingSize(in: raw))
         }
 
-        if let carbLine = lines.first(where: { $0.hasPrefix("carbohydrate") }) {
-            let values = numbers(in: carbLine)
+        if let carbIndex = lines.firstIndex(where: { $0.hasPrefix("carbohydrate") }) {
+            var values = numbers(in: lines[carbIndex])
+            if values.isEmpty, let next = nextLineNumbers(after: carbIndex, in: lines) { values = next }
             guard let last = values.last else { return .empty }
             let serving = values.count >= 2 ? portionHeader(in: lines) ?? "1 portion" : "100g"
             return reading(total: last, fiber: nil, format: .eu, serving: serving)
         }
 
-        return .empty
+        // No carb line, but keep a serving size if one was read
+        var none = LabelReading.empty
+        none.servingLabel = servingSize(in: raw)
+        return none
     }
 
     /// Lowercase, decimal commas to dots, single spaces.
@@ -103,6 +111,20 @@ public enum LabelParser {
         return num.2 == "mg" ? value / 1000 : value
     }
 
+    /// The number after a label on its line, or on the next line when recognition split them.
+    static func value(after label: some RegexComponent, at index: Int, in lines: [String]) -> Double? {
+        if let v = firstNumber(after: label, in: lines[index]) { return v }
+        return nextLineNumbers(after: index, in: lines)?.first
+    }
+
+    /// Numbers on the next line, if that line starts with one.
+    static func nextLineNumbers(after index: Int, in lines: [String]) -> [Double]? {
+        let next = index + 1
+        guard next < lines.count, lines[next].first?.isNumber == true else { return nil }
+        let values = numbers(in: lines[next])
+        return values.isEmpty ? nil : values
+    }
+
     static func servingSize(in raw: [String]) -> String? {
         for line in raw {
             let collapsed = line.replacing(/\s+/, with: " ")
@@ -123,5 +145,31 @@ public enum LabelParser {
             }
         }
         return nil
+    }
+}
+
+/// How a label reading fills the own-food form: whatever was read, plus what to check.
+public struct LabelFormFill: Equatable, Sendable {
+    public let name: String
+    public let portion: String
+    public let carbs: String
+    public let banner: String
+    public let isWarning: Bool
+
+    public init(reading: LabelReading, currentName: String) {
+        let trimmed = currentName.trimmingCharacters(in: .whitespaces)
+        name = trimmed.isEmpty ? (reading.productName ?? currentName) : currentName
+        portion = reading.servingLabel ?? ""
+        carbs = reading.netCarbs.map { String(Int($0.rounded())) } ?? ""
+        if reading.netCarbs == nil {
+            banner = "Couldn't read the label. Fill in what you can."
+            isWarning = true
+        } else if reading.fiberMissing {
+            banner = "Couldn't find fiber, so this uses total carbs."
+            isWarning = true
+        } else {
+            banner = "Read from the label. Check the numbers before saving."
+            isWarning = false
+        }
     }
 }

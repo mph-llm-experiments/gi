@@ -47,3 +47,30 @@ import Testing
     #expect(LabelParser.reading(total: 12, fiber: nil, format: .us, serving: nil).fiberMissing)
     #expect(LabelParser.reading(total: 12, fiber: 3, format: .eu, serving: "100g").netCarbs == 12)
 }
+
+@Test func fiberComesFromTheFiberLineNotAClaimOrIngredients() {
+    let brand = LabelParser.parse(lines: ["Fiber One", "Serving size 1 bar (40g)", "Total Carbohydrate 29g", "Dietary Fiber 9g"])
+    #expect(brand.fiber == 9 && brand.netCarbs == 20)
+    let interleaved = LabelParser.parse(lines: ["Total Carbohydrate 29g 11%", "INGREDIENTS: OATS, CHICORY ROOT FIBER, SUGAR, 2% OR LESS SALT", "Dietary Fiber 5g"])
+    #expect(interleaved.fiber == 5 && interleaved.netCarbs == 24)
+    #expect(LabelParser.parse(lines: ["Good source of fiber", "Total Carbohydrate 20g"]).fiberMissing)
+}
+
+@Test func numbersOnTheNextLineCount() {
+    #expect(LabelParser.parse(lines: ["Total Carbohydrate", "37g", "Dietary Fiber", "4g"]).netCarbs == 33)
+    let eu = LabelParser.parse(lines: ["Carbohydrate", "60g"])
+    #expect(eu.format == .eu && eu.netCarbs == 60 && eu.servingLabel == "100g")
+}
+
+@Test func formFillUsesWhateverWasRead() {
+    let ok = LabelFormFill(reading: LabelParser.parse(lines: ["Serving size 1 bar (40g)", "Total Carbohydrate 24g", "Fiber 3g"]), currentName: "bar")
+    #expect(ok.portion == "1 bar (40g)" && ok.carbs == "21" && ok.banner == "Read from the label. Check the numbers before saving." && !ok.isWarning)
+    let none = LabelFormFill(reading: .empty, currentName: "bar")
+    #expect(none.carbs == "" && none.portion == "" && none.banner == "Couldn't read the label. Fill in what you can." && none.isWarning)
+    let servingOnly = LabelFormFill(reading: LabelParser.parse(lines: ["Serving size 2 cookies (30g)"]), currentName: "")
+    #expect(servingOnly.portion == "2 cookies (30g)" && servingOnly.carbs == "")
+    let noFiber = LabelFormFill(reading: LabelParser.parse(lines: ["Total Carbohydrate 12g"]), currentName: "x")
+    #expect(noFiber.banner == "Couldn't find fiber, so this uses total carbs." && noFiber.isWarning)
+    let named = LabelFormFill(reading: LabelParser.reading(total: 10, fiber: 1, format: .us, serving: nil, productName: "Granola"), currentName: "")
+    #expect(named.name == "Granola")
+}

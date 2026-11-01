@@ -129,23 +129,14 @@ struct OwnFoodForm: View {
         }
     }
 
-    /// Prefills the form from a label. Nothing is saved until Save.
+    /// Prefills the form from a label with whatever was read. Nothing is saved until Save.
     func apply(_ reading: LabelReading) {
-        if name.trimmed.isEmpty, let product = reading.productName { name = product }
-        guard let net = reading.netCarbs else {
-            banner = "Couldn't read the label. Fill in what you can."
-            bannerIsWarning = true
-            return
-        }
-        portion = reading.servingLabel ?? portion
-        carbs = String(Int(net.rounded()))
-        if reading.fiberMissing {
-            banner = "Couldn't find fiber, so this uses total carbs."
-            bannerIsWarning = true
-        } else {
-            banner = "Read from the label. Check the numbers before saving."
-            bannerIsWarning = false
-        }
+        let fill = LabelFormFill(reading: reading, currentName: name)
+        name = fill.name
+        portion = fill.portion
+        carbs = fill.carbs
+        banner = fill.banner
+        bannerIsWarning = fill.isWarning
     }
 
     private func save() {
