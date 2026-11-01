@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { classifyGI, classifyGL, getGIColor } from '../public/lib.js';
+import { classifyGI, classifyGL, getGIColor, aboutCarbs, formatPortion, canonicalFirst, migrateHistory } from '../public/lib.js';
 
 describe('classifyGI', () => {
   it('returns "low" for GI ≤ 55', () => {
@@ -63,5 +63,46 @@ describe('getGIColor', () => {
 
   it('returns default brown for null', () => {
     assert.equal(getGIColor(null), '#5c4a3a');
+  });
+});
+
+describe('aboutCarbs', () => {
+  it('rounds to the nearest 5g with a 5g floor', () => {
+    assert.equal(aboutCarbs(3), 'about 5g');
+    assert.equal(aboutCarbs(7.4), 'about 5g');
+    assert.equal(aboutCarbs(7.5), 'about 10g');
+    assert.equal(aboutCarbs(21.3), 'about 20g');
+  });
+  it('says "a few grams" under 3g', () => {
+    assert.equal(aboutCarbs(2.9), 'a few grams');
+    assert.equal(aboutCarbs(0), 'a few grams');
+  });
+});
+
+describe('formatPortion', () => {
+  it('joins label and rough carbs', () => {
+    assert.equal(formatPortion({ label: 'Medium', carbs: 17.4 }), 'Medium · about 15g');
+  });
+});
+
+const A = { id: 'c:apple-raw', kind: 'canonical', name: 'Apple, raw' };
+const B = { id: 's1088', kind: 'study', name: 'Banana, raw' };
+const B2 = { id: 's1089', kind: 'study', name: 'Banana, raw' };
+
+describe('canonicalFirst', () => {
+  it('moves canonical hits first, keeping order within groups', () => {
+    assert.deepEqual(canonicalFirst([{ item: B }, { item: A }, { item: B2 }]).map(h => h.item.id), ['c:apple-raw', 's1088', 's1089']);
+  });
+});
+
+describe('migrateHistory', () => {
+  it('maps old name entries to ids, drops unknown and duplicates', () => {
+    assert.deepEqual(
+      migrateHistory([{ name: 'Banana, raw', carbs: 15, serving: 250 }, { name: 'Gone food' }, { id: 'c:apple-raw' }, { name: 'Banana, raw' }], [A, B, B2]),
+      [{ id: 's1088' }, { id: 'c:apple-raw' }],
+    );
+  });
+  it('drops ids that no longer exist', () => {
+    assert.deepEqual(migrateHistory([{ id: 'sgone' }], [A]), []);
   });
 });

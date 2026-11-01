@@ -1,5 +1,5 @@
 import Fuse from './vendor/fuse.esm.min.js';
-import { classifyGI, getGIColor } from './lib.js';
+import { classifyGI, getGIColor, formatPortion, canonicalFirst, migrateHistory } from './lib.js';
 
 const MAX_RESULTS = 25;
 const DEBOUNCE_MS = 150;
@@ -7,6 +7,7 @@ const HISTORY_KEY = 'gi-history';
 const MAX_HISTORY = 20;
 
 let fuse;
+let foodsById = new Map();
 let debounceTimer;
 
 const searchInput = document.getElementById('search');
@@ -29,19 +30,19 @@ function getHistory() {
   }
 }
 
+function saveHistory(history) {
+  try {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+  } catch {
+    // storage unavailable; history is a convenience
+  }
+}
+
 function addToHistory(food) {
-  const history = getHistory();
-  const filtered = history.filter(f => f.name !== food.name);
-  filtered.unshift({
-    name: food.name,
-    gi: food.gi,
-    gl: food.gl ?? null,
-    category: food.category ?? null,
-    carbs: food.carbs ?? null,
-    serving: food.serving ?? null,
-  });
+  const filtered = getHistory().filter(entry => entry.id !== food.id);
+  filtered.unshift({ id: food.id });
   if (filtered.length > MAX_HISTORY) filtered.length = MAX_HISTORY;
-  localStorage.setItem(HISTORY_KEY, JSON.stringify(filtered));
+  saveHistory(filtered);
 }
 
 function clearHistoryData() {
@@ -59,8 +60,9 @@ function renderHistory() {
   heading.textContent = 'Recently viewed';
   historyEl.appendChild(heading);
 
-  for (const food of history) {
-    historyEl.appendChild(createCard(food));
+  for (const { id } of history) {
+    const food = foodsById.get(id);
+    if (food) historyEl.appendChild(createCard(food));
   }
 
   const clearHistoryBtn = document.createElement('button');
@@ -76,7 +78,9 @@ function renderHistory() {
 
 async function init() {
   const res = await fetch('foods.json');
-  const foods = await res.json();
+  const { foods } = await res.json();
+  foodsById = new Map(foods.map(f => [f.id, f]));
+  saveHistory(migrateHistory(getHistory(), foods));
 
   fuse = new Fuse(foods, {
     keys: ['name', 'category'],
@@ -127,7 +131,7 @@ function handleSearch() {
     return;
   }
 
-  const hits = fuse.search(query, { limit: MAX_RESULTS });
+  const hits = canonicalFirst(fuse.search(query, { limit: MAX_RESULTS }));
 
   if (hits.length === 0) {
     show(noResultsEl);
@@ -173,9 +177,11 @@ function createCard(food) {
   const card = document.createElement('div');
   card.className = 'result-card';
 
-  const servingText = food.serving ? `${food.serving}g serve` : '';
-  const carbsText = food.carbs ? `${food.carbs}g carbs` : '';
-  const metaParts = [servingText, carbsText].filter(Boolean).join(' · ');
+  const portions = food.portions ?? [];
+  const metaParts = portions.length ? formatPortion(portions[0]) : '';
+  const portionsHtml = portions.length
+    ? portions.map(p => `<div>${escapeHtml(formatPortion(p))}</div>`).join('')
+    : '—';
 
   card.innerHTML = `
     <div class="result-summary">
@@ -200,12 +206,8 @@ function createCard(food) {
             <span class="detail-value">${escapeHtml(food.category || '—')}</span>
           </div>
           <div class="detail-item">
-            <span class="detail-label">Serving</span>
-            <span class="detail-value">${food.serving ? food.serving + 'g' : '—'}</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-label">Carbs / serve</span>
-            <span class="detail-value">${food.carbs ? food.carbs + 'g' : '—'}</span>
+            <span class="detail-label">Net carbs</span>
+            <span class="detail-value">${portionsHtml}</span>
           </div>
         </div>
       </div>
