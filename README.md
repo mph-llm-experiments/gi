@@ -10,7 +10,15 @@ Food data is from the 2021 international tables of glycemic index and glycemic l
 
 > Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE, Goletzke J. International tables of glycemic index and glycemic load values 2021. *American Journal of Clinical Nutrition*. 2021. [DOI: 10.1093/ajcn/nqac031](https://doi.org/10.1093/ajcn/nqac031)
 
-The dataset contains ~2,044 foods with GI, GL, category, and standardized carbohydrate portions.
+The dataset contains ~2,000 study foods with GI and GL, plus about 60 everyday foods with net carbs per household portion from USDA FoodData Central. Carbs are net carbs (available carbohydrate, or total minus fiber).
+
+### Regenerating the data
+
+```bash
+npm run build:data
+```
+
+This reads `data/supplementary/table1.txt`, `data/category-portions.json` and `data/portions.json` and writes `public/foods.json`.
 
 ## Self-hosting
 
