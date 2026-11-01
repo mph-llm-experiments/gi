@@ -13,7 +13,7 @@
           "locale": "en_US"
         }
       ],
-      "productID": "net.puddingtime.GIBowl.tip.small",
+      "productID": "com.mph.GIBowl.tip.small",
       "referenceName": "Small tip",
       "type": "Consumable"
     },
@@ -28,7 +28,7 @@
           "locale": "en_US"
         }
       ],
-      "productID": "net.puddingtime.GIBowl.tip.medium",
+      "productID": "com.mph.GIBowl.tip.medium",
       "referenceName": "Medium tip",
       "type": "Consumable"
     },
@@ -43,7 +43,7 @@
           "locale": "en_US"
         }
       ],
-      "productID": "net.puddingtime.GIBowl.tip.large",
+      "productID": "com.mph.GIBowl.tip.large",
       "referenceName": "Large tip",
       "type": "Consumable"
     }

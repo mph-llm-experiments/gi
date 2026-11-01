@@ -20,9 +20,9 @@ final class TipJar {
     }
 
     static let productIDs = [
-        "net.puddingtime.GIBowl.tip.small",
-        "net.puddingtime.GIBowl.tip.medium",
-        "net.puddingtime.GIBowl.tip.large",
+        "com.mph.GIBowl.tip.small",
+        "com.mph.GIBowl.tip.medium",
+        "com.mph.GIBowl.tip.large",
     ]
 
     private(set) var state: State = .loading
