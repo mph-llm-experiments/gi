@@ -34,8 +34,17 @@ final class TipJar {
             let products = try await Product.products(for: Self.productIDs)
             state = products.isEmpty ? .unavailable : .ready(products.sorted { $0.price < $1.price })
         } catch {
+            // Leaving Settings mid-load cancels it; that isn't a reason to say tips are unavailable.
+            if Task.isCancelled || error is CancellationError { return }
             state = .unavailable
         }
+    }
+
+    /// Loads unless products are already here, so an earlier failure (say, offline) is retried
+    /// the next time Settings opens instead of sticking until the app is closed.
+    func loadIfNeeded() async {
+        if case .ready = state { return }
+        await load()
     }
 
     func tip(_ product: Product) async {

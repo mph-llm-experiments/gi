@@ -37,7 +37,7 @@ struct TipJarSection: View {
             Text("GI Bowl is free and has no ads. If it helps you, a tip helps keep it that way.")
         }
         .task {
-            if jar.state == .loading { await jar.load() }
+            await jar.loadIfNeeded()
         }
     }
 }

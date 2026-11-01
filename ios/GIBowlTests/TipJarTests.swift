@@ -66,4 +66,14 @@ struct TipJarTests {
         _ = await (first, second)
         #expect(session.allTransactions().count == 1)
     }
+
+    @Test func failedLoadCanBeRetried() async throws {
+        try await session.setSimulatedError(.generic(.networkError(URLError(.notConnectedToInternet))), forAPI: .loadProducts)
+        let jar = TipJar()
+        await jar.load()
+        #expect(jar.state == .unavailable)
+        try await session.setSimulatedError(nil, forAPI: .loadProducts)
+        await jar.loadIfNeeded()
+        guard case .ready = jar.state else { Issue.record("retry didn't load: \(jar.state)"); return }
+    }
 }
