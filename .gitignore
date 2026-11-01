@@ -4,3 +4,7 @@ node_modules/
 public/vendor/
 supplementary.zip
 .claude/TASKS.md
+ios/.build/
+ios/build/
+*.xcuserstate
+xcuserdata/
