@@ -57,3 +57,11 @@ private struct MemoryStore {
     #expect(Targets(meal: 45, snack: 15).target(for: .snack) == 15)
     #expect(Targets(meal: 45, snack: 15).isSet)
 }
+
+@Test func asksForTargetsOnlyOnceAndOnlyWhenTheModeHasNoNumber() {
+    let none = Targets(meal: nil, snack: nil)
+    #expect(shouldAskForTargets(none, mode: .snack, alreadyAsked: false))
+    #expect(!shouldAskForTargets(none, mode: .snack, alreadyAsked: true))
+    #expect(!shouldAskForTargets(Targets(meal: nil, snack: 15), mode: .snack, alreadyAsked: false))
+    #expect(shouldAskForTargets(Targets(meal: nil, snack: 15), mode: .meal, alreadyAsked: false))
+}

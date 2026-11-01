@@ -30,7 +30,9 @@ extension String {
 }
 
 struct TargetsSheet: View {
+    var current = Targets(meal: nil, snack: nil)
     let onSave: (Int, Int) -> Void
+    var onCancel: () -> Void = {}
 
     @Environment(\.dismiss) private var dismiss
     @State private var meal = ""
@@ -50,7 +52,10 @@ struct TargetsSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button("Cancel") {
+                        dismiss()
+                        onCancel()
+                    }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
@@ -64,6 +69,10 @@ struct TargetsSheet: View {
                 }
             }
         }
-        .presentationDetents([.medium])
+        .presentationDetents([.medium, .large])
+        .onAppear {
+            meal = current.meal.map(String.init) ?? ""
+            snack = current.snack.map(String.init) ?? ""
+        }
     }
 }

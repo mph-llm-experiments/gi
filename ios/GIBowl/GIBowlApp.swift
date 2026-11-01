@@ -37,7 +37,7 @@ struct GIBowlApp: App {
             try? container.mainContext.delete(model: BowlItem.self)
             try? container.mainContext.delete(model: CustomFood.self)
             try? container.mainContext.save()
-            for key in ["targetMeal", "targetSnack", "bowlMode"] { defaults.removeObject(forKey: key) }
+            for key in ["targetMeal", "targetSnack", "bowlMode", "askedForTargets"] { defaults.removeObject(forKey: key) }
         }
         if let i = args.firstIndex(of: "-seedTargets"), i + 1 < args.count {
             let parts = args[i + 1].split(separator: ",").compactMap { Int($0) }

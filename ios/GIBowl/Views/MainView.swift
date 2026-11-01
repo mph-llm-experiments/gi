@@ -32,6 +32,7 @@ struct MainView: View {
                     items: bowl,
                     targets: Targets(meal: targetMeal, snack: targetSnack),
                     mode: Binding(get: { BowlMode(rawValue: bowlMode) ?? .snack }, set: { bowlMode = $0.rawValue }),
+                    compact: !query.trimmed.isEmpty,
                     onSetNumbers: { showingTargets = true }
                 )
                 let results = search.search(query)
@@ -54,7 +55,7 @@ struct MainView: View {
                 }
             }
             .sheet(isPresented: $showingTargets) {
-                TargetsSheet { meal, snack in
+                TargetsSheet(current: Targets(meal: targetMeal, snack: targetSnack)) { meal, snack in
                     targetMeal = meal
                     targetSnack = snack
                 }
@@ -72,7 +73,10 @@ struct MainView: View {
                         path = []
                     },
                     onShow: { path = [$0] },
-                    onDeleted: { path = [] }
+                    onDeleted: {
+                        query = ""
+                        path = []
+                    }
                 )
             }
         }
@@ -82,21 +86,39 @@ struct MainView: View {
 struct FoodRow: View {
     let food: SearchableFood
 
-    var body: some View {
-        HStack(alignment: .firstTextBaseline) {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(food.name)
-                    .lineLimit(3)
-                if food.source == .custom {
-                    Text("Yours")
-                        .font(.caption.weight(.medium))
-                        .foregroundStyle(.secondary)
-                }
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    private var giText: some View {
+        Text(food.gi.map { "GI \($0)" } ?? "GI —")
+            .font(.subheadline.monospacedDigit())
+            .foregroundStyle(.secondary)
+    }
+
+    private var nameBlock: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(food.name)
+                .lineLimit(typeSize.isAccessibilitySize ? nil : 3)
+            if food.source == .custom {
+                Text("Yours")
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.secondary)
             }
-            Spacer(minLength: 12)
-            Text(food.gi.map { "GI \($0)" } ?? "GI —")
-                .font(.subheadline.monospacedDigit())
-                .foregroundStyle(.secondary)
+        }
+    }
+
+    var body: some View {
+        // At accessibility sizes the name gets the full width and GI drops below it.
+        if typeSize.isAccessibilitySize {
+            VStack(alignment: .leading, spacing: 4) {
+                nameBlock
+                giText
+            }
+        } else {
+            HStack(alignment: .firstTextBaseline) {
+                nameBlock
+                Spacer(minLength: 12)
+                giText
+            }
         }
     }
 }

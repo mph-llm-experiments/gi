@@ -17,6 +17,7 @@ struct FoodDetailView: View {
     @AppStorage("targetMeal") private var targetMeal = 0
     @AppStorage("targetSnack") private var targetSnack = 0
     @AppStorage("bowlMode") private var bowlMode = BowlMode.snack.rawValue
+    @AppStorage("askedForTargets") private var askedForTargets = false
 
     @State private var pendingPortion: Portion?
     @State private var formFor: FormTarget?
@@ -72,6 +73,15 @@ struct FoodDetailView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Add to the bowl")
                             .font(Theme.title)
+                        Group {
+                            if let target = targets.target(for: mode) {
+                                Text("Against your \(mode.rawValue) number: \(target)g")
+                            } else {
+                                Text("Set your \(mode.rawValue) number to see where you'd land.")
+                            }
+                        }
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 10)], spacing: 10) {
                             ForEach(previews(for: food, bowlTotal: bowlTotal, target: targets.target(for: mode)), id: \.portion) { preview in
                                 PortionButton(preview: preview) { add(preview.portion) }
@@ -117,11 +127,11 @@ struct FoodDetailView: View {
         }
         .sensoryFeedback(.impact(weight: .light), trigger: bowl.count)
         .sheet(item: $pendingPortion) { portion in
-            TargetsSheet { meal, snack in
+            TargetsSheet(current: targets, onSave: { meal, snack in
                 targetMeal = meal
                 targetSnack = snack
                 commit(portion)
-            }
+            }, onCancel: { commit(portion) })
         }
     }
 
@@ -132,12 +142,13 @@ struct FoodDetailView: View {
         }
     }
 
-    /// The first add without numbers asks for them once, then adds.
+    /// The first add without a number for this mode asks once; the portion is added either way.
     private func add(_ portion: Portion) {
-        if targets.isSet {
-            commit(portion)
-        } else {
+        if shouldAskForTargets(targets, mode: mode, alreadyAsked: askedForTargets) {
+            askedForTargets = true
             pendingPortion = portion
+        } else {
+            commit(portion)
         }
     }
 

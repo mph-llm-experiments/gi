@@ -6,6 +6,8 @@ struct PortionButton: View {
     let preview: PortionPreview
     let action: () -> Void
 
+    @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
+
     var body: some View {
         Button(action: action) {
             VStack(alignment: .leading, spacing: 2) {
@@ -14,6 +16,11 @@ struct PortionButton: View {
                 Text(preview.label)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+                if differentiateWithoutColor, let state = preview.landsIn {
+                    Text(state.title)
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(Theme.textColor(state))
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 14)
@@ -27,6 +34,6 @@ struct PortionButton: View {
         .buttonStyle(.plain)
         .accessibilityIdentifier("portion.\(preview.portion.label)")
         .accessibilityLabel("\(preview.portion.label), \(preview.label)")
-        .accessibilityHint(preview.landsIn.map { "Adding this puts the bowl at: \($0.title)" } ?? "")
+        .accessibilityValue(preview.landsIn?.title ?? "")
     }
 }

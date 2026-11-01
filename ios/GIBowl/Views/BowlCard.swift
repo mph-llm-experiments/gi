@@ -7,6 +7,8 @@ struct BowlSection: View {
     let items: [BowlItem]
     let targets: Targets
     @Binding var mode: BowlMode
+    /// While searching, the bowl shrinks to where it stands so results get the room.
+    let compact: Bool
     let onSetNumbers: () -> Void
 
     @Environment(\.modelContext) private var context
@@ -15,8 +17,14 @@ struct BowlSection: View {
     private var target: Int? { targets.target(for: mode) }
 
     var body: some View {
-        if items.isEmpty {
+        if compact {
+            if !items.isEmpty {
+                Section { status }
+            }
+        } else if items.isEmpty {
             Section {
+                modePicker
+                    .listRowSeparator(.hidden)
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Start a bowl")
                         .font(Theme.title)
@@ -28,25 +36,20 @@ struct BowlSection: View {
             }
         } else {
             Section {
-                Picker("Meal or snack", selection: $mode) {
-                    Text("Meal").tag(BowlMode.meal)
-                    Text("Snack").tag(BowlMode.snack)
-                }
-                .pickerStyle(.segmented)
-                .listRowSeparator(.hidden)
+                modePicker
+                    .listRowSeparator(.hidden)
 
                 status
                     .listRowSeparator(.hidden)
 
                 ForEach(items) { item in
-                    HStack(alignment: .firstTextBaseline) {
-                        Text("\(item.name) · \(item.portionLabel)")
-                            .lineLimit(2)
-                        Spacer(minLength: 12)
-                        Text(aboutCarbs(item.carbs))
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(item.name)
+                        Text("\(item.portionLabel) · \(aboutCarbs(item.carbs))")
                             .foregroundStyle(.secondary)
                     }
                     .font(.subheadline)
+                    .accessibilityElement(children: .combine)
                 }
                 .onDelete { offsets in
                     let store = BowlStore(context: context)
@@ -65,13 +68,21 @@ struct BowlSection: View {
         }
     }
 
+    private var modePicker: some View {
+        Picker("Meal or snack", selection: $mode) {
+            Text("Meal").tag(BowlMode.meal)
+            Text("Snack").tag(BowlMode.snack)
+        }
+        .pickerStyle(.segmented)
+    }
+
     @ViewBuilder
     private var status: some View {
         if let target, let state = stateFor(total: total, target: target) {
             VStack(alignment: .leading, spacing: 4) {
                 Text(state.title)
                     .font(Theme.display)
-                    .foregroundStyle(Theme.color(state))
+                    .foregroundStyle(Theme.textColor(state))
                     .accessibilityIdentifier("bowl.state")
                 Text(hint(total: total, target: target))
                     .foregroundStyle(.secondary)

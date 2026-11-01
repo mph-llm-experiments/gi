@@ -67,3 +67,8 @@ public struct Targets: Equatable, Sendable {
 
     public var isSet: Bool { meal != nil && snack != nil }
 }
+
+/// Ask for numbers once, and only when the current mode has none. Numbers are optional.
+public func shouldAskForTargets(_ targets: Targets, mode: BowlMode, alreadyAsked: Bool) -> Bool {
+    !alreadyAsked && targets.target(for: mode) == nil
+}
