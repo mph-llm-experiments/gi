@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06A11F9281461895C93DC523 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D6D58268DF54C9D070C70 /* MainView.swift */; };
+		2F38330E040FAAA82C9D2761 /* OwnFoodForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6AFA9ADE24D011810CF3B3 /* OwnFoodForm.swift */; };
 		313D947A51BA4EF09E13C2EE /* GIBowlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E2BF3C04A6E87352E40C6D /* GIBowlApp.swift */; };
 		3F5E8BC03B4AC43344263295 /* BowlCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6CABE777FF24D133BC941 /* BowlCard.swift */; };
 		4660ECB152D787DD672C7A20 /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612E42F85B86C19443D5A25 /* FoodDetailView.swift */; };
@@ -44,6 +45,7 @@
 		B3404102C59D9D991E6B0DDB /* GIBowl.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GIBowl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B612E42F85B86C19443D5A25 /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
 		C5B1287B75FB3EFA693F8B5B /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ios; path = .; sourceTree = SOURCE_ROOT; };
+		CF6AFA9ADE24D011810CF3B3 /* OwnFoodForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnFoodForm.swift; sourceTree = "<group>"; };
 		D4ADB9B6B8671CE98EFA245C /* foods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foods.json; sourceTree = "<group>"; };
 		D937535B2DF02185CF8C2837 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 				3BA6CABE777FF24D133BC941 /* BowlCard.swift */,
 				B612E42F85B86C19443D5A25 /* FoodDetailView.swift */,
 				621D6D58268DF54C9D070C70 /* MainView.swift */,
+				CF6AFA9ADE24D011810CF3B3 /* OwnFoodForm.swift */,
 				4E42AE169BC662AC7A1B03BD /* PortionButton.swift */,
 				D937535B2DF02185CF8C2837 /* SettingsView.swift */,
 				4A66C3D56281DA6B8113EDB8 /* TargetsSheet.swift */,
@@ -244,6 +247,7 @@
 				4660ECB152D787DD672C7A20 /* FoodDetailView.swift in Sources */,
 				313D947A51BA4EF09E13C2EE /* GIBowlApp.swift in Sources */,
 				06A11F9281461895C93DC523 /* MainView.swift in Sources */,
+				2F38330E040FAAA82C9D2761 /* OwnFoodForm.swift in Sources */,
 				9B49FE09B09338460B23C969 /* PortionButton.swift in Sources */,
 				AF3F905BA47B15F9BE6D07B9 /* SettingsView.swift in Sources */,
 				9AE9A38F19D7D3599E08C9EC /* TargetsSheet.swift in Sources */,

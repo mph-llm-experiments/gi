@@ -2,6 +2,10 @@ import GIBowlCore
 import SwiftData
 import SwiftUI
 
+extension String: @retroactive Identifiable {
+    public var id: String { self }
+}
+
 struct MainView: View {
     @Environment(\.catalog) private var catalog
     @Environment(\.modelContext) private var context
@@ -12,6 +16,7 @@ struct MainView: View {
     @AppStorage("bowlMode") private var bowlMode = BowlMode.snack.rawValue
     @State private var showingTargets = false
     @State private var showingSettings = false
+    @State private var ownFoodName: String?
 
     @State private var query = ""
     @State private var path: [SearchableFood] = []
@@ -35,6 +40,10 @@ struct MainView: View {
                         FoodRow(food: food)
                     }
                 }
+                if !query.trimmed.isEmpty {
+                    Button("Add your own food") { ownFoodName = query.trimmed }
+                        .accessibilityIdentifier("own.add")
+                }
             }
             .scrollContentBackground(.hidden)
             .background(Theme.paper)
@@ -51,12 +60,20 @@ struct MainView: View {
                 }
             }
             .sheet(isPresented: $showingSettings) { SettingsView() }
+            .sheet(item: $ownFoodName) { name in
+                OwnFoodForm(prefillName: name, editing: nil) { path = [$0] }
+            }
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search foods")
             .navigationDestination(for: SearchableFood.self) { food in
-                FoodDetailView(food: food) {
-                    query = ""
-                    path = []
-                }
+                FoodDetailView(
+                    food: food,
+                    onAdded: {
+                        query = ""
+                        path = []
+                    },
+                    onShow: { path = [$0] },
+                    onDeleted: { path = [] }
+                )
             }
         }
     }

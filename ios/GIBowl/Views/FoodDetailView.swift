@@ -9,6 +9,8 @@ extension Portion: @retroactive Identifiable {
 struct FoodDetailView: View {
     let food: SearchableFood
     let onAdded: () -> Void
+    let onShow: (SearchableFood) -> Void
+    let onDeleted: () -> Void
 
     @Environment(\.modelContext) private var context
     @Query private var bowl: [BowlItem]
@@ -17,6 +19,24 @@ struct FoodDetailView: View {
     @AppStorage("bowlMode") private var bowlMode = BowlMode.snack.rawValue
 
     @State private var pendingPortion: Portion?
+    @State private var formFor: FormTarget?
+    @State private var confirmingDelete = false
+    @Query private var customFoods: [CustomFood]
+
+    private enum FormTarget: Identifiable {
+        case addCarbs
+        case edit(CustomFood)
+        var id: String {
+            switch self {
+            case .addCarbs: "add"
+            case .edit(let food): food.id
+            }
+        }
+    }
+
+    private var customFood: CustomFood? {
+        food.source == .custom ? customFoods.first { $0.id == food.id } : nil
+    }
 
     private var targets: Targets { Targets(meal: targetMeal, snack: targetSnack) }
     private var mode: BowlMode { BowlMode(rawValue: bowlMode) ?? .snack }
@@ -42,8 +62,12 @@ struct FoodDetailView: View {
                 }
 
                 if food.portions.isEmpty {
-                    Text("This food doesn't have carb amounts.")
-                        .foregroundStyle(.secondary)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("This food doesn't have carb amounts.")
+                            .foregroundStyle(.secondary)
+                        Button("Add carbs for this") { formFor = .addCarbs }
+                            .accessibilityIdentifier("own.addCarbs")
+                    }
                 } else {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Add to the bowl")
@@ -60,6 +84,37 @@ struct FoodDetailView: View {
         }
         .background(Theme.paper)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            if let customFood {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Button("Edit", systemImage: "pencil") { formFor = .edit(customFood) }
+                        Button("Delete", systemImage: "trash", role: .destructive) { confirmingDelete = true }
+                    } label: {
+                        Label("More", systemImage: "ellipsis")
+                    }
+                    .accessibilityIdentifier("own.menu")
+                }
+            }
+        }
+        .confirmationDialog("Delete \(food.name)?", isPresented: $confirmingDelete, titleVisibility: .visible) {
+            Button("Delete food", role: .destructive) {
+                if let customFood {
+                    BowlStore(context: context).delete(customFood)
+                    onDeleted()
+                }
+            }
+        } message: {
+            Text("Anything already in the bowl stays there.")
+        }
+        .sheet(item: $formFor) { target in
+            switch target {
+            case .addCarbs:
+                OwnFoodForm(prefillName: food.name, editing: nil, onSaved: onShow)
+            case .edit(let custom):
+                OwnFoodForm(prefillName: nil, editing: custom, onSaved: onShow)
+            }
+        }
         .sensoryFeedback(.impact(weight: .light), trigger: bowl.count)
         .sheet(item: $pendingPortion) { portion in
             TargetsSheet { meal, snack in

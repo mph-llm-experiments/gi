@@ -102,4 +102,53 @@ final class KitchenFlowTests: XCTestCase {
         app.buttons["Meal"].tap()
         XCTAssertEqual(bowlState(app), "Room to spare")
     }
+
+    private func fillOwnFood(_ app: XCUIApplication, name: String?, portion: String, carbs: String) {
+        let nameField = app.textFields["own.name"]
+        XCTAssertTrue(nameField.waitForExistence(timeout: 5))
+        if let name { nameField.tap(); nameField.typeText(name) }
+        app.textFields["own.portion"].tap(); app.textFields["own.portion"].typeText(portion)
+        app.textFields["own.carbs"].tap(); app.textFields["own.carbs"].typeText(carbs)
+        app.buttons["own.save"].tap()
+    }
+
+    func testAddOwnFood() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData", "-seedTargets", "45,15"]
+        app.launch()
+        search(app, "fage")
+        app.buttons["own.add"].tap()
+        fillOwnFood(app, name: nil, portion: "1 cup", carbs: "9")   // name prefilled from the search
+        XCTAssertTrue(app.staticTexts["GI"].waitForExistence(timeout: 5))
+        app.buttons["portion.1 cup"].tap()
+        XCTAssertEqual(bowlState(app), "Room to spare")
+        XCTAssertEqual(app.staticTexts["bowl.hint"].label, "Room for about 5g more")
+        search(app, "fage")
+        XCTAssertTrue(app.staticTexts["Yours"].waitForExistence(timeout: 5))
+    }
+
+    func testAddCarbsForAStudyFoodWithout() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData", "-seedTargets", "45,15"]
+        app.launch()
+        open(app, "jasmine rice", "Jasmine rice, cooked in rice cooker (SunRice; Ricegrowers Ltd., NSW, Australia)")
+        app.buttons["own.addCarbs"].tap()
+        fillOwnFood(app, name: nil, portion: "1 cup", carbs: "45")
+        XCTAssertTrue(app.buttons["portion.1 cup"].waitForExistence(timeout: 5))
+    }
+
+    func testEditAndDeleteOwnFoodKeepsBowl() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData", "-seedTargets", "45,15"]
+        app.launch()
+        search(app, "fage")
+        app.buttons["own.add"].tap()
+        fillOwnFood(app, name: nil, portion: "1 cup", carbs: "9")
+        app.buttons["portion.1 cup"].tap()
+        open(app, "fage", "fage")
+        app.buttons["own.menu"].tap()
+        app.buttons["Delete"].tap()
+        app.buttons["Delete food"].tap()
+        XCTAssertTrue(app.staticTexts["fage · 1 cup"].waitForExistence(timeout: 5))
+    }
 }
