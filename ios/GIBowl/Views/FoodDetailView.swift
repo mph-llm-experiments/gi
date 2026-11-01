@@ -2,6 +2,10 @@ import GIBowlCore
 import SwiftData
 import SwiftUI
 
+extension Portion: @retroactive Identifiable {
+    public var id: String { label }
+}
+
 struct FoodDetailView: View {
     let food: SearchableFood
     let onAdded: () -> Void
@@ -11,6 +15,8 @@ struct FoodDetailView: View {
     @AppStorage("targetMeal") private var targetMeal = 0
     @AppStorage("targetSnack") private var targetSnack = 0
     @AppStorage("bowlMode") private var bowlMode = BowlMode.snack.rawValue
+
+    @State private var pendingPortion: Portion?
 
     private var targets: Targets { Targets(meal: targetMeal, snack: targetSnack) }
     private var mode: BowlMode { BowlMode(rawValue: bowlMode) ?? .snack }
@@ -55,6 +61,13 @@ struct FoodDetailView: View {
         .background(Theme.paper)
         .navigationBarTitleDisplayMode(.inline)
         .sensoryFeedback(.impact(weight: .light), trigger: bowl.count)
+        .sheet(item: $pendingPortion) { portion in
+            TargetsSheet { meal, snack in
+                targetMeal = meal
+                targetSnack = snack
+                commit(portion)
+            }
+        }
     }
 
     private func stat(_ label: String, _ value: String) -> some View {
@@ -64,7 +77,16 @@ struct FoodDetailView: View {
         }
     }
 
+    /// The first add without numbers asks for them once, then adds.
     private func add(_ portion: Portion) {
+        if targets.isSet {
+            commit(portion)
+        } else {
+            pendingPortion = portion
+        }
+    }
+
+    private func commit(_ portion: Portion) {
         BowlStore(context: context).add(food, portion: portion)
         onAdded()
     }

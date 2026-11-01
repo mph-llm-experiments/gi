@@ -41,4 +41,65 @@ final class KitchenFlowTests: XCTestCase {
         app.cells.firstMatch.tap()
         snapshot("xxl-detail")
     }
+
+    private func open(_ app: XCUIApplication, _ query: String, _ name: String) {
+        search(app, query)
+        app.staticTexts[name].firstMatch.tap()
+    }
+
+    private func bowlState(_ app: XCUIApplication) -> String {
+        let el = app.staticTexts["bowl.state"]
+        XCTAssertTrue(el.waitForExistence(timeout: 5))
+        return el.label
+    }
+
+    func testCanIAddFruitToCottageCheese() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData"]
+        app.launch()
+        open(app, "cottage", "Cottage cheese")
+        app.buttons["portion.½ cup"].tap()
+        let meal = app.textFields["targets.meal"]
+        XCTAssertTrue(meal.waitForExistence(timeout: 5))
+        meal.tap(); meal.typeText("45")
+        app.textFields["targets.snack"].tap(); app.textFields["targets.snack"].typeText("15")
+        app.buttons["targets.save"].tap()
+        XCTAssertEqual(bowlState(app), "Room to spare")
+        XCTAssertEqual(app.staticTexts["bowl.hint"].label, "Room for about 10g more")
+        // ½ cup blueberries (8.9g) + cottage cheese (5.4g) = 14.3g of 15 → Close
+        open(app, "blueberries", "Blueberries")
+        app.buttons["portion.½ cup"].tap()
+        XCTAssertEqual(bowlState(app), "Close to your number")
+        snapshot("bowl-close")
+    }
+
+    func testOverThenRemoveThenStartOver() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData", "-seedTargets", "45,15"]
+        app.launch()
+        open(app, "cottage", "Cottage cheese")
+        app.buttons["portion.½ cup"].tap()
+        open(app, "banana", "Banana, raw")
+        app.buttons["portion.1 large"].tap()
+        XCTAssertEqual(bowlState(app), "Over your number")
+        XCTAssertEqual(app.staticTexts["bowl.hint"].label, "Roughly 20g past it")
+        snapshot("bowl-over")
+        let banana = app.staticTexts["Banana, raw · 1 large"]
+        banana.swipeLeft()
+        app.buttons["Delete"].tap()
+        XCTAssertEqual(bowlState(app), "Room to spare")
+        app.buttons["Start over"].tap()
+        XCTAssertTrue(app.staticTexts["Start a bowl"].waitForExistence(timeout: 5))
+    }
+
+    func testMealModeUsesMealNumber() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData", "-seedTargets", "45,15"]
+        app.launch()
+        open(app, "banana", "Banana, raw")
+        app.buttons["portion.1 large"].tap()
+        XCTAssertEqual(bowlState(app), "Over your number")
+        app.buttons["Meal"].tap()
+        XCTAssertEqual(bowlState(app), "Room to spare")
+    }
 }

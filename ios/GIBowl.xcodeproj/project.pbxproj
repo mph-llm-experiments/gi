@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		06A11F9281461895C93DC523 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D6D58268DF54C9D070C70 /* MainView.swift */; };
 		313D947A51BA4EF09E13C2EE /* GIBowlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E2BF3C04A6E87352E40C6D /* GIBowlApp.swift */; };
+		3F5E8BC03B4AC43344263295 /* BowlCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6CABE777FF24D133BC941 /* BowlCard.swift */; };
 		4660ECB152D787DD672C7A20 /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612E42F85B86C19443D5A25 /* FoodDetailView.swift */; };
 		51D48A5B3D7771E068DEA81A /* KitchenFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F236AE939C98E354F7574C2 /* KitchenFlowTests.swift */; };
 		7D07D2D839A2BEE3E6B79552 /* GIBowlCore in Frameworks */ = {isa = PBXBuildFile; productRef = 96C7B4BB94D9373A0A6CD1F4 /* GIBowlCore */; };
 		8812B3C9FFD17D9EC094A724 /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = D4ADB9B6B8671CE98EFA245C /* foods.json */; };
+		9AE9A38F19D7D3599E08C9EC /* TargetsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A66C3D56281DA6B8113EDB8 /* TargetsSheet.swift */; };
 		9B49FE09B09338460B23C969 /* PortionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E42AE169BC662AC7A1B03BD /* PortionButton.swift */; };
 		9CFEEDA538725367794B3B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C3EB9C411D5046327746907 /* Assets.xcassets */; };
+		AF3F905BA47B15F9BE6D07B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D937535B2DF02185CF8C2837 /* SettingsView.swift */; };
 		E47B37C6CB937E81F4728595 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E870810FBF7F08366002D97 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,8 @@
 		18E2BF3C04A6E87352E40C6D /* GIBowlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIBowlApp.swift; sourceTree = "<group>"; };
 		1F236AE939C98E354F7574C2 /* KitchenFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenFlowTests.swift; sourceTree = "<group>"; };
 		2E870810FBF7F08366002D97 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		3BA6CABE777FF24D133BC941 /* BowlCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlCard.swift; sourceTree = "<group>"; };
+		4A66C3D56281DA6B8113EDB8 /* TargetsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetsSheet.swift; sourceTree = "<group>"; };
 		4E42AE169BC662AC7A1B03BD /* PortionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionButton.swift; sourceTree = "<group>"; };
 		621D6D58268DF54C9D070C70 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		665C81AEA9692EF559EA5415 /* GIBowlUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GIBowlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +45,7 @@
 		B612E42F85B86C19443D5A25 /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
 		C5B1287B75FB3EFA693F8B5B /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ios; path = .; sourceTree = SOURCE_ROOT; };
 		D4ADB9B6B8671CE98EFA245C /* foods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foods.json; sourceTree = "<group>"; };
+		D937535B2DF02185CF8C2837 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +74,12 @@
 		165904C1B35A669BD9AEEE78 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3BA6CABE777FF24D133BC941 /* BowlCard.swift */,
 				B612E42F85B86C19443D5A25 /* FoodDetailView.swift */,
 				621D6D58268DF54C9D070C70 /* MainView.swift */,
 				4E42AE169BC662AC7A1B03BD /* PortionButton.swift */,
+				D937535B2DF02185CF8C2837 /* SettingsView.swift */,
+				4A66C3D56281DA6B8113EDB8 /* TargetsSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,10 +240,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5E8BC03B4AC43344263295 /* BowlCard.swift in Sources */,
 				4660ECB152D787DD672C7A20 /* FoodDetailView.swift in Sources */,
 				313D947A51BA4EF09E13C2EE /* GIBowlApp.swift in Sources */,
 				06A11F9281461895C93DC523 /* MainView.swift in Sources */,
 				9B49FE09B09338460B23C969 /* PortionButton.swift in Sources */,
+				AF3F905BA47B15F9BE6D07B9 /* SettingsView.swift in Sources */,
+				9AE9A38F19D7D3599E08C9EC /* TargetsSheet.swift in Sources */,
 				E47B37C6CB937E81F4728595 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

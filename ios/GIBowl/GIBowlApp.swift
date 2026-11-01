@@ -19,6 +19,35 @@ extension FoodCatalog {
 @main
 struct GIBowlApp: App {
     private let catalog = FoodCatalog.bundled()
+    private let container: ModelContainer
+
+    init() {
+        container = try! ModelContainer(for: Schema(schema))
+        #if DEBUG
+        applyTestLaunchArguments()
+        #endif
+    }
+
+    #if DEBUG
+    /// UI tests: -resetData clears the bowl, your foods and your numbers; -seedTargets 45,15 sets numbers.
+    private func applyTestLaunchArguments() {
+        let args = ProcessInfo.processInfo.arguments
+        let defaults = UserDefaults.standard
+        if args.contains("-resetData") {
+            try? container.mainContext.delete(model: BowlItem.self)
+            try? container.mainContext.delete(model: CustomFood.self)
+            try? container.mainContext.save()
+            for key in ["targetMeal", "targetSnack", "bowlMode"] { defaults.removeObject(forKey: key) }
+        }
+        if let i = args.firstIndex(of: "-seedTargets"), i + 1 < args.count {
+            let parts = args[i + 1].split(separator: ",").compactMap { Int($0) }
+            if parts.count == 2 {
+                defaults.set(parts[0], forKey: "targetMeal")
+                defaults.set(parts[1], forKey: "targetSnack")
+            }
+        }
+    }
+    #endif
 
     var body: some Scene {
         WindowGroup {
@@ -29,6 +58,6 @@ struct GIBowlApp: App {
                 ContentUnavailableView("Food data couldn't load", systemImage: "exclamationmark.triangle", description: Text("Reinstall the app."))
             }
         }
-        .modelContainer(for: schema)
+        .modelContainer(container)
     }
 }
