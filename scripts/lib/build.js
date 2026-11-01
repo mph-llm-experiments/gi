@@ -28,8 +28,10 @@ export function buildFoods(rows, canonical, rules) {
     if (r.gl != null) food.gl = r.gl;
     const per100 = trustedCarbsPer100g(r);
     const portions = portionsForStudyRow(r, rules);
-    if (per100 != null) food.carbsPer100g = per100;
-    if (portions.length) food.carbSource = 'study';
+    if (portions.length) {
+      food.carbsPer100g = per100;
+      food.carbSource = 'study';
+    }
     food.portions = portions;
     return food;
   });

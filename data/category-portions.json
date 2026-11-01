@@ -1,20 +1,22 @@
 {
   "FRUIT AND FRUIT PRODUCTS": [
-    { "match": "canned|tinned|in juice|in syrup", "sizes": [{ "label": "½ cup", "grams": 120 }, { "label": "1 cup", "grams": 240 }] },
-    { "match": "juice|nectar|drink|smoothie", "sizes": [{ "label": "Small glass", "grams": 150 }, { "label": "Large glass", "grams": 250 }] },
-    { "match": "dried|raisin|sultana|prune|date\\b", "sizes": [{ "label": "Small handful", "grams": 15 }, { "label": "Handful", "grams": 30 }] },
-    { "match": "jam|spread|marmalade|conserve|compote", "sizes": [{ "label": "1 tsp", "grams": 7 }, { "label": "1 tbsp", "grams": 20 }] },
-    { "match": null, "sizes": [{ "label": "Small", "grams": 100 }, { "label": "Medium", "grams": 150 }, { "label": "Large", "grams": 200 }] }
+    { "match": "\\bjams?\\b|spread|marmalade|conserve|compote", "maxPer100g": 75, "sizes": [{ "label": "1 tsp", "grams": 7 }, { "label": "1 tbsp", "grams": 20 }] },
+    { "match": "\\bcanned\\b|\\btinned\\b|\\bin (fruit |natural )?juice\\b|\\bin syrup\\b", "maxPer100g": 25, "sizes": [{ "label": "½ cup", "grams": 120 }, { "label": "1 cup", "grams": 240 }] },
+    { "match": "\\bjuice\\b|\\bnectar\\b|\\bdrink\\b|smoothie", "maxPer100g": 20, "sizes": [{ "label": "Small glass", "grams": 150 }, { "label": "Large glass", "grams": 250 }] },
+    { "match": "dried|\\braisins?\\b|\\bsultanas?\\b|\\bprunes?\\b|\\bdates?\\b", "maxPer100g": 85, "sizes": [{ "label": "Small handful", "grams": 15 }, { "label": "Handful", "grams": 30 }] },
+    { "match": null, "maxPer100g": 25, "sizes": [{ "label": "Small", "grams": 100 }, { "label": "Medium", "grams": 150 }, { "label": "Large", "grams": 200 }] }
   ],
   "DAIRY PRODUCTS AND ALTERNATIVES": [
-    { "match": "milk|drink|shake|smoothie", "sizes": [{ "label": "Small glass", "grams": 150 }, { "label": "Large glass", "grams": 250 }] },
-    { "match": "ice cream|frozen", "sizes": [{ "label": "Small scoop", "grams": 50 }, { "label": "2 scoops", "grams": 100 }] },
-    { "match": null, "sizes": [{ "label": "½ cup", "grams": 120 }, { "label": "1 cup", "grams": 245 }] }
+    { "match": "condensed", "maxPer100g": 60, "sizes": [{ "label": "1 tbsp", "grams": 20 }, { "label": "2 tbsp", "grams": 40 }] },
+    { "match": "pudding|custard|dessert|mousse", "maxPer100g": 35, "sizes": [{ "label": "½ cup", "grams": 120 }, { "label": "1 cup", "grams": 245 }] },
+    { "match": "ice cream|frozen", "maxPer100g": 35, "sizes": [{ "label": "Small scoop", "grams": 50 }, { "label": "2 scoops", "grams": 100 }] },
+    { "match": "milk|drink|shake|smoothie", "maxPer100g": 15, "sizes": [{ "label": "Small glass", "grams": 150 }, { "label": "Large glass", "grams": 250 }] },
+    { "match": null, "maxPer100g": 25, "sizes": [{ "label": "½ cup", "grams": 120 }, { "label": "1 cup", "grams": 245 }] }
   ],
   "BEVERAGES": [
-    { "match": null, "sizes": [{ "label": "Small glass", "grams": 150 }, { "label": "Large glass", "grams": 250 }, { "label": "Can", "grams": 355 }] }
+    { "match": null, "maxPer100g": 20, "sizes": [{ "label": "Small glass", "grams": 150 }, { "label": "Large glass", "grams": 250 }, { "label": "Can", "grams": 355 }] }
   ],
   "BREADS": [
-    { "match": null, "sizes": [{ "label": "1 slice", "grams": 35 }, { "label": "2 slices", "grams": 70 }] }
+    { "match": null, "maxPer100g": 70, "sizes": [{ "label": "1 slice", "grams": 35 }, { "label": "2 slices", "grams": 70 }] }
   ]
 }

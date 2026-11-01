@@ -1259,12 +1259,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small scoop",
-          "carbs": 13.5
+          "label": "½ cup",
+          "carbs": 32.3
         },
         {
-          "label": "2 scoops",
-          "carbs": 26.9
+          "label": "1 cup",
+          "carbs": 65.9
         }
       ]
     },
@@ -1864,12 +1864,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 57.8
+          "label": "1 tsp",
+          "carbs": 2.7
         },
         {
-          "label": "Large glass",
-          "carbs": 96.3
+          "label": "1 tbsp",
+          "carbs": 7.7
         }
       ]
     },
@@ -1944,22 +1944,7 @@
       "category": "FRUIT AND FRUIT PRODUCTS",
       "gi": 42,
       "gl": 6,
-      "carbsPer100g": 61.4,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small",
-          "carbs": 61.4
-        },
-        {
-          "label": "Medium",
-          "carbs": 92.1
-        },
-        {
-          "label": "Large",
-          "carbs": 122.8
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1956",
@@ -3891,18 +3876,7 @@
       "category": "BREADS",
       "gi": 72,
       "gl": 11,
-      "carbsPer100g": 25,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "1 slice",
-          "carbs": 8.8
-        },
-        {
-          "label": "2 slices",
-          "carbs": 17.5
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s271",
@@ -3911,18 +3885,7 @@
       "category": "BREADS",
       "gi": 87,
       "gl": 13,
-      "carbsPer100g": 49,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "1 slice",
-          "carbs": 17.2
-        },
-        {
-          "label": "2 slices",
-          "carbs": 34.3
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s337",
@@ -4357,18 +4320,7 @@
       "category": "DAIRY PRODUCTS AND ALTERNATIVES",
       "gi": 36,
       "gl": 7,
-      "carbsPer100g": 60.6,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "½ cup",
-          "carbs": 72.7
-        },
-        {
-          "label": "1 cup",
-          "carbs": 148.5
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s52",
@@ -5650,18 +5602,7 @@
       "category": "DAIRY PRODUCTS AND ALTERNATIVES",
       "gi": 33,
       "gl": 7,
-      "carbsPer100g": 65.4,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "½ cup",
-          "carbs": 78.5
-        },
-        {
-          "label": "1 cup",
-          "carbs": 160.2
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s963",
@@ -5670,18 +5611,7 @@
       "category": "DAIRY PRODUCTS AND ALTERNATIVES",
       "gi": 36,
       "gl": 7,
-      "carbsPer100g": 61.5,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "½ cup",
-          "carbs": 73.8
-        },
-        {
-          "label": "1 cup",
-          "carbs": 150.7
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s964",
@@ -5690,18 +5620,7 @@
       "category": "DAIRY PRODUCTS AND ALTERNATIVES",
       "gi": 32,
       "gl": 6,
-      "carbsPer100g": 60.6,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "½ cup",
-          "carbs": 72.7
-        },
-        {
-          "label": "1 cup",
-          "carbs": 148.5
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1276",
@@ -6385,18 +6304,7 @@
       "category": "DAIRY PRODUCTS AND ALTERNATIVES",
       "gi": 21,
       "gl": 4,
-      "carbsPer100g": 11.8,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 17.7
-        },
-        {
-          "label": "Large glass",
-          "carbs": 29.5
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s895",
@@ -6757,12 +6665,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small handful",
-          "carbs": 9.5
+          "label": "1 tsp",
+          "carbs": 4.4
         },
         {
-          "label": "Handful",
-          "carbs": 18.9
+          "label": "1 tbsp",
+          "carbs": 12.6
         }
       ]
     },
@@ -6786,16 +6694,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 71.3
+          "label": "Small handful",
+          "carbs": 10.7
         },
         {
-          "label": "Medium",
-          "carbs": 107
-        },
-        {
-          "label": "Large",
-          "carbs": 142.6
+          "label": "Handful",
+          "carbs": 21.4
         }
       ]
     },
@@ -6897,16 +6801,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 49.1
+          "label": "Small handful",
+          "carbs": 7.4
         },
         {
-          "label": "Medium",
-          "carbs": 73.7
-        },
-        {
-          "label": "Large",
-          "carbs": 98.2
+          "label": "Handful",
+          "carbs": 14.7
         }
       ]
     },
@@ -6981,16 +6881,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 74.5
+          "label": "Small handful",
+          "carbs": 11.2
         },
         {
-          "label": "Medium",
-          "carbs": 111.8
-        },
-        {
-          "label": "Large",
-          "carbs": 149
+          "label": "Handful",
+          "carbs": 22.4
         }
       ]
     },
@@ -7025,16 +6921,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 73
+          "label": "Small handful",
+          "carbs": 11
         },
         {
-          "label": "Medium",
-          "carbs": 109.5
-        },
-        {
-          "label": "Large",
-          "carbs": 146
+          "label": "Handful",
+          "carbs": 21.9
         }
       ]
     },
@@ -7049,16 +6941,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 70.9
+          "label": "Small handful",
+          "carbs": 10.6
         },
         {
-          "label": "Medium",
-          "carbs": 106.4
-        },
-        {
-          "label": "Large",
-          "carbs": 141.8
+          "label": "Handful",
+          "carbs": 21.3
         }
       ]
     },
@@ -7073,16 +6961,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 72.2
+          "label": "Small handful",
+          "carbs": 10.8
         },
         {
-          "label": "Medium",
-          "carbs": 108.3
-        },
-        {
-          "label": "Large",
-          "carbs": 144.4
+          "label": "Handful",
+          "carbs": 21.7
         }
       ]
     },
@@ -7097,16 +6981,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 74.6
+          "label": "Small handful",
+          "carbs": 11.2
         },
         {
-          "label": "Medium",
-          "carbs": 111.9
-        },
-        {
-          "label": "Large",
-          "carbs": 149.2
+          "label": "Handful",
+          "carbs": 22.4
         }
       ]
     },
@@ -7121,16 +7001,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 64.3
+          "label": "Small handful",
+          "carbs": 9.6
         },
         {
-          "label": "Medium",
-          "carbs": 96.5
-        },
-        {
-          "label": "Large",
-          "carbs": 128.6
+          "label": "Handful",
+          "carbs": 19.3
         }
       ]
     },
@@ -7145,16 +7021,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 60.6
+          "label": "Small handful",
+          "carbs": 9.1
         },
         {
-          "label": "Medium",
-          "carbs": 90.9
-        },
-        {
-          "label": "Large",
-          "carbs": 121.2
+          "label": "Handful",
+          "carbs": 18.2
         }
       ]
     },
@@ -7169,16 +7041,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 74.3
+          "label": "Small handful",
+          "carbs": 11.1
         },
         {
-          "label": "Medium",
-          "carbs": 111.5
-        },
-        {
-          "label": "Large",
-          "carbs": 148.6
+          "label": "Handful",
+          "carbs": 22.3
         }
       ]
     },
@@ -7193,16 +7061,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 68.1
+          "label": "Small handful",
+          "carbs": 10.2
         },
         {
-          "label": "Medium",
-          "carbs": 102.2
-        },
-        {
-          "label": "Large",
-          "carbs": 136.2
+          "label": "Handful",
+          "carbs": 20.4
         }
       ]
     },
@@ -7217,16 +7081,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 68.8
+          "label": "Small handful",
+          "carbs": 10.3
         },
         {
-          "label": "Medium",
-          "carbs": 103.2
-        },
-        {
-          "label": "Large",
-          "carbs": 137.6
+          "label": "Handful",
+          "carbs": 20.6
         }
       ]
     },
@@ -7261,16 +7121,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 72.5
+          "label": "Small handful",
+          "carbs": 10.9
         },
         {
-          "label": "Medium",
-          "carbs": 108.8
-        },
-        {
-          "label": "Large",
-          "carbs": 145
+          "label": "Handful",
+          "carbs": 21.8
         }
       ]
     },
@@ -7285,16 +7141,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 74.7
+          "label": "Small handful",
+          "carbs": 11.2
         },
         {
-          "label": "Medium",
-          "carbs": 112.1
-        },
-        {
-          "label": "Large",
-          "carbs": 149.4
+          "label": "Handful",
+          "carbs": 22.4
         }
       ]
     },
@@ -7309,16 +7161,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 69.6
+          "label": "Small handful",
+          "carbs": 10.4
         },
         {
-          "label": "Medium",
-          "carbs": 104.4
-        },
-        {
-          "label": "Large",
-          "carbs": 139.2
+          "label": "Handful",
+          "carbs": 20.9
         }
       ]
     },
@@ -7333,16 +7181,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 64.4
+          "label": "Small handful",
+          "carbs": 9.7
         },
         {
-          "label": "Medium",
-          "carbs": 96.6
-        },
-        {
-          "label": "Large",
-          "carbs": 128.8
+          "label": "Handful",
+          "carbs": 19.3
         }
       ]
     },
@@ -7366,16 +7210,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 72.4
+          "label": "Small handful",
+          "carbs": 10.9
         },
         {
-          "label": "Medium",
-          "carbs": 108.6
-        },
-        {
-          "label": "Large",
-          "carbs": 144.8
+          "label": "Handful",
+          "carbs": 21.7
         }
       ]
     },
@@ -7390,16 +7230,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small",
-          "carbs": 74.1
+          "label": "Small handful",
+          "carbs": 11.1
         },
         {
-          "label": "Medium",
-          "carbs": 111.2
-        },
-        {
-          "label": "Large",
-          "carbs": 148.2
+          "label": "Handful",
+          "carbs": 22.2
         }
       ]
     },
@@ -8232,12 +8068,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 31.8
+          "label": "½ cup",
+          "carbs": 25.4
         },
         {
-          "label": "Large glass",
-          "carbs": 53
+          "label": "1 cup",
+          "carbs": 51.9
         }
       ]
     },
@@ -8252,12 +8088,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 24.6
+          "label": "½ cup",
+          "carbs": 19.7
         },
         {
-          "label": "Large glass",
-          "carbs": 41
+          "label": "1 cup",
+          "carbs": 40.2
         }
       ]
     },
@@ -8457,12 +8293,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 31.8
+          "label": "½ cup",
+          "carbs": 25.4
         },
         {
-          "label": "Large glass",
-          "carbs": 53
+          "label": "1 cup",
+          "carbs": 51.9
         }
       ]
     },
@@ -8668,12 +8504,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small scoop",
-          "carbs": 13.7
+          "label": "½ cup",
+          "carbs": 32.9
         },
         {
-          "label": "2 scoops",
-          "carbs": 27.4
+          "label": "1 cup",
+          "carbs": 67.1
         }
       ]
     },
@@ -9080,22 +8916,7 @@
       "category": "BEVERAGES",
       "gi": 72,
       "gl": 18,
-      "carbsPer100g": 11.3,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 17
-        },
-        {
-          "label": "Large glass",
-          "carbs": 28.3
-        },
-        {
-          "label": "Can",
-          "carbs": 40.1
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s399",
@@ -9260,12 +9081,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "½ cup",
-          "carbs": 13.2
+          "label": "Small glass",
+          "carbs": 16.5
         },
         {
-          "label": "1 cup",
-          "carbs": 26.4
+          "label": "Large glass",
+          "carbs": 27.5
         }
       ]
     },
@@ -9742,22 +9563,7 @@
       "category": "BEVERAGES",
       "gi": 25,
       "gl": 6,
-      "carbsPer100g": 57,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 85.5
-        },
-        {
-          "label": "Large glass",
-          "carbs": 142.5
-        },
-        {
-          "label": "Can",
-          "carbs": 202.4
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s747",
@@ -10097,18 +9903,7 @@
       "category": "FRUIT AND FRUIT PRODUCTS",
       "gi": 52,
       "gl": 10,
-      "carbsPer100g": 78.2,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 117.3
-        },
-        {
-          "label": "Large glass",
-          "carbs": 195.5
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1136",
@@ -11092,22 +10887,7 @@
       "category": "BEVERAGES",
       "gi": 38,
       "gl": 10,
-      "carbsPer100g": 8.7,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 13.1
-        },
-        {
-          "label": "Large glass",
-          "carbs": 21.8
-        },
-        {
-          "label": "Can",
-          "carbs": 30.9
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s624",
@@ -11536,22 +11316,7 @@
       "category": "FRUIT AND FRUIT PRODUCTS",
       "gi": 65,
       "gl": 10,
-      "carbsPer100g": 42.2,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small",
-          "carbs": 42.2
-        },
-        {
-          "label": "Medium",
-          "carbs": 63.3
-        },
-        {
-          "label": "Large",
-          "carbs": 84.4
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1563",
@@ -12877,22 +12642,7 @@
       "category": "BEVERAGES",
       "gi": 69,
       "gl": 17,
-      "carbsPer100g": 8.8,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 13.2
-        },
-        {
-          "label": "Large glass",
-          "carbs": 22
-        },
-        {
-          "label": "Can",
-          "carbs": 31.2
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1756",
@@ -13453,18 +13203,7 @@
       "category": "BREADS",
       "gi": 54,
       "gl": 8,
-      "carbsPer100g": 40.7,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "1 slice",
-          "carbs": 14.2
-        },
-        {
-          "label": "2 slices",
-          "carbs": 28.5
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1758",
@@ -14082,22 +13821,7 @@
       "category": "BEVERAGES",
       "gi": 32,
       "gl": 8,
-      "carbsPer100g": 52,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 78
-        },
-        {
-          "label": "Large glass",
-          "carbs": 130
-        },
-        {
-          "label": "Can",
-          "carbs": 184.6
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s968",
@@ -14110,12 +13834,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 31.5
+          "label": "½ cup",
+          "carbs": 25.2
         },
         {
-          "label": "Large glass",
-          "carbs": 52.5
+          "label": "1 cup",
+          "carbs": 51.5
         }
       ]
     },
@@ -14130,12 +13854,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 32.4
+          "label": "½ cup",
+          "carbs": 25.9
         },
         {
-          "label": "Large glass",
-          "carbs": 54
+          "label": "1 cup",
+          "carbs": 52.9
         }
       ]
     },
@@ -14150,12 +13874,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 30.3
+          "label": "½ cup",
+          "carbs": 24.2
         },
         {
-          "label": "Large glass",
-          "carbs": 50.5
+          "label": "1 cup",
+          "carbs": 49.5
         }
       ]
     },
@@ -14170,12 +13894,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 28.4
+          "label": "½ cup",
+          "carbs": 22.7
         },
         {
-          "label": "Large glass",
-          "carbs": 47.3
+          "label": "1 cup",
+          "carbs": 46.3
         }
       ]
     },
@@ -14190,12 +13914,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 28.1
+          "label": "½ cup",
+          "carbs": 22.4
         },
         {
-          "label": "Large glass",
-          "carbs": 46.8
+          "label": "1 cup",
+          "carbs": 45.8
         }
       ]
     },
@@ -14210,12 +13934,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 31.5
+          "label": "½ cup",
+          "carbs": 25.2
         },
         {
-          "label": "Large glass",
-          "carbs": 52.5
+          "label": "1 cup",
+          "carbs": 51.5
         }
       ]
     },
@@ -14230,12 +13954,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 30.8
+          "label": "½ cup",
+          "carbs": 24.6
         },
         {
-          "label": "Large glass",
-          "carbs": 51.3
+          "label": "1 cup",
+          "carbs": 50.2
         }
       ]
     },
@@ -14250,12 +13974,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 83.1
+          "label": "1 tbsp",
+          "carbs": 11.1
         },
         {
-          "label": "Large glass",
-          "carbs": 138.5
+          "label": "2 tbsp",
+          "carbs": 22.2
         }
       ]
     },
@@ -14362,22 +14086,7 @@
       "category": "BEVERAGES",
       "gi": 55,
       "gl": 14,
-      "carbsPer100g": 68.5,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 102.8
-        },
-        {
-          "label": "Large glass",
-          "carbs": 171.3
-        },
-        {
-          "label": "Can",
-          "carbs": 243.2
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1618",
@@ -14577,18 +14286,7 @@
       "category": "DAIRY PRODUCTS AND ALTERNATIVES",
       "gi": 36,
       "gl": 7,
-      "carbsPer100g": 61.5,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "½ cup",
-          "carbs": 73.8
-        },
-        {
-          "label": "1 cup",
-          "carbs": 150.7
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s709",
@@ -14937,12 +14635,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 31.8
+          "label": "½ cup",
+          "carbs": 25.4
         },
         {
-          "label": "Large glass",
-          "carbs": 53
+          "label": "1 cup",
+          "carbs": 51.9
         }
       ]
     },
@@ -15360,12 +15058,16 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
+          "label": "Small",
+          "carbs": 7.7
+        },
+        {
+          "label": "Medium",
           "carbs": 11.6
         },
         {
-          "label": "Large glass",
-          "carbs": 19.3
+          "label": "Large",
+          "carbs": 15.4
         }
       ]
     },
@@ -16098,12 +15800,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 72.2
+          "label": "1 tsp",
+          "carbs": 3.4
         },
         {
-          "label": "Large glass",
-          "carbs": 120.3
+          "label": "1 tbsp",
+          "carbs": 9.6
         }
       ]
     },
@@ -16267,22 +15969,7 @@
       "category": "BEVERAGES",
       "gi": 36,
       "gl": 9,
-      "carbsPer100g": 65.3,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 98
-        },
-        {
-          "label": "Large glass",
-          "carbs": 163.3
-        },
-        {
-          "label": "Can",
-          "carbs": 231.8
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s346",
@@ -16521,18 +16208,7 @@
       "category": "FRUIT AND FRUIT PRODUCTS",
       "gi": 46,
       "gl": 7,
-      "carbsPer100g": 26.1,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "½ cup",
-          "carbs": 31.3
-        },
-        {
-          "label": "1 cup",
-          "carbs": 62.6
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1498",
@@ -16695,18 +16371,7 @@
       "category": "FRUIT AND FRUIT PRODUCTS",
       "gi": 31,
       "gl": 5,
-      "carbsPer100g": 27.6,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "½ cup",
-          "carbs": 33.1
-        },
-        {
-          "label": "1 cup",
-          "carbs": 66.2
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1265",
@@ -17075,22 +16740,7 @@
       "category": "BEVERAGES",
       "gi": 33,
       "gl": 8,
-      "carbsPer100g": 53.1,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 79.7
-        },
-        {
-          "label": "Large glass",
-          "carbs": 132.8
-        },
-        {
-          "label": "Can",
-          "carbs": 188.5
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s2068",
@@ -17756,22 +17406,7 @@
       "category": "BEVERAGES",
       "gi": 11,
       "gl": 3,
-      "carbsPer100g": 14,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 21
-        },
-        {
-          "label": "Large glass",
-          "carbs": 35
-        },
-        {
-          "label": "Can",
-          "carbs": 49.7
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1639",
@@ -19891,12 +19526,12 @@
       "carbSource": "study",
       "portions": [
         {
-          "label": "Small glass",
-          "carbs": 58.7
+          "label": "1 tsp",
+          "carbs": 2.7
         },
         {
-          "label": "Large glass",
-          "carbs": 97.8
+          "label": "1 tbsp",
+          "carbs": 7.8
         }
       ]
     },
@@ -20705,18 +20340,7 @@
       "category": "BREADS",
       "gi": 50,
       "gl": 8,
-      "carbsPer100g": 30.3,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "1 slice",
-          "carbs": 10.6
-        },
-        {
-          "label": "2 slices",
-          "carbs": 21.2
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1581",
@@ -21820,22 +21444,7 @@
       "category": "BEVERAGES",
       "gi": 37,
       "gl": 9,
-      "carbsPer100g": 66.2,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 99.3
-        },
-        {
-          "label": "Large glass",
-          "carbs": 165.5
-        },
-        {
-          "label": "Can",
-          "carbs": 235
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s452",
@@ -23059,22 +22668,7 @@
       "category": "BEVERAGES",
       "gi": 50,
       "gl": 13,
-      "carbsPer100g": 66.5,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 99.8
-        },
-        {
-          "label": "Large glass",
-          "carbs": 166.3
-        },
-        {
-          "label": "Can",
-          "carbs": 236.1
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s1417",
@@ -24956,22 +24550,7 @@
       "category": "BEVERAGES",
       "gi": 32,
       "gl": 8,
-      "carbsPer100g": 49.8,
-      "carbSource": "study",
-      "portions": [
-        {
-          "label": "Small glass",
-          "carbs": 74.7
-        },
-        {
-          "label": "Large glass",
-          "carbs": 124.5
-        },
-        {
-          "label": "Can",
-          "carbs": 176.8
-        }
-      ]
+      "portions": []
     },
     {
       "id": "s2070",

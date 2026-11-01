@@ -49,3 +49,13 @@ describe('buildFoods', () => {
     }
   });
 });
+
+describe('buildFoods portion sanity', () => {
+  it('keeps every study portion at 100g or less', () => {
+    const over = out.foods.filter(f => f.kind === 'study' && f.portions.some(p => p.carbs > 100)).map(f => f.id);
+    assert.deepEqual(over, []);
+  });
+  it('emits carbsPer100g only for rows that have portions', () => {
+    for (const f of out.foods) if ('carbsPer100g' in f) assert.ok(f.portions.length, f.id);
+  });
+});
