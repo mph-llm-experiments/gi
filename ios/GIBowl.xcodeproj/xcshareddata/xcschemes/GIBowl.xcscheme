@@ -44,6 +44,17 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0F38EAB8C556FE0D38953CBD"
+               BuildableName = "GIBowlTests.xctest"
+               BlueprintName = "GIBowlTests"
+               ReferencedContainer = "container:GIBowl.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "8279F879A696473DFED459FC"
                BuildableName = "GIBowlUITests.xctest"
                BlueprintName = "GIBowlUITests"

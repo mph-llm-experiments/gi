@@ -18,7 +18,12 @@
 		9B49FE09B09338460B23C969 /* PortionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E42AE169BC662AC7A1B03BD /* PortionButton.swift */; };
 		9CFEEDA538725367794B3B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C3EB9C411D5046327746907 /* Assets.xcassets */; };
 		A2AB73084421C2F1E1401744 /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = 78E0DC928BB010C15AD248A9 /* foods.json */; };
+		A42068D08925CBD2E240844A /* LabelFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4388250212628AE6C557 /* LabelFixtures.swift */; };
+		AB4AC4F253A8C47AD8509316 /* LabelReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B98AF2A8663EDA0FD7EF7 /* LabelReader.swift */; };
+		ADA0BF6062DA17888CBA00A9 /* LabelReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1F92D97A141681A331863 /* LabelReaderTests.swift */; };
 		AF3F905BA47B15F9BE6D07B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D937535B2DF02185CF8C2837 /* SettingsView.swift */; };
+		D392B3362258EF70AEF0D401 /* GIBowlCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8FDA5951DBEC556EFF96045A /* GIBowlCore */; };
+		D4B4B2EA3CCE435355CF5C89 /* ModelLabelExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC008413C7E97751110878 /* ModelLabelExtractor.swift */; };
 		E47B37C6CB937E81F4728595 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E870810FBF7F08366002D97 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,9 +35,17 @@
 			remoteGlobalIDString = 1F695340A015FD45C5166445;
 			remoteInfo = GIBowl;
 		};
+		D4182F421ACCB3CBC0C6B7BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F23B7BCD2F697BA52C7C006E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F695340A015FD45C5166445;
+			remoteInfo = GIBowl;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AB1F92D97A141681A331863 /* LabelReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelReaderTests.swift; sourceTree = "<group>"; };
 		18E2BF3C04A6E87352E40C6D /* GIBowlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIBowlApp.swift; sourceTree = "<group>"; };
 		1F236AE939C98E354F7574C2 /* KitchenFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenFlowTests.swift; sourceTree = "<group>"; };
 		2E870810FBF7F08366002D97 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -41,13 +54,17 @@
 		4E42AE169BC662AC7A1B03BD /* PortionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionButton.swift; sourceTree = "<group>"; };
 		621D6D58268DF54C9D070C70 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		665C81AEA9692EF559EA5415 /* GIBowlUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GIBowlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F9D6B166338FC092F949E9B /* GIBowlTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GIBowlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E0DC928BB010C15AD248A9 /* foods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foods.json; sourceTree = "<group>"; };
 		7C3EB9C411D5046327746907 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F0B98AF2A8663EDA0FD7EF7 /* LabelReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelReader.swift; sourceTree = "<group>"; };
 		B3404102C59D9D991E6B0DDB /* GIBowl.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GIBowl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B612E42F85B86C19443D5A25 /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
+		B6DC008413C7E97751110878 /* ModelLabelExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLabelExtractor.swift; sourceTree = "<group>"; };
 		C5B1287B75FB3EFA693F8B5B /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ios; path = .; sourceTree = SOURCE_ROOT; };
 		CF6AFA9ADE24D011810CF3B3 /* OwnFoodForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnFoodForm.swift; sourceTree = "<group>"; };
 		D937535B2DF02185CF8C2837 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F8EB4388250212628AE6C557 /* LabelFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFixtures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D07D2D839A2BEE3E6B79552 /* GIBowlCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8064198E592C92FE6564E3BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D392B3362258EF70AEF0D401 /* GIBowlCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +93,7 @@
 				7C3EB9C411D5046327746907 /* Assets.xcassets */,
 				18E2BF3C04A6E87352E40C6D /* GIBowlApp.swift */,
 				2E870810FBF7F08366002D97 /* Theme.swift */,
+				1B67177AC814DB48B7BDD845 /* Label */,
 				165904C1B35A669BD9AEEE78 /* Views */,
 			);
 			path = GIBowl;
@@ -85,6 +111,16 @@
 				4A66C3D56281DA6B8113EDB8 /* TargetsSheet.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1B67177AC814DB48B7BDD845 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				F8EB4388250212628AE6C557 /* LabelFixtures.swift */,
+				7F0B98AF2A8663EDA0FD7EF7 /* LabelReader.swift */,
+				B6DC008413C7E97751110878 /* ModelLabelExtractor.swift */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 		24A32EA7DB66F6AB4D4B1995 /* GIBowlUITests */ = {
@@ -107,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				B3404102C59D9D991E6B0DDB /* GIBowl.app */,
+				6F9D6B166338FC092F949E9B /* GIBowlTests.xctest */,
 				665C81AEA9692EF559EA5415 /* GIBowlUITests.xctest */,
 			);
 			name = Products;
@@ -129,11 +166,20 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		D4F7EE7C2199A0A2EEC5E4D6 /* GIBowlTests */ = {
+			isa = PBXGroup;
+			children = (
+				0AB1F92D97A141681A331863 /* LabelReaderTests.swift */,
+			);
+			path = GIBowlTests;
+			sourceTree = "<group>";
+		};
 		E3102CF1CC7481F1D2BB09E1 = {
 			isa = PBXGroup;
 			children = (
 				9EBCBA248140DBE35B53F290 /* gi-photo */,
 				105C4167408E783B686D7C9E /* GIBowl */,
+				D4F7EE7C2199A0A2EEC5E4D6 /* GIBowlTests */,
 				24A32EA7DB66F6AB4D4B1995 /* GIBowlUITests */,
 				BD884FB7CEB1E97E899DCD9F /* Packages */,
 				7A274ED5D4E0DA18AA81AD07 /* Products */,
@@ -143,6 +189,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0F38EAB8C556FE0D38953CBD /* GIBowlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9E700DFC2453CD768E6E2FE /* Build configuration list for PBXNativeTarget "GIBowlTests" */;
+			buildPhases = (
+				52CCE9ACA9DE49BC5712F064 /* Sources */,
+				8064198E592C92FE6564E3BA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18DAFDF17B717BC7C22A3B55 /* PBXTargetDependency */,
+			);
+			name = GIBowlTests;
+			packageProductDependencies = (
+				8FDA5951DBEC556EFF96045A /* GIBowlCore */,
+			);
+			productName = GIBowlTests;
+			productReference = 6F9D6B166338FC092F949E9B /* GIBowlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1F695340A015FD45C5166445 /* GIBowl */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0276821B3FCBEC3ACD1D2C08 /* Build configuration list for PBXNativeTarget "GIBowl" */;
@@ -213,6 +279,7 @@
 			projectRoot = "";
 			targets = (
 				1F695340A015FD45C5166445 /* GIBowl */,
+				0F38EAB8C556FE0D38953CBD /* GIBowlTests */,
 				8279F879A696473DFED459FC /* GIBowlUITests */,
 			);
 		};
@@ -231,6 +298,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		52CCE9ACA9DE49BC5712F064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADA0BF6062DA17888CBA00A9 /* LabelReaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56EB57DFFEE24EF6DB32776A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,7 +321,10 @@
 				3F5E8BC03B4AC43344263295 /* BowlCard.swift in Sources */,
 				4660ECB152D787DD672C7A20 /* FoodDetailView.swift in Sources */,
 				313D947A51BA4EF09E13C2EE /* GIBowlApp.swift in Sources */,
+				A42068D08925CBD2E240844A /* LabelFixtures.swift in Sources */,
+				AB4AC4F253A8C47AD8509316 /* LabelReader.swift in Sources */,
 				06A11F9281461895C93DC523 /* MainView.swift in Sources */,
+				D4B4B2EA3CCE435355CF5C89 /* ModelLabelExtractor.swift in Sources */,
 				2F38330E040FAAA82C9D2761 /* OwnFoodForm.swift in Sources */,
 				9B49FE09B09338460B23C969 /* PortionButton.swift in Sources */,
 				AF3F905BA47B15F9BE6D07B9 /* SettingsView.swift in Sources */,
@@ -258,6 +336,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		18DAFDF17B717BC7C22A3B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F695340A015FD45C5166445 /* GIBowl */;
+			targetProxy = D4182F421ACCB3CBC0C6B7BD /* PBXContainerItemProxy */;
+		};
 		D813FE5EF6C976BEA7EFDF8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1F695340A015FD45C5166445 /* GIBowl */;
@@ -302,6 +385,40 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.puddingtime.GIBowl;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67BC5CEF4B30C79A68EFB6EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.puddingtime.GIBowlTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GIBowl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GIBowl";
+			};
+			name = Release;
+		};
+		A67AA9656A69C8EBFAA75001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.puddingtime.GIBowlTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GIBowl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GIBowl";
 			};
 			name = Debug;
 		};
@@ -479,6 +596,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		A9E700DFC2453CD768E6E2FE /* Build configuration list for PBXNativeTarget "GIBowlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A67AA9656A69C8EBFAA75001 /* Debug */,
+				67BC5CEF4B30C79A68EFB6EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		D23505670EF5FBE74D166E87 /* Build configuration list for PBXNativeTarget "GIBowlUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -507,6 +633,10 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8FDA5951DBEC556EFF96045A /* GIBowlCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GIBowlCore;
+		};
 		96C7B4BB94D9373A0A6CD1F4 /* GIBowlCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = GIBowlCore;

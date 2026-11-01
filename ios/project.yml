@@ -33,6 +33,20 @@ targets:
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+  GIBowlTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: GIBowlTests
+    dependencies:
+      - target: GIBowl
+      - package: GIBowlCore
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: net.puddingtime.GIBowlTests
+        BUNDLE_LOADER: $(TEST_HOST)
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/GIBowl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GIBowl
   GIBowlUITests:
     type: bundle.ui-testing
     platform: iOS
@@ -52,4 +66,5 @@ schemes:
         GIBowl: all
     test:
       targets:
+        - GIBowlTests
         - GIBowlUITests
