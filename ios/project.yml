@@ -1,0 +1,55 @@
+name: GIBowl
+options:
+  bundleIdPrefix: net.puddingtime
+  deploymentTarget:
+    iOS: "27.0"
+  createIntermediateGroups: true
+packages:
+  GIBowlCore:
+    path: .
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    CODE_SIGNING_ALLOWED: "NO"
+targets:
+  GIBowl:
+    type: application
+    platform: iOS
+    sources:
+      - path: GIBowl
+      - path: ../public/foods.json
+        buildPhase: resources
+    dependencies:
+      - package: GIBowlCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: net.puddingtime.GIBowl
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: GI Bowl
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+  GIBowlUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: GIBowlUITests
+    dependencies:
+      - target: GIBowl
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: net.puddingtime.GIBowlUITests
+        TEST_TARGET_NAME: GIBowl
+schemes:
+  GIBowl:
+    build:
+      targets:
+        GIBowl: all
+    test:
+      targets:
+        - GIBowlUITests
