@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06A11F9281461895C93DC523 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D6D58268DF54C9D070C70 /* MainView.swift */; };
 		2F38330E040FAAA82C9D2761 /* OwnFoodForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6AFA9ADE24D011810CF3B3 /* OwnFoodForm.swift */; };
+		2F8D5F725BA3ECAACD45B7EC /* LabelCaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B66A570991E49C0F8391A5 /* LabelCaptureButton.swift */; };
 		313D947A51BA4EF09E13C2EE /* GIBowlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E2BF3C04A6E87352E40C6D /* GIBowlApp.swift */; };
 		3F5E8BC03B4AC43344263295 /* BowlCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6CABE777FF24D133BC941 /* BowlCard.swift */; };
 		4660ECB152D787DD672C7A20 /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612E42F85B86C19443D5A25 /* FoodDetailView.swift */; };
@@ -22,6 +23,7 @@
 		AB4AC4F253A8C47AD8509316 /* LabelReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B98AF2A8663EDA0FD7EF7 /* LabelReader.swift */; };
 		ADA0BF6062DA17888CBA00A9 /* LabelReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1F92D97A141681A331863 /* LabelReaderTests.swift */; };
 		AF3F905BA47B15F9BE6D07B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D937535B2DF02185CF8C2837 /* SettingsView.swift */; };
+		BE7DECB3117AD2CC972F44CE /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B541F1D7F29D2A2E4EE566 /* CameraPicker.swift */; };
 		D392B3362258EF70AEF0D401 /* GIBowlCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8FDA5951DBEC556EFF96045A /* GIBowlCore */; };
 		D4B4B2EA3CCE435355CF5C89 /* ModelLabelExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC008413C7E97751110878 /* ModelLabelExtractor.swift */; };
 		E47B37C6CB937E81F4728595 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E870810FBF7F08366002D97 /* Theme.swift */; };
@@ -48,6 +50,7 @@
 		0AB1F92D97A141681A331863 /* LabelReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelReaderTests.swift; sourceTree = "<group>"; };
 		18E2BF3C04A6E87352E40C6D /* GIBowlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIBowlApp.swift; sourceTree = "<group>"; };
 		1F236AE939C98E354F7574C2 /* KitchenFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenFlowTests.swift; sourceTree = "<group>"; };
+		20B66A570991E49C0F8391A5 /* LabelCaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCaptureButton.swift; sourceTree = "<group>"; };
 		2E870810FBF7F08366002D97 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		3BA6CABE777FF24D133BC941 /* BowlCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlCard.swift; sourceTree = "<group>"; };
 		4A66C3D56281DA6B8113EDB8 /* TargetsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetsSheet.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		78E0DC928BB010C15AD248A9 /* foods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foods.json; sourceTree = "<group>"; };
 		7C3EB9C411D5046327746907 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F0B98AF2A8663EDA0FD7EF7 /* LabelReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelReader.swift; sourceTree = "<group>"; };
+		86B541F1D7F29D2A2E4EE566 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		B3404102C59D9D991E6B0DDB /* GIBowl.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GIBowl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B612E42F85B86C19443D5A25 /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
 		B6DC008413C7E97751110878 /* ModelLabelExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLabelExtractor.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		1B67177AC814DB48B7BDD845 /* Label */ = {
 			isa = PBXGroup;
 			children = (
+				86B541F1D7F29D2A2E4EE566 /* CameraPicker.swift */,
+				20B66A570991E49C0F8391A5 /* LabelCaptureButton.swift */,
 				F8EB4388250212628AE6C557 /* LabelFixtures.swift */,
 				7F0B98AF2A8663EDA0FD7EF7 /* LabelReader.swift */,
 				B6DC008413C7E97751110878 /* ModelLabelExtractor.swift */,
@@ -319,8 +325,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5E8BC03B4AC43344263295 /* BowlCard.swift in Sources */,
+				BE7DECB3117AD2CC972F44CE /* CameraPicker.swift in Sources */,
 				4660ECB152D787DD672C7A20 /* FoodDetailView.swift in Sources */,
 				313D947A51BA4EF09E13C2EE /* GIBowlApp.swift in Sources */,
+				2F8D5F725BA3ECAACD45B7EC /* LabelCaptureButton.swift in Sources */,
 				A42068D08925CBD2E240844A /* LabelFixtures.swift in Sources */,
 				AB4AC4F253A8C47AD8509316 /* LabelReader.swift in Sources */,
 				06A11F9281461895C93DC523 /* MainView.swift in Sources */,
@@ -375,6 +383,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "GI Bowl";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Photograph a nutrition label to add a food.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,6 +505,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "GI Bowl";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Photograph a nutrition label to add a food.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (

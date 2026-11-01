@@ -17,6 +17,7 @@ struct MainView: View {
     @State private var showingTargets = false
     @State private var showingSettings = false
     @State private var ownFoodName: String?
+    @State private var labelFoodName: String?
 
     @State private var query = ""
     @State private var path: [SearchableFood] = []
@@ -38,14 +39,19 @@ struct MainView: View {
                     onSetNumbers: { showingTargets = true }
                 )
                 let results = query.trimmed.isEmpty ? [] : search.search(query)
+                if !query.trimmed.isEmpty {
+                    // Packaged foods often aren't in the data, so adding your own sits above the results.
+                    Section {
+                        Button("Add your own food", systemImage: "square.and.pencil") { ownFoodName = query.trimmed }
+                            .accessibilityIdentifier("own.add")
+                        Button("Add from a label", systemImage: "text.viewfinder") { labelFoodName = query.trimmed }
+                            .accessibilityIdentifier("own.addFromLabel")
+                    }
+                }
                 ForEach(results) { food in
                     NavigationLink(value: food) {
                         FoodRow(food: food)
                     }
-                }
-                if !query.trimmed.isEmpty {
-                    Button("Add your own food") { ownFoodName = query.trimmed }
-                        .accessibilityIdentifier("own.add")
                 }
             }
             .onAppear(perform: rebuildSearch)
@@ -54,6 +60,15 @@ struct MainView: View {
             .background(Theme.paper)
             .navigationTitle("GI Bowl")
             .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Button("Add your own food", systemImage: "square.and.pencil") { ownFoodName = query.trimmed }
+                        Button("Add from a label", systemImage: "text.viewfinder") { labelFoodName = query.trimmed }
+                    } label: {
+                        Label("Add food", systemImage: "plus")
+                    }
+                    .accessibilityIdentifier("add.menu")
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Settings", systemImage: "gearshape") { showingSettings = true }
                 }
@@ -67,6 +82,9 @@ struct MainView: View {
             .sheet(isPresented: $showingSettings) { SettingsView() }
             .sheet(item: $ownFoodName) { name in
                 OwnFoodForm(prefillName: name, editing: nil) { path = [$0] }
+            }
+            .sheet(item: $labelFoodName) { name in
+                OwnFoodForm(prefillName: name, editing: nil, onSaved: { path = [$0] }, startWithCapture: true)
             }
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search foods")
             .navigationDestination(for: SearchableFood.self) { food in

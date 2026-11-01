@@ -39,7 +39,8 @@ final class KitchenFlowTests: XCTestCase {
         search(app, "vitasoy maltodextrin")
         // The 158-character name is over XCUITest's 128-character identifier limit, so match by prefix
         let row = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH %@", "containing maltodextrin (So Natural Foods")).firstMatch
-        _ = row.waitForExistence(timeout: 5)
+        // "Add your own food" rows sit above results, so at this size the row starts below the fold
+        for _ in 0..<6 where !(row.exists && row.isHittable) { app.swipeUp() }
         snapshot("xxl-search")
         XCTAssertTrue(row.exists)
         // At this size the row is taller than the space above the keyboard; tap its top
@@ -195,5 +196,38 @@ final class KitchenFlowTests: XCTestCase {
         open(app, "banana", "Banana, raw")
         XCTAssertTrue(app.staticTexts["Against your meal number: 45g"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.buttons["portion.1 large"].value as? String, "Room to spare")
+    }
+
+    private func readSampleLabel(_ app: XCUIApplication) -> String {
+        let sample = app.buttons["label.sample"]
+        XCTAssertTrue(sample.waitForExistence(timeout: 5))
+        sample.tap()
+        let banner = app.staticTexts["label.banner"]
+        XCTAssertTrue(banner.waitForExistence(timeout: 20))
+        return banner.label
+    }
+
+    func testAddFromUSLabel() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData", "-seedTargets", "45,15", "-labelFixture", "us"]
+        app.launch()
+        search(app, "granola")
+        app.buttons["own.add"].tap()
+        XCTAssertEqual(readSampleLabel(app), "Read from the label. Check the numbers before saving.")
+        XCTAssertEqual(app.textFields["own.carbs"].value as? String, "33")
+        XCTAssertEqual(app.textFields["own.portion"].value as? String, "2/3 cup (55g)")
+        app.buttons["own.save"].tap()
+        XCTAssertTrue(app.buttons["portion.2/3 cup (55g)"].waitForExistence(timeout: 5))
+    }
+
+    func testBlankPhotoSaysSo() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData", "-labelFixture", "blank"]
+        app.launch()
+        search(app, "mystery bar")
+        app.buttons["own.add"].tap()
+        XCTAssertEqual(readSampleLabel(app), "Couldn't read the label. Fill in what you can.")
+        let carbs = app.textFields["own.carbs"].value as? String ?? ""
+        XCTAssertTrue(carbs.isEmpty || carbs == "0", "carbs stay empty, got \(carbs)")
     }
 }

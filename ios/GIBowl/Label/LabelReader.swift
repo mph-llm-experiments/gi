@@ -40,7 +40,11 @@ struct LabelReader {
         let lines = (try? await recognizer.lines(in: image)) ?? []
         let vision = LabelParser.parse(lines: lines)
 
-        guard model.isAvailable, var fromModel = try? await model.extract(from: image), fromModel.netCarbs != nil else {
+        // The model can invent numbers for a photo with no label in it, so it only gets a say
+        // when Vision can see a carbohydrate line too.
+        let seesCarbLine = lines.contains { $0.localizedCaseInsensitiveContains("carb") }
+        guard seesCarbLine, model.isAvailable,
+              var fromModel = try? await model.extract(from: image), fromModel.netCarbs != nil else {
             return vision
         }
         if fromModel.servingLabel == nil { fromModel.servingLabel = vision.servingLabel }

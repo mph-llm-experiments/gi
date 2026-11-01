@@ -1,5 +1,6 @@
 import GIBowlCore
 import SwiftData
+import CoreGraphics
 import SwiftUI
 
 /// Add or edit a food of your own: a name, one or two portions with net carbs, optional GI.
@@ -7,6 +8,8 @@ struct OwnFoodForm: View {
     let prefillName: String?
     let editing: CustomFood?
     let onSaved: (SearchableFood) -> Void
+    /// Opens straight into taking or choosing a photo.
+    var startWithCapture = false
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
@@ -17,6 +20,11 @@ struct OwnFoodForm: View {
     @State private var portion2 = ""
     @State private var carbs2 = ""
     @State private var gi = ""
+    @State private var reading = false
+    @State private var banner: String?
+    @State private var bannerIsWarning = false
+    @State private var showCamera = false
+    @State private var showPhotos = false
 
     private var canSave: Bool {
         !name.trimmed.isEmpty && !portion.trimmed.isEmpty && Int(carbs.trimmed) != nil
@@ -25,6 +33,21 @@ struct OwnFoodForm: View {
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    if reading {
+                        ProgressView("Reading the label…")
+                    } else {
+                        LabelCaptureButton(showCamera: $showCamera, showPhotos: $showPhotos) { image in
+                            read(image)
+                        }
+                    }
+                    if let banner {
+                        Text(banner)
+                            .font(.subheadline)
+                            .foregroundStyle(bannerIsWarning ? Theme.textColor(.close) : .secondary)
+                            .accessibilityIdentifier("label.banner")
+                    }
+                }
                 Section {
                     TextField("What is it?", text: $name)
                         .accessibilityIdentifier("own.name")
@@ -59,7 +82,12 @@ struct OwnFoodForm: View {
                         .accessibilityIdentifier("own.save")
                 }
             }
-            .onAppear(perform: load)
+            .onAppear {
+                load()
+                if startWithCapture {
+                    if CameraPicker.isAvailable { showCamera = true } else { showPhotos = true }
+                }
+            }
         }
     }
 
@@ -89,6 +117,34 @@ struct OwnFoodForm: View {
             }
         } else if let prefillName {
             name = prefillName
+        }
+    }
+
+    private func read(_ image: CGImage) {
+        reading = true
+        Task {
+            let result = await LabelReader().read(image)
+            apply(result)
+            reading = false
+        }
+    }
+
+    /// Prefills the form from a label. Nothing is saved until Save.
+    func apply(_ reading: LabelReading) {
+        if name.trimmed.isEmpty, let product = reading.productName { name = product }
+        guard let net = reading.netCarbs else {
+            banner = "Couldn't read the label. Fill in what you can."
+            bannerIsWarning = true
+            return
+        }
+        portion = reading.servingLabel ?? portion
+        carbs = String(Int(net.rounded()))
+        if reading.fiberMissing {
+            banner = "Couldn't find fiber, so this uses total carbs."
+            bannerIsWarning = true
+        } else {
+            banner = "Read from the label. Check the numbers before saving."
+            bannerIsWarning = false
         }
     }
 

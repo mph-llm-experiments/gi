@@ -64,3 +64,16 @@ func realModelReadsUSLabel() async throws {
     #expect(r.fiber == 4)
     #expect(r.netCarbs == 33)
 }
+
+/// The model can invent numbers for an image with no label on it; only trust it when Vision sees a carbohydrate line.
+@Test func modelIgnoredWhenNoLabelTextSeen() async {
+    let model = StubModel(reading: LabelParser.reading(total: 20, fiber: 2, format: .us, serving: "1 bar"))
+    let r = await LabelReader(recognizer: StubRecognizer(lines: ["Hello"]), model: model).read(LabelFixtures.image([]))
+    #expect(r.netCarbs == nil)
+}
+
+@Test(.enabled(if: ModelLabelExtractor().isAvailable))
+func realModelOnBlankImageReadsNothing() async {
+    let r = await LabelReader().read(LabelFixtures.image([]))
+    #expect(r.netCarbs == nil)
+}
