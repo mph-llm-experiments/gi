@@ -11,7 +11,8 @@ settings:
   base:
     SWIFT_VERSION: "6.0"
     TARGETED_DEVICE_FAMILY: "1"
-    CODE_SIGNING_ALLOWED: "NO"
+    DEVELOPMENT_TEAM: WS4GXJ44LJ
+    CODE_SIGN_STYLE: Automatic
 targets:
   GIBowl:
     type: application
