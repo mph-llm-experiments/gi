@@ -1,0 +1,1327 @@
+[
+  {
+    "slug": "apple-raw",
+    "name": "Apple, raw",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 171688,
+    "usdaDescription": "Apples, raw, with skin (Includes foods for USDA's Food Distribution Program)",
+    "studyRows": [
+      1078
+    ],
+    "portions": [
+      {
+        "label": "1 small",
+        "grams": 149,
+        "carbs": 17
+      },
+      {
+        "label": "1 medium",
+        "grams": 182,
+        "carbs": 20.8
+      },
+      {
+        "label": "1 large",
+        "grams": 223,
+        "carbs": 25.4
+      }
+    ]
+  },
+  {
+    "slug": "banana-raw",
+    "name": "Banana, raw",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 173944,
+    "usdaDescription": "Bananas, raw",
+    "studyRows": [
+      1088
+    ],
+    "portions": [
+      {
+        "label": "1 small",
+        "grams": 101,
+        "carbs": 20.4
+      },
+      {
+        "label": "1 medium",
+        "grams": 118,
+        "carbs": 23.9
+      },
+      {
+        "label": "1 large",
+        "grams": 136,
+        "carbs": 27.5
+      }
+    ]
+  },
+  {
+    "slug": "blueberries",
+    "name": "Blueberries",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 171711,
+    "usdaDescription": "Blueberries, raw",
+    "studyRows": [
+      1092
+    ],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 74,
+        "carbs": 8.9
+      },
+      {
+        "label": "1 cup",
+        "grams": 148,
+        "carbs": 17.9
+      }
+    ]
+  },
+  {
+    "slug": "strawberries",
+    "name": "Strawberries",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 167762,
+    "usdaDescription": "Strawberries, raw",
+    "studyRows": [
+      1174
+    ],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 72,
+        "carbs": 4.1
+      },
+      {
+        "label": "1 cup",
+        "grams": 144,
+        "carbs": 8.2
+      }
+    ]
+  },
+  {
+    "slug": "raspberries",
+    "name": "Raspberries",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 167755,
+    "usdaDescription": "Raspberries, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 62,
+        "carbs": 3.4
+      },
+      {
+        "label": "1 cup",
+        "grams": 123,
+        "carbs": 6.7
+      }
+    ]
+  },
+  {
+    "slug": "grapes",
+    "name": "Grapes",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 174683,
+    "usdaDescription": "Grapes, red or green (European type, such as Thompson seedless), raw",
+    "studyRows": [
+      1133,
+      1134,
+      1135
+    ],
+    "portions": [
+      {
+        "label": "10 grapes",
+        "grams": 49,
+        "carbs": 8.4
+      },
+      {
+        "label": "1 cup",
+        "grams": 151,
+        "carbs": 26
+      }
+    ]
+  },
+  {
+    "slug": "orange",
+    "name": "Orange",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 169097,
+    "usdaDescription": "Oranges, raw, all commercial varieties",
+    "studyRows": [
+      1150
+    ],
+    "portions": [
+      {
+        "label": "1 small",
+        "grams": 96,
+        "carbs": 9
+      },
+      {
+        "label": "1 medium",
+        "grams": 131,
+        "carbs": 12.2
+      },
+      {
+        "label": "1 large",
+        "grams": 184,
+        "carbs": 17.2
+      }
+    ]
+  },
+  {
+    "slug": "pear",
+    "name": "Pear",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 169118,
+    "usdaDescription": "Pears, raw",
+    "studyRows": [
+      1161
+    ],
+    "portions": [
+      {
+        "label": "1 small",
+        "grams": 148,
+        "carbs": 18
+      },
+      {
+        "label": "1 medium",
+        "grams": 178,
+        "carbs": 21.6
+      }
+    ]
+  },
+  {
+    "slug": "peach",
+    "name": "Peach",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 169928,
+    "usdaDescription": "Peaches, yellow, raw",
+    "studyRows": [
+      1155
+    ],
+    "portions": [
+      {
+        "label": "1 small",
+        "grams": 130,
+        "carbs": 10.5
+      },
+      {
+        "label": "1 medium",
+        "grams": 150,
+        "carbs": 12.1
+      },
+      {
+        "label": "1 large",
+        "grams": 175,
+        "carbs": 14.1
+      }
+    ]
+  },
+  {
+    "slug": "mango",
+    "name": "Mango",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 169910,
+    "usdaDescription": "Mangos, raw",
+    "studyRows": [
+      1142
+    ],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 83,
+        "carbs": 11.1
+      },
+      {
+        "label": "1 cup",
+        "grams": 165,
+        "carbs": 22.1
+      }
+    ]
+  },
+  {
+    "slug": "pineapple",
+    "name": "Pineapple",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 169124,
+    "usdaDescription": "Pineapple, raw, all varieties",
+    "studyRows": [
+      1164
+    ],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 83,
+        "carbs": 9.7
+      },
+      {
+        "label": "1 cup",
+        "grams": 165,
+        "carbs": 19.3
+      }
+    ]
+  },
+  {
+    "slug": "cherries",
+    "name": "Cherries, sweet",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 171719,
+    "usdaDescription": "Cherries, sweet, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "10 cherries",
+        "grams": 82,
+        "carbs": 11.4
+      },
+      {
+        "label": "1 cup",
+        "grams": 154,
+        "carbs": 21.4
+      }
+    ]
+  },
+  {
+    "slug": "kiwi",
+    "name": "Kiwi",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 168153,
+    "usdaDescription": "Kiwifruit, green, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 kiwi",
+        "grams": 69,
+        "carbs": 8
+      },
+      {
+        "label": "2 kiwis",
+        "grams": 138,
+        "carbs": 16.1
+      }
+    ]
+  },
+  {
+    "slug": "watermelon",
+    "name": "Watermelon",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 167765,
+    "usdaDescription": "Watermelon, raw",
+    "studyRows": [
+      1145,
+      1146,
+      1147
+    ],
+    "portions": [
+      {
+        "label": "1 cup",
+        "grams": 152,
+        "carbs": 10.9
+      },
+      {
+        "label": "1 wedge",
+        "grams": 286,
+        "carbs": 20.4
+      }
+    ]
+  },
+  {
+    "slug": "cantaloupe",
+    "name": "Cantaloupe",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 169092,
+    "usdaDescription": "Melons, cantaloupe, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 80,
+        "carbs": 5.8
+      },
+      {
+        "label": "1 cup",
+        "grams": 160,
+        "carbs": 11.6
+      }
+    ]
+  },
+  {
+    "slug": "cottage-cheese",
+    "name": "Cottage cheese",
+    "category": "DAIRY PRODUCTS AND ALTERNATIVES",
+    "carbSource": "usda",
+    "fdcId": 172182,
+    "usdaDescription": "Cheese, cottage, lowfat, 2% milkfat",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 113,
+        "carbs": 5.4
+      },
+      {
+        "label": "1 cup",
+        "grams": 226,
+        "carbs": 10.8
+      }
+    ]
+  },
+  {
+    "slug": "greek-yogurt-plain",
+    "name": "Greek yogurt, plain",
+    "category": "DAIRY PRODUCTS AND ALTERNATIVES",
+    "carbSource": "usda",
+    "fdcId": 170894,
+    "usdaDescription": "Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 113,
+        "carbs": 4.1
+      },
+      {
+        "label": "1 container",
+        "grams": 170,
+        "carbs": 6.1
+      }
+    ]
+  },
+  {
+    "slug": "yogurt-plain",
+    "name": "Yogurt, plain",
+    "category": "DAIRY PRODUCTS AND ALTERNATIVES",
+    "carbSource": "usda",
+    "fdcId": 171284,
+    "usdaDescription": "Yogurt, plain, whole milk",
+    "studyRows": [
+      1046
+    ],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 123,
+        "carbs": 5.7
+      },
+      {
+        "label": "1 cup",
+        "grams": 245,
+        "carbs": 11.4
+      }
+    ]
+  },
+  {
+    "slug": "milk-2-percent",
+    "name": "Milk, 2%",
+    "category": "DAIRY PRODUCTS AND ALTERNATIVES",
+    "carbSource": "usda",
+    "fdcId": 171267,
+    "usdaDescription": "Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",
+    "studyRows": [
+      942
+    ],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 122,
+        "carbs": 5.9
+      },
+      {
+        "label": "1 cup",
+        "grams": 244,
+        "carbs": 11.7
+      }
+    ]
+  },
+  {
+    "slug": "cheddar",
+    "name": "Cheddar cheese",
+    "category": "CHEESE",
+    "carbSource": "usda",
+    "fdcId": 173414,
+    "usdaDescription": "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 oz",
+        "grams": 28,
+        "carbs": 0.9
+      },
+      {
+        "label": "1 cup shredded",
+        "grams": 113,
+        "carbs": 3.8
+      }
+    ]
+  },
+  {
+    "slug": "mozzarella",
+    "name": "Mozzarella cheese",
+    "category": "CHEESE",
+    "carbSource": "usda",
+    "fdcId": 170845,
+    "usdaDescription": "Cheese, mozzarella, whole milk",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 oz",
+        "grams": 28,
+        "carbs": 0.7
+      },
+      {
+        "label": "1 cup shredded",
+        "grams": 112,
+        "carbs": 2.7
+      }
+    ]
+  },
+  {
+    "slug": "egg",
+    "name": "Egg",
+    "category": "MEAT, FISH AND EGGS",
+    "carbSource": "usda",
+    "fdcId": 171287,
+    "usdaDescription": "Egg, whole, raw, fresh",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 large egg",
+        "grams": 50,
+        "carbs": 0.4
+      },
+      {
+        "label": "2 large eggs",
+        "grams": 100,
+        "carbs": 0.7
+      }
+    ]
+  },
+  {
+    "slug": "chicken-breast",
+    "name": "Chicken breast, cooked",
+    "category": "MEAT, FISH AND EGGS",
+    "carbSource": "usda",
+    "fdcId": 171477,
+    "usdaDescription": "Chicken, broilers or fryers, breast, meat only, cooked, roasted",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "3 oz",
+        "grams": 85,
+        "carbs": 0
+      },
+      {
+        "label": "½ breast",
+        "grams": 86,
+        "carbs": 0
+      }
+    ]
+  },
+  {
+    "slug": "ground-beef",
+    "name": "Ground beef, cooked",
+    "category": "MEAT, FISH AND EGGS",
+    "carbSource": "usda",
+    "fdcId": 174032,
+    "usdaDescription": "Beef, ground, 85% lean meat / 15% fat, patty, cooked, broiled",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "3 oz",
+        "grams": 85,
+        "carbs": 0
+      },
+      {
+        "label": "1 patty",
+        "grams": 77,
+        "carbs": 0
+      }
+    ]
+  },
+  {
+    "slug": "salmon",
+    "name": "Salmon, cooked",
+    "category": "MEAT, FISH AND EGGS",
+    "carbSource": "usda",
+    "fdcId": 175168,
+    "usdaDescription": "Fish, salmon, Atlantic, farmed, cooked, dry heat",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "3 oz",
+        "grams": 85,
+        "carbs": 0
+      },
+      {
+        "label": "½ fillet",
+        "grams": 178,
+        "carbs": 0
+      }
+    ]
+  },
+  {
+    "slug": "tofu-firm",
+    "name": "Tofu, firm",
+    "category": "LEGUMES",
+    "carbSource": "usda",
+    "fdcId": 172475,
+    "usdaDescription": "Tofu, raw, firm, prepared with calcium sulfate",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 126,
+        "carbs": 0.6
+      },
+      {
+        "label": "¼ block",
+        "grams": 81,
+        "carbs": 0.4
+      }
+    ]
+  },
+  {
+    "slug": "white-rice-cooked",
+    "name": "White rice, cooked",
+    "category": "CEREAL GRAINS",
+    "carbSource": "usda",
+    "fdcId": 168878,
+    "usdaDescription": "Rice, white, long-grain, regular, enriched, cooked",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup cooked",
+        "grams": 79,
+        "carbs": 21.9
+      },
+      {
+        "label": "1 cup cooked",
+        "grams": 158,
+        "carbs": 43.9
+      }
+    ]
+  },
+  {
+    "slug": "brown-rice-cooked",
+    "name": "Brown rice, cooked",
+    "category": "CEREAL GRAINS",
+    "carbSource": "usda",
+    "fdcId": 169704,
+    "usdaDescription": "Rice, brown, long-grain, cooked (Includes foods for USDA's Food Distribution Program)",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup cooked",
+        "grams": 101,
+        "carbs": 24.2
+      },
+      {
+        "label": "1 cup cooked",
+        "grams": 202,
+        "carbs": 48.4
+      }
+    ]
+  },
+  {
+    "slug": "pasta-cooked",
+    "name": "Pasta, cooked",
+    "category": "PASTA AND NOODLES",
+    "carbSource": "usda",
+    "fdcId": 169737,
+    "usdaDescription": "Pasta, cooked, enriched, without added salt",
+    "studyRows": [
+      1466,
+      1467,
+      1468,
+      1469
+    ],
+    "portions": [
+      {
+        "label": "½ cup cooked",
+        "grams": 62,
+        "carbs": 18
+      },
+      {
+        "label": "1 cup cooked",
+        "grams": 124,
+        "carbs": 36
+      },
+      {
+        "label": "2 cups cooked",
+        "grams": 248,
+        "carbs": 72.1
+      }
+    ]
+  },
+  {
+    "slug": "oatmeal-cooked",
+    "name": "Oatmeal, cooked",
+    "category": "CEREAL GRAINS",
+    "carbSource": "usda",
+    "fdcId": 173905,
+    "usdaDescription": "Cereals, oats, regular and quick, unenriched, cooked with water (includes boiling and microwaving), without salt",
+    "studyRows": [
+      430,
+      431
+    ],
+    "portions": [
+      {
+        "label": "½ cup cooked",
+        "grams": 117,
+        "carbs": 12.1
+      },
+      {
+        "label": "1 cup cooked",
+        "grams": 234,
+        "carbs": 24.1
+      }
+    ]
+  },
+  {
+    "slug": "quinoa-cooked",
+    "name": "Quinoa, cooked",
+    "category": "CEREAL GRAINS",
+    "carbSource": "usda",
+    "fdcId": 168917,
+    "usdaDescription": "Quinoa, cooked",
+    "studyRows": [
+      568
+    ],
+    "portions": [
+      {
+        "label": "½ cup cooked",
+        "grams": 93,
+        "carbs": 17.2
+      },
+      {
+        "label": "1 cup cooked",
+        "grams": 185,
+        "carbs": 34.2
+      }
+    ]
+  },
+  {
+    "slug": "white-bread",
+    "name": "White bread",
+    "category": "BREADS",
+    "carbSource": "usda",
+    "fdcId": 174924,
+    "usdaDescription": "Bread, white, commercially prepared (includes soft bread crumbs)",
+    "studyRows": [
+      235,
+      236,
+      237,
+      238,
+      239,
+      240
+    ],
+    "portions": [
+      {
+        "label": "1 slice",
+        "grams": 29,
+        "carbs": 13.5
+      },
+      {
+        "label": "2 slices",
+        "grams": 58,
+        "carbs": 27.1
+      }
+    ]
+  },
+  {
+    "slug": "whole-wheat-bread",
+    "name": "Whole wheat bread",
+    "category": "BREADS",
+    "carbSource": "usda",
+    "fdcId": 172688,
+    "usdaDescription": "Bread, whole-wheat, commercially prepared",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 slice",
+        "grams": 32,
+        "carbs": 11.7
+      },
+      {
+        "label": "2 slices",
+        "grams": 64,
+        "carbs": 23.5
+      }
+    ]
+  },
+  {
+    "slug": "flour-tortilla",
+    "name": "Flour tortilla",
+    "category": "BREADS",
+    "carbSource": "usda",
+    "fdcId": 175037,
+    "usdaDescription": "Tortillas, ready-to-bake or -fry, flour, refrigerated",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 small (6\")",
+        "grams": 30,
+        "carbs": 13.8
+      },
+      {
+        "label": "1 large (10\")",
+        "grams": 72,
+        "carbs": 33
+      }
+    ]
+  },
+  {
+    "slug": "bagel-plain",
+    "name": "Bagel, plain",
+    "category": "BREADS",
+    "carbSource": "usda",
+    "fdcId": 175049,
+    "usdaDescription": "Bagels, plain, enriched, without calcium propionate (includes onion, poppy, sesame)",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 small",
+        "grams": 69,
+        "carbs": 35.3
+      },
+      {
+        "label": "1 medium",
+        "grams": 105,
+        "carbs": 53.7
+      }
+    ]
+  },
+  {
+    "slug": "baked-potato",
+    "name": "Baked potato",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 170093,
+    "usdaDescription": "Potatoes, baked, flesh and skin, without salt",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 small",
+        "grams": 138,
+        "carbs": 26.2
+      },
+      {
+        "label": "1 medium",
+        "grams": 173,
+        "carbs": 32.8
+      },
+      {
+        "label": "1 large",
+        "grams": 299,
+        "carbs": 56.7
+      }
+    ]
+  },
+  {
+    "slug": "sweet-potato-baked",
+    "name": "Sweet potato, baked",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 168483,
+    "usdaDescription": "Sweet potato, cooked, baked in skin, flesh, without salt",
+    "studyRows": [
+      1874
+    ],
+    "portions": [
+      {
+        "label": "1 small",
+        "grams": 60,
+        "carbs": 10.4
+      },
+      {
+        "label": "1 medium",
+        "grams": 114,
+        "carbs": 19.8
+      },
+      {
+        "label": "1 large",
+        "grams": 180,
+        "carbs": 31.3
+      }
+    ]
+  },
+  {
+    "slug": "corn-sweet",
+    "name": "Sweet corn",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 169999,
+    "usdaDescription": "Corn, sweet, yellow, cooked, boiled, drained, without salt",
+    "studyRows": [
+      1801,
+      1802
+    ],
+    "portions": [
+      {
+        "label": "1 ear",
+        "grams": 103,
+        "carbs": 19.1
+      },
+      {
+        "label": "½ cup",
+        "grams": 75,
+        "carbs": 13.9
+      },
+      {
+        "label": "1 cup",
+        "grams": 149,
+        "carbs": 27.7
+      }
+    ]
+  },
+  {
+    "slug": "broccoli",
+    "name": "Broccoli",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 170379,
+    "usdaDescription": "Broccoli, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 46,
+        "carbs": 1.9
+      },
+      {
+        "label": "1 cup",
+        "grams": 91,
+        "carbs": 3.7
+      }
+    ]
+  },
+  {
+    "slug": "carrots",
+    "name": "Carrots",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 170393,
+    "usdaDescription": "Carrots, raw",
+    "studyRows": [
+      1804
+    ],
+    "portions": [
+      {
+        "label": "1 medium",
+        "grams": 61,
+        "carbs": 4.1
+      },
+      {
+        "label": "1 cup chopped",
+        "grams": 128,
+        "carbs": 8.7
+      }
+    ]
+  },
+  {
+    "slug": "spinach",
+    "name": "Spinach, raw",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 168462,
+    "usdaDescription": "Spinach, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 cup",
+        "grams": 30,
+        "carbs": 0.4
+      },
+      {
+        "label": "2 cups",
+        "grams": 60,
+        "carbs": 0.9
+      }
+    ]
+  },
+  {
+    "slug": "lettuce",
+    "name": "Lettuce",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 169249,
+    "usdaDescription": "Lettuce, green leaf, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 cup",
+        "grams": 36,
+        "carbs": 0.6
+      },
+      {
+        "label": "2 cups",
+        "grams": 72,
+        "carbs": 1.1
+      }
+    ]
+  },
+  {
+    "slug": "tomato",
+    "name": "Tomato",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 170457,
+    "usdaDescription": "Tomatoes, red, ripe, raw, year round average",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 medium",
+        "grams": 123,
+        "carbs": 3.3
+      },
+      {
+        "label": "1 cup cherry tomatoes",
+        "grams": 149,
+        "carbs": 4
+      }
+    ]
+  },
+  {
+    "slug": "cucumber",
+    "name": "Cucumber",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 168409,
+    "usdaDescription": "Cucumber, with peel, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup slices",
+        "grams": 52,
+        "carbs": 1.6
+      },
+      {
+        "label": "1 cucumber",
+        "grams": 301,
+        "carbs": 9.4
+      }
+    ]
+  },
+  {
+    "slug": "bell-pepper",
+    "name": "Bell pepper",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 170108,
+    "usdaDescription": "Peppers, sweet, red, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup chopped",
+        "grams": 75,
+        "carbs": 2.9
+      },
+      {
+        "label": "1 pepper",
+        "grams": 164,
+        "carbs": 6.4
+      }
+    ]
+  },
+  {
+    "slug": "green-beans",
+    "name": "Green beans",
+    "category": "VEGETABLES",
+    "carbSource": "usda",
+    "fdcId": 169961,
+    "usdaDescription": "Beans, snap, green, raw",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 50,
+        "carbs": 2.1
+      },
+      {
+        "label": "1 cup",
+        "grams": 100,
+        "carbs": 4.3
+      }
+    ]
+  },
+  {
+    "slug": "black-beans",
+    "name": "Black beans, cooked",
+    "category": "LEGUMES",
+    "carbSource": "usda",
+    "fdcId": 173735,
+    "usdaDescription": "Beans, black, mature seeds, cooked, boiled, without salt",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 86,
+        "carbs": 12.9
+      },
+      {
+        "label": "1 cup",
+        "grams": 172,
+        "carbs": 25.8
+      }
+    ]
+  },
+  {
+    "slug": "chickpeas",
+    "name": "Chickpeas, cooked",
+    "category": "LEGUMES",
+    "carbSource": "usda",
+    "fdcId": 173757,
+    "usdaDescription": "Chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, without salt",
+    "studyRows": [
+      1285
+    ],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 82,
+        "carbs": 16.3
+      },
+      {
+        "label": "1 cup",
+        "grams": 164,
+        "carbs": 32.5
+      }
+    ]
+  },
+  {
+    "slug": "lentils",
+    "name": "Lentils, cooked",
+    "category": "LEGUMES",
+    "carbSource": "usda",
+    "fdcId": 172421,
+    "usdaDescription": "Lentils, mature seeds, cooked, boiled, without salt",
+    "studyRows": [
+      1291,
+      1292,
+      1293,
+      1294,
+      1295,
+      1296,
+      1297,
+      1298
+    ],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 99,
+        "carbs": 12.1
+      },
+      {
+        "label": "1 cup",
+        "grams": 198,
+        "carbs": 24.2
+      }
+    ]
+  },
+  {
+    "slug": "almonds",
+    "name": "Almonds",
+    "category": "NUTS",
+    "carbSource": "usda",
+    "fdcId": 170567,
+    "usdaDescription": "Nuts, almonds",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 oz (about 23)",
+        "grams": 28,
+        "carbs": 2.5
+      },
+      {
+        "label": "¼ cup",
+        "grams": 36,
+        "carbs": 3.3
+      }
+    ]
+  },
+  {
+    "slug": "peanuts",
+    "name": "Peanuts, roasted",
+    "category": "NUTS",
+    "carbSource": "usda",
+    "fdcId": 173806,
+    "usdaDescription": "Peanuts, all types, dry-roasted, without salt",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 oz",
+        "grams": 28,
+        "carbs": 3.6
+      },
+      {
+        "label": "¼ cup",
+        "grams": 37,
+        "carbs": 4.8
+      }
+    ]
+  },
+  {
+    "slug": "walnuts",
+    "name": "Walnuts",
+    "category": "NUTS",
+    "carbSource": "usda",
+    "fdcId": 170187,
+    "usdaDescription": "Nuts, walnuts, english",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 oz",
+        "grams": 28,
+        "carbs": 2
+      },
+      {
+        "label": "¼ cup",
+        "grams": 29,
+        "carbs": 2
+      }
+    ]
+  },
+  {
+    "slug": "peanut-butter",
+    "name": "Peanut butter",
+    "category": "NUTS",
+    "carbSource": "usda",
+    "fdcId": 172470,
+    "usdaDescription": "Peanut butter, smooth style, without salt",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 tbsp",
+        "grams": 16,
+        "carbs": 2.8
+      },
+      {
+        "label": "2 tbsp",
+        "grams": 32,
+        "carbs": 5.5
+      }
+    ]
+  },
+  {
+    "slug": "hummus",
+    "name": "Hummus",
+    "category": "LEGUMES",
+    "carbSource": "usda",
+    "fdcId": 174289,
+    "usdaDescription": "Hummus, commercial",
+    "studyRows": [
+      1288
+    ],
+    "portions": [
+      {
+        "label": "2 tbsp",
+        "grams": 30,
+        "carbs": 2.9
+      },
+      {
+        "label": "¼ cup",
+        "grams": 62,
+        "carbs": 5.9
+      }
+    ]
+  },
+  {
+    "slug": "raisins",
+    "name": "Raisins",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 168165,
+    "usdaDescription": "Raisins, dark, seedless (Includes foods for USDA's Food Distribution Program)",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 small box",
+        "grams": 43,
+        "carbs": 32.2
+      },
+      {
+        "label": "¼ cup",
+        "grams": 36,
+        "carbs": 26.9
+      }
+    ]
+  },
+  {
+    "slug": "orange-juice",
+    "name": "Orange juice",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 169098,
+    "usdaDescription": "Orange juice, raw (Includes foods for USDA's Food Distribution Program)",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 124,
+        "carbs": 12.6
+      },
+      {
+        "label": "1 cup",
+        "grams": 248,
+        "carbs": 25.3
+      }
+    ]
+  },
+  {
+    "slug": "apple-juice",
+    "name": "Apple juice",
+    "category": "FRUIT AND FRUIT PRODUCTS",
+    "carbSource": "usda",
+    "fdcId": 173933,
+    "usdaDescription": "Apple juice, canned or bottled, unsweetened, without added ascorbic acid",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "½ cup",
+        "grams": 124,
+        "carbs": 13.8
+      },
+      {
+        "label": "1 cup",
+        "grams": 248,
+        "carbs": 27.5
+      }
+    ]
+  },
+  {
+    "slug": "honey",
+    "name": "Honey",
+    "category": "SUGARS AND SYRUPS",
+    "carbSource": "usda",
+    "fdcId": 169640,
+    "usdaDescription": "Honey",
+    "studyRows": [],
+    "portions": [
+      {
+        "label": "1 tsp",
+        "grams": 7,
+        "carbs": 5.8
+      },
+      {
+        "label": "1 tbsp",
+        "grams": 21,
+        "carbs": 17.3
+      }
+    ]
+  }
+]
