@@ -19,10 +19,10 @@ extension FoodCatalog {
 @main
 struct GIBowlApp: App {
     private let catalog = FoodCatalog.bundled()
-    private let container: ModelContainer
+    private let container: ModelContainer?
 
     init() {
-        container = try! ModelContainer(for: Schema(schema))
+        container = try? makeModelContainer()
         #if DEBUG
         applyTestLaunchArguments()
         #endif
@@ -33,7 +33,7 @@ struct GIBowlApp: App {
     private func applyTestLaunchArguments() {
         let args = ProcessInfo.processInfo.arguments
         let defaults = UserDefaults.standard
-        if args.contains("-resetData") {
+        if args.contains("-resetData"), let container {
             try? container.mainContext.delete(model: BowlItem.self)
             try? container.mainContext.delete(model: CustomFood.self)
             try? container.mainContext.save()
@@ -51,13 +51,15 @@ struct GIBowlApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if let catalog {
+            if let catalog, let container {
                 MainView()
                     .environment(\.catalog, catalog)
+                    .modelContainer(container)
+            } else if container == nil {
+                ContentUnavailableView("Your saved foods couldn't be opened", systemImage: "exclamationmark.triangle", description: Text("Reinstall the app to start fresh."))
             } else {
                 ContentUnavailableView("Food data couldn't load", systemImage: "exclamationmark.triangle", description: Text("Reinstall the app."))
             }
         }
-        .modelContainer(container)
     }
 }

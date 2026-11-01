@@ -9,7 +9,7 @@ private struct MemoryStore {
     let store: BowlStore
 
     init() throws {
-        container = try ModelContainer(for: Schema(schema), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        container = try makeModelContainer(inMemory: true)
         store = BowlStore(context: container.mainContext)
     }
 }

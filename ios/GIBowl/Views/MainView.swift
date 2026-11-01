@@ -21,8 +21,10 @@ struct MainView: View {
     @State private var query = ""
     @State private var path: [SearchableFood] = []
 
-    private var search: FoodSearch {
-        FoodSearch(catalog.foods.map(SearchableFood.init) + customFoods.map(\.searchable))
+    @State private var search = FoodSearch([])
+
+    private func rebuildSearch() {
+        search = FoodSearch(catalog.foods.map(SearchableFood.init) + customFoods.map(\.searchable))
     }
 
     var body: some View {
@@ -35,7 +37,7 @@ struct MainView: View {
                     compact: !query.trimmed.isEmpty,
                     onSetNumbers: { showingTargets = true }
                 )
-                let results = search.search(query)
+                let results = query.trimmed.isEmpty ? [] : search.search(query)
                 ForEach(results) { food in
                     NavigationLink(value: food) {
                         FoodRow(food: food)
@@ -46,6 +48,8 @@ struct MainView: View {
                         .accessibilityIdentifier("own.add")
                 }
             }
+            .onAppear(perform: rebuildSearch)
+            .onChange(of: customFoods) { rebuildSearch() }
             .scrollContentBackground(.hidden)
             .background(Theme.paper)
             .navigationTitle("GI Bowl")

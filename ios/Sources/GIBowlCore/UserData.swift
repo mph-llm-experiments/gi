@@ -44,8 +44,6 @@ public final class BowlItem {
     }
 }
 
-public let schema: [any PersistentModel.Type] = [CustomFood.self, BowlItem.self]
-
 public enum BowlMode: String, CaseIterable, Sendable {
     case meal
     case snack
