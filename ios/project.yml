@@ -39,6 +39,8 @@ targets:
     platform: iOS
     sources:
       - path: GIBowlTests
+      - path: GIBowl/Tips.storekit
+        buildPhase: resources
     dependencies:
       - target: GIBowl
       - package: GIBowlCore
@@ -65,7 +67,10 @@ schemes:
     build:
       targets:
         GIBowl: all
+    run:
+      storeKitConfiguration: GIBowl/Tips.storekit
     test:
+      storeKitConfiguration: GIBowl/Tips.storekit
       targets:
         - GIBowlTests
         - GIBowlUITests

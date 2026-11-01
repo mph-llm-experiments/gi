@@ -20,6 +20,8 @@ extension FoodCatalog {
 struct GIBowlApp: App {
     private let catalog = FoodCatalog.bundled()
     private let container: ModelContainer?
+    @State private var tipJar = TipJar()
+    @State private var tipUpdates: Task<Void, Never>?
 
     init() {
         container = try? makeModelContainer()
@@ -54,7 +56,11 @@ struct GIBowlApp: App {
             if let catalog, let container {
                 MainView()
                     .environment(\.catalog, catalog)
+                    .environment(tipJar)
                     .modelContainer(container)
+                    .task {
+                        if tipUpdates == nil { tipUpdates = tipJar.listenForTransactions() }
+                    }
             } else if container == nil {
                 ContentUnavailableView("Your saved foods couldn't be opened", systemImage: "exclamationmark.triangle", description: Text("Reinstall the app to start fresh."))
             } else {
