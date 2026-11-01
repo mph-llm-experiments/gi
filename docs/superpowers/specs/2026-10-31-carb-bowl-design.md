@@ -91,7 +91,7 @@ Mike's physician said "carbs". Mike is fine counting **net carbs** (total carboh
 - Typed-in own foods ask for "carbs (net)", with a one-line hint: "total carbs minus fiber".
 - The About screen explains net carbs in one sentence.
 
-### Built-in everyday foods (Claude's recommendation, pending Mike's confirmation)
+### Built-in everyday foods (Claude's recommendation, confirmed by Mike)
 
 The study mostly leaves out low-carb staples: plain cottage cheese, eggs, meat, hard cheese, most vegetables, and nearly all nuts. Mike's own kitchen moment hits this gap first. The canonical foods in `portions.json` therefore include a hand-picked set of everyday foods, with net carbs from USDA FoodData Central (public domain). GI is shown only where a study row is linked. Each canonical food records its carb source (`usda` or `study`) so the data's provenance stays traceable for the licensing check.
 
