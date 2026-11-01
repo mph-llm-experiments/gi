@@ -230,4 +230,27 @@ final class KitchenFlowTests: XCTestCase {
         let carbs = app.textFields["own.carbs"].value as? String ?? ""
         XCTAssertTrue(carbs.isEmpty || carbs == "0", "carbs stay empty, got \(carbs)")
     }
+    func testTipJarShowsPricesQuietly() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData"]
+        app.launch()
+        XCTAssertFalse(app.staticTexts["Tip jar"].exists, "tips appear nowhere on the main screen")
+        app.buttons["Settings"].tap()
+        let small = app.buttons["tip.small"]
+        for _ in 0..<4 where !small.exists { app.swipeUp() }
+        XCTAssertTrue(small.waitForExistence(timeout: 10))
+        XCTAssertEqual(small.label, "$1.99")
+        small.tap()
+        // StoreKit's local purchase sheet runs in another process
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        for confirm in [app.buttons["Purchase"], springboard.buttons["Purchase"], app.buttons["Subscribe"], springboard.buttons["OK"], app.buttons["OK"]] where confirm.waitForExistence(timeout: 3) {
+            confirm.tap()
+            break
+        }
+        let thanks = app.staticTexts["tip.thanks"]
+        if !thanks.waitForExistence(timeout: 15) {
+            for _ in 0..<3 where !thanks.exists { app.swipeUp() }
+        }
+        XCTAssertTrue(thanks.exists)
+    }
 }

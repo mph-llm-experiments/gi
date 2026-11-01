@@ -20,6 +20,8 @@ struct SettingsView: View {
                     Text("No ads, no tracking. Nothing leaves your phone.")
                 }
 
+                TipJarSection()
+
                 Section("Where the numbers come from") {
                     Text("Everyday foods: USDA FoodData Central.")
                     VStack(alignment: .leading, spacing: 6) {
