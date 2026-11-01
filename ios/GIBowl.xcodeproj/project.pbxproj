@@ -415,7 +415,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.puddingtime.GIBowlUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mph.GIBowlUITests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GIBowl;
@@ -439,7 +439,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.puddingtime.GIBowl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mph.GIBowl;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,7 +455,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.puddingtime.GIBowlTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mph.GIBowlTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GIBowl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GIBowl";
@@ -472,7 +472,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.puddingtime.GIBowlTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mph.GIBowlTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GIBowl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GIBowl";
@@ -562,7 +562,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.puddingtime.GIBowl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mph.GIBowl;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -637,7 +637,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.puddingtime.GIBowlUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mph.GIBowlUITests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GIBowl;

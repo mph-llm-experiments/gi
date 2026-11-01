@@ -1,0 +1,10 @@
+# The factory's manifest for this app: `factory` (~/code/factory) reads it for build and release.
+slug: gi                  # dist folder and apps.json key
+name: "GI Bowl"
+blurb: "Glycemic index lookup"
+project: project.yml           # relative; xcodegen is run before every build
+platforms:
+  ios:
+    scheme: GIBowl
+    bundle_id: com.mph.GIBowl
+    iconset: GIBowl/Assets.xcassets/AppIcon.appiconset   # the icon on the install page

@@ -1,0 +1,5 @@
+build/
+# the .xcodeproj is committed (factory new --commit-xcodeproj)
+.claude/TASKS.md
+.DS_Store
+.swiftpm/
