@@ -8,3 +8,4 @@ ios/.build/
 ios/build/
 *.xcuserstate
 xcuserdata/
+.claude/settings.local.json
