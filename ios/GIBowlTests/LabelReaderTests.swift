@@ -94,3 +94,30 @@ func realModelOnBlankImageReadsNothing() async {
     let fromData = LabelImage.cgImage(from: data)
     #expect(fromData != nil && max(fromData!.width, fromData!.height) <= LabelImage.maxDimension)
 }
+
+struct StubClassifier: LabelImageClassifier {
+    let labels: [String]
+    func labels(in image: CGImage) async throws -> [String] { labels }
+}
+
+@Test func plateLooksLikeFood() async {
+    let r = await LabelReader(recognizer: StubRecognizer(lines: ["Oh hi"]), model: UnavailableModel(), classifier: StubClassifier(labels: ["food", "salad"])).read(LabelFixtures.image([]))
+    #expect(r.notALabel == .food)
+    #expect(r.netCarbs == nil)
+}
+
+@Test func nonFoodNonLabelIsOther() async {
+    let r = await LabelReader(recognizer: StubRecognizer(lines: []), model: UnavailableModel(), classifier: StubClassifier(labels: ["document", "text"])).read(LabelFixtures.image([]))
+    #expect(r.notALabel == .other)
+}
+
+@Test func labelsAreNotFlagged() async {
+    let r = await LabelReader(recognizer: StubRecognizer(lines: ["Total Carbohydrate 10g", "Dietary Fiber 2g"]), model: UnavailableModel(), classifier: StubClassifier(labels: ["food"])).read(LabelFixtures.image([]))
+    #expect(r.notALabel == nil)
+    #expect(r.netCarbs == 8)
+}
+
+@Test func realClassifierOnBlankImageIsNotFood() async {
+    let r = await LabelReader().read(LabelFixtures.image([]))
+    #expect(r.notALabel == .other)
+}

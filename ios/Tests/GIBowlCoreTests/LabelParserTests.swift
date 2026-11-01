@@ -74,3 +74,21 @@ import Testing
     let named = LabelFormFill(reading: LabelParser.reading(total: 10, fiber: 1, format: .us, serving: nil, productName: "Granola"), currentName: "")
     #expect(named.name == "Granola")
 }
+
+@Test func recognizesLabelText() {
+    #expect(LabelParser.looksLikeLabel(lines: ["Nutrition Facts", "Serving size 1 cup"]))
+    #expect(LabelParser.looksLikeLabel(lines: ["Typical values", "Carbohydrate 12g"]))
+    #expect(!LabelParser.looksLikeLabel(lines: []))
+    #expect(!LabelParser.looksLikeLabel(lines: ["CHEDDAR", "Best before 12/11"]))
+}
+
+@Test func notALabelBannersExplainTheMistake() {
+    var plate = LabelReading.empty
+    plate.notALabel = .food
+    let food = LabelFormFill(reading: plate, currentName: "")
+    #expect(food.banner == "This looks like a photo of food. GI Bowl reads the nutrition label on the package, so photograph the panel that lists carbohydrate.")
+    #expect(food.isWarning && food.carbs == "")
+    var other = LabelReading.empty
+    other.notALabel = .other
+    #expect(LabelFormFill(reading: other, currentName: "").banner == "This doesn't look like a nutrition label. Photograph the panel that lists carbohydrate.")
+}

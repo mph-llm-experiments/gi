@@ -18,6 +18,14 @@ public struct LabelReading: Equatable, Sendable {
     /// The numbers don't add up (fiber above total), so fiber was ignored.
     public var unreliable: Bool
     public var productName: String?
+    /// Set when the photo doesn't look like a nutrition label at all.
+    public var notALabel: NotALabel?
+
+    public enum NotALabel: Sendable {
+        /// The photo looks like food (someone photographed their plate).
+        case food
+        case other
+    }
 
     public static let empty = LabelReading(format: .unknown, fiberMissing: false, unreliable: false)
 
@@ -34,6 +42,16 @@ public struct LabelReading: Equatable, Sendable {
 }
 
 public enum LabelParser {
+    /// Words found on nearly every nutrition label, US or EU.
+    static let labelWords = ["nutrition", "carbohydrate", "carb", "serving", "calories", "energy", "kcal"]
+
+    public static func looksLikeLabel(lines: [String]) -> Bool {
+        lines.contains { line in
+            let l = line.lowercased()
+            return labelWords.contains { l.contains($0) }
+        }
+    }
+
     /// Net carbs from a total and fiber. US totals include fiber; EU carbohydrate already excludes it.
     public static func reading(total: Double?, fiber: Double?, format: LabelReading.Format, serving: String?, productName: String? = nil) -> LabelReading {
         var r = LabelReading(servingLabel: serving, totalCarbs: total, fiber: fiber, format: format, fiberMissing: false, unreliable: false, productName: productName)
@@ -161,7 +179,12 @@ public struct LabelFormFill: Equatable, Sendable {
         name = trimmed.isEmpty ? (reading.productName ?? currentName) : currentName
         portion = reading.servingLabel ?? ""
         carbs = reading.netCarbs.map { String(Int($0.rounded())) } ?? ""
-        if reading.netCarbs == nil {
+        if let notALabel = reading.notALabel {
+            banner = notALabel == .food
+                ? "This looks like a photo of food. GI Bowl reads the nutrition label on the package, so photograph the panel that lists carbohydrate."
+                : "This doesn't look like a nutrition label. Photograph the panel that lists carbohydrate."
+            isWarning = true
+        } else if reading.netCarbs == nil {
             banner = "Couldn't read the label. Fill in what you can."
             isWarning = true
         } else if reading.fiberMissing {

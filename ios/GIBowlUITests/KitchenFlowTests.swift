@@ -226,7 +226,7 @@ final class KitchenFlowTests: XCTestCase {
         app.launch()
         search(app, "mystery bar")
         app.buttons["own.add"].tap()
-        XCTAssertEqual(readSampleLabel(app), "Couldn't read the label. Fill in what you can.")
+        XCTAssertEqual(readSampleLabel(app), "This doesn't look like a nutrition label. Photograph the panel that lists carbohydrate.")
         let carbs = app.textFields["own.carbs"].value as? String ?? ""
         XCTAssertTrue(carbs.isEmpty || carbs == "0", "carbs stay empty, got \(carbs)")
     }
