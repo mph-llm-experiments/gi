@@ -18,7 +18,7 @@ GI Bowl ships through the factory (`~/code/factory`) to https://dist.puddingtime
 
 **The iOS install fails with "unable to install" (device not registered).** The device's UDID is not in the team's ad-hoc profile. Register the device in the developer portal, then release again so the IPA is signed with the refreshed profile. See the papercut ledger in the `apple-factory` skill.
 
-**A Mac release stops on a profile (expired, missing, or the wrong certificate).** Run `factory profiles --check` to see which, then `factory profiles` to fetch fresh Developer ID profiles. `factory doctor` reports the same thing.
+**A Mac release stops on a profile (expired, missing, or the wrong certificate).** Run `factory profiles --check` to inspect them; `factory profiles --yes` creates fresh Developer ID profiles (a gated write to the developer account: get the go-ahead first). `factory doctor` reports the same thing.
 
 **The release says the build is "already published".** That version and build number are already on dist. Release again without `--no-bump` (the default bumps the build), or with `--version X.Y.Z`.
 
