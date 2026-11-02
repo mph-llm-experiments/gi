@@ -38,7 +38,7 @@ struct HowItWorksView: View {
                     heading("Where the numbers come from")
                     paragraph("Everyday foods: USDA FoodData Central, which is in the public domain.")
                     paragraph("GI values: Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE, Goletzke J. International tables of glycemic index and glycemic load values 2021. American Journal of Clinical Nutrition.")
-                    Link("doi.org/10.1093/ajcn/nqac031", destination: URL(string: "https://doi.org/10.1093/ajcn/nqac031")!)
+                    Link("doi.org/10.1093/ajcn/nqab233", destination: URL(string: "https://doi.org/10.1093/ajcn/nqab233")!)
                         .font(.subheadline)
                         .fixedSize(horizontal: false, vertical: true)
                     paragraph("Each food's screen says which source it came from.")
