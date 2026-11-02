@@ -17,13 +17,13 @@
 		601F86356C4FA7AB478EA979 /* LabelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF1C0B220EB7648AEA7B5E4 /* LabelImage.swift */; };
 		67403DC823E56F306673030A /* TipJarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C28D266B7B5FDF0ACBBF49 /* TipJarSection.swift */; };
 		7176EA08E414C2CF3FBFEEBC /* TipJarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9E5A1CDF84539ABF3AB50 /* TipJarTests.swift */; };
+		728CD51A71221545E2C98274 /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = 37E5BE0265F80D3EC101E5FC /* foods.json */; };
 		7D07D2D839A2BEE3E6B79552 /* GIBowlCore in Frameworks */ = {isa = PBXBuildFile; productRef = 96C7B4BB94D9373A0A6CD1F4 /* GIBowlCore */; };
 		9AA2D1B6C8DF3F784BD4E506 /* HowItWorksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4482AEAC5F7F91FDB85593 /* HowItWorksView.swift */; };
 		9AE9A38F19D7D3599E08C9EC /* TargetsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A66C3D56281DA6B8113EDB8 /* TargetsSheet.swift */; };
 		9B49FE09B09338460B23C969 /* PortionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E42AE169BC662AC7A1B03BD /* PortionButton.swift */; };
 		9CFEEDA538725367794B3B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C3EB9C411D5046327746907 /* Assets.xcassets */; };
 		A42068D08925CBD2E240844A /* LabelFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4388250212628AE6C557 /* LabelFixtures.swift */; };
-		A49FAD5C92C27A2386EA12B6 /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5A84AB7E860D617AB372D /* foods.json */; };
 		A62F5EA8DB867EC086A43069 /* TipJar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69668EB68EFD2326DFB359DB /* TipJar.swift */; };
 		AA0753AA317352A8FDC673AA /* Tips.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 193424A7A8FE2212208B3CCE /* Tips.storekit */; };
 		AB1509CA25E55CDAD6AF368D /* Tips.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 193424A7A8FE2212208B3CCE /* Tips.storekit */; };
@@ -61,7 +61,7 @@
 		1F236AE939C98E354F7574C2 /* KitchenFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenFlowTests.swift; sourceTree = "<group>"; };
 		20B66A570991E49C0F8391A5 /* LabelCaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCaptureButton.swift; sourceTree = "<group>"; };
 		2E870810FBF7F08366002D97 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		2EC5A84AB7E860D617AB372D /* foods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foods.json; sourceTree = "<group>"; };
+		37E5BE0265F80D3EC101E5FC /* foods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foods.json; sourceTree = "<group>"; };
 		3BA6CABE777FF24D133BC941 /* BowlCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlCard.swift; sourceTree = "<group>"; };
 		3EF1C0B220EB7648AEA7B5E4 /* LabelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelImage.swift; sourceTree = "<group>"; };
 		4A66C3D56281DA6B8113EDB8 /* TargetsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetsSheet.swift; sourceTree = "<group>"; };
@@ -104,14 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BD5BA8E49DBE795FF126E1B /* public */ = {
-			isa = PBXGroup;
-			children = (
-				2EC5A84AB7E860D617AB372D /* foods.json */,
-			);
-			path = public;
-			sourceTree = "<group>";
-		};
 		105C4167408E783B686D7C9E /* GIBowl */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,15 +154,6 @@
 			path = GIBowlUITests;
 			sourceTree = "<group>";
 		};
-		2F1513C3D3A1B757455C1326 /* gi-polish */ = {
-			isa = PBXGroup;
-			children = (
-				0BD5BA8E49DBE795FF126E1B /* public */,
-			);
-			name = "gi-polish";
-			path = ..;
-			sourceTree = "<group>";
-		};
 		4DF5CB38D6F89CBFD91199AB /* Tips */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +161,14 @@
 				62C28D266B7B5FDF0ACBBF49 /* TipJarSection.swift */,
 			);
 			path = Tips;
+			sourceTree = "<group>";
+		};
+		77E5DD35265A6ABCD26FD66B /* public */ = {
+			isa = PBXGroup;
+			children = (
+				37E5BE0265F80D3EC101E5FC /* foods.json */,
+			);
+			path = public;
 			sourceTree = "<group>";
 		};
 		7A274ED5D4E0DA18AA81AD07 /* Products */ = {
@@ -188,6 +179,15 @@
 				665C81AEA9692EF559EA5415 /* GIBowlUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AD8B7473B11B71EF4A0AD6D5 /* gi */ = {
+			isa = PBXGroup;
+			children = (
+				77E5DD35265A6ABCD26FD66B /* public */,
+			);
+			name = gi;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BD884FB7CEB1E97E899DCD9F /* Packages */ = {
@@ -210,7 +210,7 @@
 		E3102CF1CC7481F1D2BB09E1 = {
 			isa = PBXGroup;
 			children = (
-				2F1513C3D3A1B757455C1326 /* gi-polish */,
+				AD8B7473B11B71EF4A0AD6D5 /* gi */,
 				105C4167408E783B686D7C9E /* GIBowl */,
 				D4F7EE7C2199A0A2EEC5E4D6 /* GIBowlTests */,
 				24A32EA7DB66F6AB4D4B1995 /* GIBowlUITests */,
@@ -344,7 +344,7 @@
 			files = (
 				9CFEEDA538725367794B3B2C /* Assets.xcassets in Resources */,
 				AA0753AA317352A8FDC673AA /* Tips.storekit in Resources */,
-				A49FAD5C92C27A2386EA12B6 /* foods.json in Resources */,
+				728CD51A71221545E2C98274 /* foods.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +432,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "GI Bowl";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Photograph a nutrition label to add a food.";
@@ -555,7 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "GI Bowl";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Photograph a nutrition label to add a food.";
