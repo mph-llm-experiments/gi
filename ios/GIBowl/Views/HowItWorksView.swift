@@ -8,7 +8,8 @@ struct HowItWorksView: View {
             VStack(alignment: .leading, spacing: 28) {
                 section("The bowl", id: "howItWorks",
                         "Pick Meal or Snack, add what's going in, and the bowl says where you stand against your number: Room to spare, Close to your number, or Over your number.",
-                        "When the bowl's eaten, start over. Nothing is tracked past this meal.")
+                        "When the bowl's eaten, start over. Nothing is tracked past this meal.",
+                        "GI Bowl is a rough guide, not medical advice. Your numbers come from your doctor; check with them before changing how you eat.")
 
                 section("About 15g",
                         "Every amount is rounded to the nearest 5 grams on purpose. Portions are eyeballed, labels are approximate, and a number like 23.4g would suggest a precision nobody has.",
