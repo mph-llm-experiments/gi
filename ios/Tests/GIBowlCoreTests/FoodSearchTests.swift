@@ -40,3 +40,15 @@ private let search = FoodSearch(catalog.foods.map(SearchableFood.init) + [fage])
     }
     #expect(Date().timeIntervalSince(start) < 4)
 }
+
+@Test func provenanceReadsFromTheFood() throws {
+    let usda = SearchableFood(food: try #require(catalog["c:cottage-cheese"]))
+    #expect(usda.provenance == "USDA FoodData Central · #172182")
+    let study = SearchableFood(food: try #require(catalog["s1078"]))
+    #expect(study.provenance == "GI study 2021 · row 1078")
+    #expect(fage.provenance == "Added by you")
+    #expect(study.hasNoCarbData == false)
+    let noCarbs = try #require(catalog.foods.first { $0.kind == .study && $0.portions.isEmpty })
+    #expect(SearchableFood(food: noCarbs).hasNoCarbData)
+    #expect(fage.hasNoCarbData == false)
+}

@@ -14,6 +14,11 @@ public struct SearchableFood: Identifiable, Hashable, Sendable {
     public let gi: Int?
     public let gl: Int?
     public let portions: [Portion]
+    /// Where this food's numbers came from, for the detail screen's footnote.
+    public let provenance: String?
+
+    /// A study row the app can't price: it was never weighed as eaten.
+    public var hasNoCarbData: Bool { source == .dataset && portions.isEmpty }
 
     public init(food: Food) {
         id = food.id
@@ -24,6 +29,15 @@ public struct SearchableFood: Identifiable, Hashable, Sendable {
         gi = food.gi
         gl = food.gl
         portions = food.portions
+        provenance = Self.provenance(for: food)
+    }
+
+    private static func provenance(for food: Food) -> String? {
+        if let fdcId = food.fdcId { return "USDA FoodData Central · #\(fdcId)" }
+        if food.kind == .study, food.id.hasPrefix("s"), let row = Int(food.id.dropFirst()) {
+            return "GI study 2021 · row \(row)"
+        }
+        return nil
     }
 
     public init(customID: String, name: String, gi: Int?, portions: [Portion]) {
@@ -35,5 +49,6 @@ public struct SearchableFood: Identifiable, Hashable, Sendable {
         self.gi = gi
         gl = nil
         self.portions = portions
+        provenance = "Added by you"
     }
 }
