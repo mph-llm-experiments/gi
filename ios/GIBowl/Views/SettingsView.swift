@@ -21,8 +21,6 @@ struct SettingsView: View {
                     NavigationLink("How GI Bowl works") { HowItWorksView() }
                 }
 
-                TipJarSection()
-
                 Section("Where the numbers come from") {
                     Text("Everyday foods: USDA FoodData Central.")
                     VStack(alignment: .leading, spacing: 6) {

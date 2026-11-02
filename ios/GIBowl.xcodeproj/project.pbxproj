@@ -15,8 +15,6 @@
 		4660ECB152D787DD672C7A20 /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612E42F85B86C19443D5A25 /* FoodDetailView.swift */; };
 		51D48A5B3D7771E068DEA81A /* KitchenFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F236AE939C98E354F7574C2 /* KitchenFlowTests.swift */; };
 		601F86356C4FA7AB478EA979 /* LabelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF1C0B220EB7648AEA7B5E4 /* LabelImage.swift */; };
-		67403DC823E56F306673030A /* TipJarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C28D266B7B5FDF0ACBBF49 /* TipJarSection.swift */; };
-		7176EA08E414C2CF3FBFEEBC /* TipJarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9E5A1CDF84539ABF3AB50 /* TipJarTests.swift */; };
 		728CD51A71221545E2C98274 /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = 37E5BE0265F80D3EC101E5FC /* foods.json */; };
 		7D07D2D839A2BEE3E6B79552 /* GIBowlCore in Frameworks */ = {isa = PBXBuildFile; productRef = 96C7B4BB94D9373A0A6CD1F4 /* GIBowlCore */; };
 		9AA2D1B6C8DF3F784BD4E506 /* HowItWorksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4482AEAC5F7F91FDB85593 /* HowItWorksView.swift */; };
@@ -24,9 +22,6 @@
 		9B49FE09B09338460B23C969 /* PortionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E42AE169BC662AC7A1B03BD /* PortionButton.swift */; };
 		9CFEEDA538725367794B3B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C3EB9C411D5046327746907 /* Assets.xcassets */; };
 		A42068D08925CBD2E240844A /* LabelFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4388250212628AE6C557 /* LabelFixtures.swift */; };
-		A62F5EA8DB867EC086A43069 /* TipJar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69668EB68EFD2326DFB359DB /* TipJar.swift */; };
-		AA0753AA317352A8FDC673AA /* Tips.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 193424A7A8FE2212208B3CCE /* Tips.storekit */; };
-		AB1509CA25E55CDAD6AF368D /* Tips.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 193424A7A8FE2212208B3CCE /* Tips.storekit */; };
 		AB4AC4F253A8C47AD8509316 /* LabelReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B98AF2A8663EDA0FD7EF7 /* LabelReader.swift */; };
 		ADA0BF6062DA17888CBA00A9 /* LabelReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1F92D97A141681A331863 /* LabelReaderTests.swift */; };
 		AF3F905BA47B15F9BE6D07B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D937535B2DF02185CF8C2837 /* SettingsView.swift */; };
@@ -54,10 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02C9E5A1CDF84539ABF3AB50 /* TipJarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarTests.swift; sourceTree = "<group>"; };
 		0AB1F92D97A141681A331863 /* LabelReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelReaderTests.swift; sourceTree = "<group>"; };
 		18E2BF3C04A6E87352E40C6D /* GIBowlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIBowlApp.swift; sourceTree = "<group>"; };
-		193424A7A8FE2212208B3CCE /* Tips.storekit */ = {isa = PBXFileReference; path = Tips.storekit; sourceTree = "<group>"; };
 		1F236AE939C98E354F7574C2 /* KitchenFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenFlowTests.swift; sourceTree = "<group>"; };
 		20B66A570991E49C0F8391A5 /* LabelCaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCaptureButton.swift; sourceTree = "<group>"; };
 		2E870810FBF7F08366002D97 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -67,9 +60,7 @@
 		4A66C3D56281DA6B8113EDB8 /* TargetsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetsSheet.swift; sourceTree = "<group>"; };
 		4E42AE169BC662AC7A1B03BD /* PortionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionButton.swift; sourceTree = "<group>"; };
 		621D6D58268DF54C9D070C70 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		62C28D266B7B5FDF0ACBBF49 /* TipJarSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarSection.swift; sourceTree = "<group>"; };
 		665C81AEA9692EF559EA5415 /* GIBowlUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GIBowlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69668EB68EFD2326DFB359DB /* TipJar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJar.swift; sourceTree = "<group>"; };
 		6F9D6B166338FC092F949E9B /* GIBowlTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GIBowlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3EB9C411D5046327746907 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F0B98AF2A8663EDA0FD7EF7 /* LabelReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelReader.swift; sourceTree = "<group>"; };
@@ -110,9 +101,7 @@
 				7C3EB9C411D5046327746907 /* Assets.xcassets */,
 				18E2BF3C04A6E87352E40C6D /* GIBowlApp.swift */,
 				2E870810FBF7F08366002D97 /* Theme.swift */,
-				193424A7A8FE2212208B3CCE /* Tips.storekit */,
 				1B67177AC814DB48B7BDD845 /* Label */,
-				4DF5CB38D6F89CBFD91199AB /* Tips */,
 				165904C1B35A669BD9AEEE78 /* Views */,
 			);
 			path = GIBowl;
@@ -154,15 +143,6 @@
 			path = GIBowlUITests;
 			sourceTree = "<group>";
 		};
-		4DF5CB38D6F89CBFD91199AB /* Tips */ = {
-			isa = PBXGroup;
-			children = (
-				69668EB68EFD2326DFB359DB /* TipJar.swift */,
-				62C28D266B7B5FDF0ACBBF49 /* TipJarSection.swift */,
-			);
-			path = Tips;
-			sourceTree = "<group>";
-		};
 		77E5DD35265A6ABCD26FD66B /* public */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				0AB1F92D97A141681A331863 /* LabelReaderTests.swift */,
-				02C9E5A1CDF84539ABF3AB50 /* TipJarTests.swift */,
 			);
 			path = GIBowlTests;
 			sourceTree = "<group>";
@@ -227,7 +206,6 @@
 			buildConfigurationList = A9E700DFC2453CD768E6E2FE /* Build configuration list for PBXNativeTarget "GIBowlTests" */;
 			buildPhases = (
 				52CCE9ACA9DE49BC5712F064 /* Sources */,
-				6AC2602A0D56E823D40D1AD0 /* Resources */,
 				8064198E592C92FE6564E3BA /* Frameworks */,
 			);
 			buildRules = (
@@ -330,20 +308,11 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6AC2602A0D56E823D40D1AD0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB1509CA25E55CDAD6AF368D /* Tips.storekit in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E1F086BABFD2DA4C0F373197 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9CFEEDA538725367794B3B2C /* Assets.xcassets in Resources */,
-				AA0753AA317352A8FDC673AA /* Tips.storekit in Resources */,
 				728CD51A71221545E2C98274 /* foods.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +325,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADA0BF6062DA17888CBA00A9 /* LabelReaderTests.swift in Sources */,
-				7176EA08E414C2CF3FBFEEBC /* TipJarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,8 +356,6 @@
 				AF3F905BA47B15F9BE6D07B9 /* SettingsView.swift in Sources */,
 				9AE9A38F19D7D3599E08C9EC /* TargetsSheet.swift in Sources */,
 				E47B37C6CB937E81F4728595 /* Theme.swift in Sources */,
-				A62F5EA8DB867EC086A43069 /* TipJar.swift in Sources */,
-				67403DC823E56F306673030A /* TipJarSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
