@@ -52,3 +52,9 @@ private let search = FoodSearch(catalog.foods.map(SearchableFood.init) + [fage])
     #expect(SearchableFood(food: noCarbs).hasNoCarbData)
     #expect(fage.hasNoCarbData == false)
 }
+
+@Test func provenanceIgnoresOddStudyIDs() throws {
+    let data = Data(#"{"version":2,"foods":[{"id":"s+12","kind":"study","name":"A","category":"X","portions":[]},{"id":"s-5","kind":"study","name":"B","category":"X","portions":[]},{"id":"sx","kind":"study","name":"C","category":"X","portions":[]}]}"#.utf8)
+    let odd = try FoodCatalog(data: data)
+    for food in odd.foods { #expect(SearchableFood(food: food).provenance == nil, Comment(rawValue: food.id)) }
+}

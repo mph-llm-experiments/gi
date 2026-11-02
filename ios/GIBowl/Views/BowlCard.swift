@@ -12,15 +12,17 @@ struct BowlSection: View {
     let onSetNumbers: () -> Void
 
     @Environment(\.modelContext) private var context
+    @Environment(\.colorScheme) private var colorScheme
 
     private var total: Double { items.reduce(0) { $0 + $1.carbs } }
     private var target: Int? { targets.target(for: mode) }
     private var state: BowlState? { target.flatMap { stateFor(total: total, target: $0) } }
+    private var wash: Color? { Theme.wash(state, dark: colorScheme == .dark) }
 
     var body: some View {
         if compact {
             if !items.isEmpty {
-                Section { status.listRowBackground(Theme.wash(state)) }
+                Section { status.listRowBackground(wash) }
             }
         } else if items.isEmpty {
             Section {
@@ -42,11 +44,11 @@ struct BowlSection: View {
             Section {
                 modePicker
                     .listRowSeparator(.hidden)
-                    .listRowBackground(Theme.wash(state))
+                    .listRowBackground(wash)
 
                 status
                     .listRowSeparator(.hidden)
-                    .listRowBackground(Theme.wash(state))
+                    .listRowBackground(wash)
 
                 ForEach(items) { item in
                     VStack(alignment: .leading, spacing: 2) {
@@ -56,7 +58,7 @@ struct BowlSection: View {
                     }
                     .font(.subheadline)
                     .accessibilityElement(children: .combine)
-                    .listRowBackground(Theme.wash(state))
+                    .listRowBackground(wash)
                 }
                 .onDelete { offsets in
                     let store = BowlStore(context: context)
@@ -67,13 +69,13 @@ struct BowlSection: View {
                     BowlStore(context: context).clear()
                 }
                 .font(.subheadline)
-                .tint(Theme.textColor(.over))
-                .listRowBackground(Theme.wash(state))
+                .listRowBackground(wash)
             } footer: {
                 if let target {
                     Text("Your \(mode.rawValue) number: \(target)g")
                 }
             }
+            .animation(.default, value: state)
         }
     }
 

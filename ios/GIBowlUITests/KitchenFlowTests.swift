@@ -181,6 +181,7 @@ final class KitchenFlowTests: XCTestCase {
         XCTAssertTrue(app.textFields["targets.meal"].waitForExistence(timeout: 5))
         app.buttons["Cancel"].tap()
         XCTAssertEqual(bowlState(app), "About 5g so far")
+        snapshot("bowl-no-numbers")
         open(app, "banana", "Banana, raw")
         app.buttons["portion.1 small"].tap()
         XCTAssertFalse(app.textFields["targets.meal"].waitForExistence(timeout: 2), "asks only once")
@@ -292,5 +293,11 @@ final class KitchenFlowTests: XCTestCase {
         app.buttons["How it works"].firstMatch.tap()
         XCTAssertTrue(app.staticTexts["howItWorks"].waitForExistence(timeout: 5))
         snapshot("how-it-works-xxl")
+        // The GI band ranges must stay whole at this size, not wrap to "56–" / "69"
+        let medium = app.staticTexts["56–69"]
+        for _ in 0..<14 where !(medium.exists && medium.isHittable) { app.swipeUp() }
+        XCTAssertTrue(medium.exists)
+        XCTAssertTrue(app.staticTexts["0–55"].exists && app.staticTexts["70+"].exists)
+        snapshot("how-it-works-xxl-bands")
     }
 }

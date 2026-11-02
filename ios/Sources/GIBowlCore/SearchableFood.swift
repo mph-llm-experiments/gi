@@ -34,7 +34,8 @@ public struct SearchableFood: Identifiable, Hashable, Sendable {
 
     private static func provenance(for food: Food) -> String? {
         if let fdcId = food.fdcId { return "USDA FoodData Central · #\(fdcId)" }
-        if food.kind == .study, food.id.hasPrefix("s"), let row = Int(food.id.dropFirst()) {
+        let digits = food.id.dropFirst()
+        if food.kind == .study, food.id.hasPrefix("s"), !digits.isEmpty, digits.allSatisfy(\.isNumber), let row = Int(digits) {
             return "GI study 2021 · row \(row)"
         }
         return nil

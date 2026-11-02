@@ -1,6 +1,5 @@
 import GIBowlCore
 import SwiftUI
-import UIKit
 
 enum Theme {
     static func color(_ state: BowlState?) -> Color {
@@ -23,16 +22,10 @@ enum Theme {
     }
 
     /// A faint tint of the state colour behind the bowl, stronger in the dark where it reads fainter.
-    static func wash(_ state: BowlState?) -> Color {
-        guard let state else { return .clear }
-        let name = switch state {
-        case .roomToSpare: "StateRoom"
-        case .close: "StateClose"
-        case .over: "StateOver"
-        }
-        return Color(uiColor: UIColor { traits in
-            UIColor(named: name)!.withAlphaComponent(traits.userInterfaceStyle == .dark ? 0.16 : 0.10)
-        })
+    /// Nil (no number set yet) keeps the List's own row background, so the card doesn't vanish.
+    static func wash(_ state: BowlState?, dark: Bool) -> Color? {
+        guard let state else { return nil }
+        return color(state).opacity(dark ? 0.16 : 0.10)
     }
 
     static let paper = Color("Paper")

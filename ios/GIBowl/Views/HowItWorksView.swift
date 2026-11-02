@@ -20,10 +20,10 @@ struct HowItWorksView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     heading("GI and GL")
                     paragraph("The glycemic index ranks foods by how quickly they raise blood sugar, against pure glucose at 100.")
-                    HStack(spacing: 18) {
-                        band(.low, "0–55")
-                        band(.medium, "56–69")
-                        band(.high, "70+")
+                    // Side by side where they fit; stacked at accessibility sizes so a range never wraps
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 18) { bands }
+                        VStack(alignment: .leading, spacing: 10) { bands }
                     }
                     paragraph("Glycemic load accounts for both the GI and how much carbohydrate a portion holds. A high-GI food can have a low GL in a normal portion.")
                     paragraph("GI is shown as background. The bowl measures carbs, not GI.")
@@ -39,6 +39,7 @@ struct HowItWorksView: View {
                     paragraph("GI values: Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE, Goletzke J. International tables of glycemic index and glycemic load values 2021. American Journal of Clinical Nutrition.")
                     Link("doi.org/10.1093/ajcn/nqac031", destination: URL(string: "https://doi.org/10.1093/ajcn/nqac031")!)
                         .font(.subheadline)
+                        .fixedSize(horizontal: false, vertical: true)
                     paragraph("Each food's screen says which source it came from.")
                 }
 
@@ -72,14 +73,23 @@ struct HowItWorksView: View {
             .fixedSize(horizontal: false, vertical: true)
     }
 
+    @ViewBuilder
+    private var bands: some View {
+        band(.low, "0–55")
+        band(.medium, "56–69")
+        band(.high, "70+")
+    }
+
     private func band(_ band: GIBand, _ range: String) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(range)
                 .font(.headline.monospacedDigit())
                 .foregroundStyle(Theme.textColor(band.state))
+                .fixedSize()
             Text(band.title)
                 .font(.caption)
                 .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 }

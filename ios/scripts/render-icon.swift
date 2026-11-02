@@ -40,7 +40,8 @@ for y in 0..<h { for x in 0..<w where px[(y * w + x) * 4 + 3] > 20 {
 let bbox = CGRect(x: minX, y: minY, width: maxX - minX + 1, height: maxY - minY + 1)   // CG coords (y up)
 
 let size = 1024.0
-let ctx = CGContext(data: nil, width: 1024, height: 1024, bitsPerComponent: 8, bytesPerRow: 0, space: space, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+// No alpha channel: the App Store rejects icons that have one (ITMS-90717)
+let ctx = CGContext(data: nil, width: 1024, height: 1024, bitsPerComponent: 8, bytesPerRow: 0, space: space, bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)!
 ctx.setFillColor(paper)
 ctx.fill(CGRect(x: 0, y: 0, width: size, height: size))
 
