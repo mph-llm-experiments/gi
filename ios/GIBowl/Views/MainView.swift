@@ -111,9 +111,18 @@ struct FoodRow: View {
     @Environment(\.dynamicTypeSize) private var typeSize
 
     private var giText: some View {
-        Text(food.gi.map { "GI \($0)" } ?? "GI —")
-            .font(.subheadline.monospacedDigit())
-            .foregroundStyle(.secondary)
+        HStack(spacing: 6) {
+            if let band = giBand(food.gi) {
+                Circle()
+                    .fill(Theme.color(band.state))
+                    .frame(width: 10, height: 10)
+            }
+            Text(food.gi.map { "GI \($0)" } ?? "GI —")
+                .font(.subheadline.monospacedDigit())
+                .foregroundStyle(.secondary)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(food.gi.map { "GI \($0), \(giBand($0)?.title ?? "")" } ?? "No GI")
     }
 
     private var nameBlock: some View {

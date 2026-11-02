@@ -57,15 +57,26 @@ struct FoodDetailView: View {
                     }
                 }
 
-                HStack(spacing: 24) {
-                    stat("GI", food.gi.map(String.init) ?? "—")
+                HStack(alignment: .top, spacing: 24) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        stat("GI", food.gi.map(String.init) ?? "—")
+                        if let band = giBand(food.gi) {
+                            Text(band.title)
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(Theme.textColor(band.state))
+                                .accessibilityIdentifier("detail.band")
+                        }
+                    }
                     stat("GL", food.gl.map(String.init) ?? "—")
                 }
 
                 if food.portions.isEmpty {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("This food doesn't have carb amounts.")
+                        Text(food.hasNoCarbData
+                             ? "This food comes from a GI study that didn't weigh it as eaten, so it has no carb amounts. Add your own carbs to use it in a bowl."
+                             : "This food doesn't have carb amounts.")
                             .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
                         Button("Add carbs for this") { formFor = .addCarbs }
                             .accessibilityIdentifier("own.addCarbs")
                     }
@@ -91,6 +102,15 @@ struct FoodDetailView: View {
                 }
             }
             .padding()
+            if let provenance = food.provenance {
+                Text(provenance)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                    .padding(.bottom)
+                    .accessibilityIdentifier("detail.provenance")
+            }
         }
         .background(Theme.paper)
         .navigationBarTitleDisplayMode(.inline)

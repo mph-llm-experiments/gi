@@ -73,6 +73,7 @@ final class KitchenFlowTests: XCTestCase {
         app.launchArguments = ["-resetData"]
         app.launch()
         open(app, "cottage", "Cottage cheese")
+        XCTAssertEqual(app.staticTexts["detail.provenance"].label, "USDA FoodData Central · #172182")
         app.buttons["portion.½ cup"].tap()
         let meal = app.textFields["targets.meal"]
         XCTAssertTrue(meal.waitForExistence(timeout: 5))
@@ -252,5 +253,44 @@ final class KitchenFlowTests: XCTestCase {
             for _ in 0..<3 where !thanks.exists { app.swipeUp() }
         }
         XCTAssertTrue(thanks.exists)
+    }
+
+    func testStudyFoodShowsBandAndReason() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData"]
+        app.launch()
+        open(app, "apples raw", "Apples, raw")
+        XCTAssertTrue(app.staticTexts["detail.band"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["detail.band"].label, "Low GI")
+        XCTAssertEqual(app.staticTexts["detail.provenance"].label, "GI study 2021 · row 1078")
+        app.navigationBars.buttons.firstMatch.tap()
+        open(app, "jasmine rice", "Jasmine rice, cooked in rice cooker (SunRice; Ricegrowers Ltd., NSW, Australia)")
+        let reason = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH %@", "This food comes from a GI study that didn't weigh it as eaten")).firstMatch
+        XCTAssertTrue(reason.waitForExistence(timeout: 5))
+        snapshot("detail-no-carbs")
+    }
+
+    func testHowItWorksIsReachableAndQuiet() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData"]
+        app.launch()
+        let link = app.buttons["How it works"]
+        XCTAssertTrue(link.waitForExistence(timeout: 5))
+        link.tap()
+        XCTAssertTrue(app.staticTexts["howItWorks"].waitForExistence(timeout: 5))
+        app.navigationBars.buttons.firstMatch.tap()
+        app.buttons["Settings"].tap()
+        app.buttons["How GI Bowl works"].tap()
+        XCTAssertTrue(app.staticTexts["howItWorks"].waitForExistence(timeout: 5))
+        snapshot("how-it-works")
+    }
+
+    func testHowItWorksAtLargestTextSize() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-resetData", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        app.buttons["How it works"].firstMatch.tap()
+        XCTAssertTrue(app.staticTexts["howItWorks"].waitForExistence(timeout: 5))
+        snapshot("how-it-works-xxl")
     }
 }

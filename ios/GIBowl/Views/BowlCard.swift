@@ -15,11 +15,12 @@ struct BowlSection: View {
 
     private var total: Double { items.reduce(0) { $0 + $1.carbs } }
     private var target: Int? { targets.target(for: mode) }
+    private var state: BowlState? { target.flatMap { stateFor(total: total, target: $0) } }
 
     var body: some View {
         if compact {
             if !items.isEmpty {
-                Section { status }
+                Section { status.listRowBackground(Theme.wash(state)) }
             }
         } else if items.isEmpty {
             Section {
@@ -31,6 +32,9 @@ struct BowlSection: View {
                     Text("Search for what's going in it.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
+                    NavigationLink("How it works") { HowItWorksView() }
+                        .font(.subheadline)
+                        .padding(.top, 4)
                 }
                 .padding(.vertical, 4)
             }
@@ -38,9 +42,11 @@ struct BowlSection: View {
             Section {
                 modePicker
                     .listRowSeparator(.hidden)
+                    .listRowBackground(Theme.wash(state))
 
                 status
                     .listRowSeparator(.hidden)
+                    .listRowBackground(Theme.wash(state))
 
                 ForEach(items) { item in
                     VStack(alignment: .leading, spacing: 2) {
@@ -50,6 +56,7 @@ struct BowlSection: View {
                     }
                     .font(.subheadline)
                     .accessibilityElement(children: .combine)
+                    .listRowBackground(Theme.wash(state))
                 }
                 .onDelete { offsets in
                     let store = BowlStore(context: context)
@@ -60,6 +67,8 @@ struct BowlSection: View {
                     BowlStore(context: context).clear()
                 }
                 .font(.subheadline)
+                .tint(Theme.textColor(.over))
+                .listRowBackground(Theme.wash(state))
             } footer: {
                 if let target {
                     Text("Your \(mode.rawValue) number: \(target)g")
