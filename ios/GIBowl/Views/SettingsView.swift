@@ -18,6 +18,7 @@ struct SettingsView: View {
                     Text("GI Bowl helps you see, roughly, whether a meal or snack fits the carb numbers you're aiming for.")
                     Text("Carbs are net carbs (total carbohydrate minus fiber), shown as rough amounts.")
                     Text("No ads, no tracking. Nothing leaves your phone.")
+                    NavigationLink("How GI Bowl works") { HowItWorksView() }
                 }
 
                 TipJarSection()
